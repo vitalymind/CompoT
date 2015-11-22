@@ -1,0 +1,641 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Project name="composition_tool">
+	<Package name="object_library">
+		<Container name="object_library">
+			<Key ID="STR_A3_object_library_unkonw_mod_text">
+				<Original>Unknown mod. Please select correct mod manually.</Original>
+				<English>Unknown mod. Please select correct mod manually.</English>
+			</Key>
+			<Key ID="STR_A3_object_library_sort_by_text">
+				<Original>sort by</Original>
+				<English>sort by</English>
+			</Key>
+			<Key ID="STR_A3_object_library_groupby_text">
+				<Original>group by</Original>
+				<English>group by</English>
+			</Key>
+			<Key ID="STR_A3_object_library_mods_text">
+				<Original>mods</Original>
+				<English>mods</English>
+			</Key>
+			<Key ID="STR_A3_object_library_mod_text">
+				<Original>Mod</Original>
+				<English>Mod</English>
+			</Key>
+			<Key ID="STR_A3_object_library_Configentries_text">
+				<Original>Config entries</Original>
+				<English>Config entries</English>
+			</Key>
+			<Key ID="STR_A3_object_library_exclude_scope_0_text">
+				<Original>no scope 0</Original>
+				<English>no scope 0</English>
+			</Key>
+			<Key ID="STR_A3_object_library_exclude_scope_1_text">
+				<Original>bo scope 1</Original>
+				<English>no scope 1</English>
+			</Key>
+			<Key ID="STR_A3_object_library_exclude_empty_model_text">
+				<Original>no empty model</Original>
+				<English>no empty model</English>
+			</Key>
+			<Key ID="STR_A3_object_library_model_text">
+				<Original>Model:</Original>
+				<English>Model:</English>
+			</Key>
+			<Key ID="STR_A3_object_library_scope_text">
+				<Original>Scope:</Original>
+				<English>Scope:</English>
+			</Key>
+			<Key ID="STR_A3_object_library_dispalyname_text">
+				<Original>Display name:</Original>
+				<English>Display name:</English>
+			</Key>
+			<Key ID="STR_A3_object_library_classname_text">
+				<Original>Classname:</Original>
+				<English>Classname:</English>
+			</Key>
+			<Key ID="STR_A3_object_library_mapsize_text">
+				<Original>Object size</Original>
+				<English>Object size</English>
+			</Key>
+			<Key ID="STR_A3_object_library_lib_text">
+				<Original>Object library</Original>
+				<English>Object library</English>
+			</Key>
+		</Container>
+	</Package>
+	<Package name="build_tool_menu">
+		<Container name="build_tool_menu">
+			<Key ID="STR_A3_build_tool_menu_objects_but">
+				<Original>Objects</Original>
+				<English>Objects</English>
+			</Key>
+			<Key ID="STR_A3_build_tool_menu_composition_but">
+				<Original>Compositions</Original>
+				<English>Compositions</English>
+			</Key>
+			<Key ID="STR_A3_build_tool_menu_collections_but">
+				<Original>Collections</Original>
+				<English>Collections</English>
+			</Key>
+			<Key ID="STR_A3_build_tool_menu_prefabs_but">
+				<Original>Prefabs</Original>
+				<English>Prefabs</English>
+			</Key>
+		</Container>
+	</Package>
+	<Package name="change_name">
+		<Container name="change_name">
+			<Key ID="STR_A3_change_name_ok_but">
+				<Original>Ok</Original>
+				<English>Ok</English>
+			</Key>
+			<Key ID="STR_A3_change_name_cancel_but">
+				<Original>Cancel</Original>
+				<English>Cancel</English>
+			</Key>
+			<Key ID="STR_A3_change_name_text">
+				<Original>RENAMING: Please enter composition name. Double click for random name</Original>
+				<English>RENAMING: Please enter composition name. Double click for random name</English>
+			</Key>
+		</Container>
+	</Package>
+	<Package name="save_composition">
+		<Container name="save_composition">
+			<Key ID="STR_A3_save_composition_compo_name_exists">
+				<Original>Composition with this name already exists. Do you want to overwrite it?</Original>
+				<English>Composition with this name already exists. Do you want to overwrite it?</English>
+			</Key>
+			<Key ID="STR_A3_save_composition_cat_name_exists">
+				<Original>Category with this name already exists. Try another name.</Original>
+				<English>Category with this name already exists. Try another name.</English>
+			</Key>
+			<Key ID="STR_A3_save_composition_name_empty">
+				<Original>Name field must not be empty.</Original>
+				<English>Name field must not be empty.</English>
+			</Key>
+			<Key ID="STR_A3_save_composition_select_cat">
+				<Original>Select category to save composition in.</Original>
+				<English>Select category to save composition in.</English>
+			</Key>
+			<Key ID="STR_A3_save_composition_specify_name">
+				<Original>Specify composition name.</Original>
+				<English>Specify composition name.</English>
+			</Key>
+			<Key ID="STR_A3_save_composition_new_cat_but">
+				<Original>New Category</Original>
+				<English>New Category</English>
+			</Key>
+			<Key ID="STR_A3_save_composition_cancel_but">
+				<Original>Cancel</Original>
+				<English>Cancel</English>
+			</Key>
+			<Key ID="STR_A3_save_composition_overwrite_but">
+				<Original>Overwrite</Original>
+				<English>Overwrite</English>
+			</Key>
+			<Key ID="STR_A3_save_composition_save_but">
+				<Original>Save</Original>
+				<English>Save</English>
+			</Key>			
+			<Key ID="STR_A3_save_composition_no_cat_selected">
+				<Original>Category must be selected.</Original>
+				<English>Category must be selected.</English>
+			</Key>
+		</Container>
+	</Package>
+	<Package name="info_gui">
+		<Container name="info_gui">
+			<Key ID="STR_A3_info_gui_name">
+				<Original>Name:</Original>
+				<English>Name:</English>
+			</Key>
+			<Key ID="STR_A3_info_gui_category">
+				<Original>Category:</Original>
+				<English>Category:</English>
+			</Key>
+			<Key ID="STR_A3_info_gui_library">
+				<Original>Library:</Original>
+				<English>Library:</English>
+			</Key>
+			<Key ID="STR_A3_info_gui_size">
+				<Original>Size:</Original>
+				<English>Size:</English>
+			</Key>
+			<Key ID="STR_A3_info_gui_elements">
+				<Original>Element:</Original>
+				<English>Element:</English>
+			</Key>
+			<Key ID="STR_A3_info_gui_empty">
+				<Original>empty</Original>
+				<English>empty</English>
+			</Key>
+		</Container>
+	</Package>
+	<Package name="composition_library">
+		<Container name="composition_library">
+			<Key ID="STR_A3_composition_library_rename">
+				<Original>Rename</Original>
+				<English>Rename</English>
+			</Key>
+			<Key ID="STR_A3_composition_library_newcat">
+				<Original>Create</Original>
+				<English>Create</English>
+			</Key>
+			<Key ID="STR_A3_composition_library_size">
+				<Original>Size:</Original>
+				<English>Size:</English>
+			</Key>
+			<Key ID="STR_A3_composition_library_objects">
+				<Original>Objects:</Original>
+				<English>Objects:</English>
+			</Key>
+			<Key ID="STR_A3_composition_library_compositions">
+				<Original>Compositions:</Original>
+				<English>Compositions:</English>
+			</Key>
+			<Key ID="STR_A3_composition_library_collections">
+				<Original>Collections:</Original>
+				<English>Collections:</English>
+			</Key>
+			<Key ID="STR_A3_composition_library_prefabs">
+				<Original>Prefabs:</Original>
+				<English>Prefabs:</English>
+			</Key>
+			<Key ID="STR_A3_composition_library_exclude">
+				<Original>exclude temporary</Original>
+				<English>exclude temporary</English>
+			</Key>
+			<Key ID="STR_A3_composition_library_objects_field">
+				<Original>OBJ:</Original>
+				<English>OBJ:</English>
+			</Key>
+			<Key ID="STR_A3_composition_library_compositions_field">
+				<Original>COM:</Original>
+				<English>COM:</English>
+			</Key>
+			<Key ID="STR_A3_composition_library_collections_field">
+				<Original>COL:</Original>
+				<English>COL:</English>
+			</Key>
+			<Key ID="STR_A3_composition_library_prefabs_field">
+				<Original>PRF:</Original>
+				<English>PRF:</English>
+			</Key>
+			<Key ID="STR_A3_composition_library_library">
+				<Original>Composition library</Original>
+				<English>Composition library</English>
+			</Key>
+			<Key ID="STR_A3_composition_library_meters">
+				<Original>meters</Original>
+				<English>meters</English>
+			</Key>
+			<Key ID="STR_A3_composition_library_pcs">
+				<Original>pcs</Original>
+				<English>pcs</English>
+			</Key>
+		</Container>
+	</Package>
+	<Package name="collection_library">
+		<Container name="collection_library">
+			<Key ID="STR_A3_collection_library_lib">
+				<Original>Collection library:</Original>
+				<English>Collection library:</English>
+			</Key>
+			<Key ID="STR_A3_collection_library_lib_categories">
+				<Original>Categories</Original>
+				<English>Categories</English>
+			</Key>
+			<Key ID="STR_A3_collection_library_lib_collections">
+				<Original>Collections</Original>
+				<English>Collections</English>
+			</Key>
+			<Key ID="STR_A3_collection_library_lib_content">
+				<Original>Contents</Original>
+				<English>Contents</English>
+			</Key>
+			<Key ID="STR_A3_collection_library_create">
+				<Original>Create</Original>
+				<English>Create</English>
+			</Key>
+			<Key ID="STR_A3_collection_library_rename">
+				<Original>Rename</Original>
+				<English>Rename</English>
+			</Key>
+		</Container>
+	</Package>
+	<Package name="prefab_library">
+		<Container name="prefab_library">
+			<Key ID="STR_A3_prefab_library_lib">
+				<Original>Prefab library</Original>
+				<English>Prefab library</English>
+			</Key>
+			<Key ID="STR_A3_prefab_library_prefabs">
+				<Original>Prefabs</Original>
+				<English>Prefabs</English>
+			</Key>
+		</Container>
+	</Package>
+	<Package name="object_select">
+		<Container name="object_select">
+			<Key ID="STR_A3_object_select_search">
+				<Original>Search:</Original>
+				<English>Search:</English>
+			</Key>
+			<Key ID="STR_A3_object_select_groupby">
+				<Original>Group by:</Original>
+				<English>Group by:</English>
+			</Key>
+		</Container>
+	</Package>
+	<Package name="export_tool">
+		<Container name="export_tool">
+			<Key ID="STR_A3_export_tool_export">
+				<Original>Export menu</Original>
+				<English>Export menu</English>
+			</Key>
+			<Key ID="STR_A3_export_tool_export_but">
+				<Original>Export</Original>
+				<English>Export</English>
+			</Key>
+			<Key ID="STR_A3_export_tool_close_but">
+				<Original>Close</Original>
+				<English>Close</English>
+			</Key>
+			<Key ID="STR_A3_export_tool_toclip">
+				<Original>to clipboard</Original>
+				<English>to clipboard</English>
+			</Key>
+			<Key ID="STR_A3_export_tool_todisplay">
+				<Original>to display</Original>
+				<English>to display</English>
+			</Key>
+			<Key ID="STR_A3_export_tool_export_format">
+				<Original>export format</Original>
+				<English>export format</English>
+			</Key>
+			<Key ID="STR_A3_export_tool_specify">
+				<Original>Specify export options</Original>
+				<English>Specify export options</English>
+			</Key>
+			<Key ID="STR_A3_export_tool_All_libraries">
+				<Original>All libraries</Original>
+				<English>All libraries</English>
+			</Key>
+			<Key ID="STR_A3_export_tool_Single_library">
+				<Original>Single library</Original>
+				<English>Single library</English>
+			</Key>
+			<Key ID="STR_A3_export_tool_Single_element">
+				<Original>Single element</Original>
+				<English>Single element</English>
+			</Key>
+			<Key ID="STR_A3_export_tool_Setup">
+				<Original>Project</Original>
+				<English>Project</English>
+			</Key>
+			<Key ID="STR_A3_export_tool_objects">
+				<Original>Objects</Original>
+				<English>Objects</English>
+			</Key>
+			<Key ID="STR_A3_export_tool_object">
+				<Original>Selected objects</Original>
+				<English>Selected objects</English>
+			</Key>
+			<Key ID="STR_A3_export_tool_compositons">
+				<Original>Compositions</Original>
+				<English>Compositions</English>
+			</Key>
+			<Key ID="STR_A3_export_tool_compositon">
+				<Original>Selected compositions</Original>
+				<English>Selected composition</English>
+			</Key>
+			<Key ID="STR_A3_export_tool_Collection">
+				<Original>Selected collections</Original>
+				<English>Selected collections</English>
+			</Key>
+			<Key ID="STR_A3_export_tool_Collections">
+				<Original>Collections</Original>
+				<English>Collections</English>
+			</Key>
+			<Key ID="STR_A3_export_tool_prefab">
+				<Original>Selected prefabs</Original>
+				<English>Selected prefabs</English>
+			</Key>
+			<Key ID="STR_A3_export_tool_prefabs">
+				<Original>Prefabs</Original>
+				<English>Prefabs</English>
+			</Key>
+			<Key ID="STR_A3_export_tool_objects_only">
+				<Original>Objects only</Original>
+				<English>Objects only</English>
+			</Key>
+			<Key ID="STR_A3_export_tool_with_pivots">
+				<Original>With all data</Original>
+				<English>With all data</English>
+			</Key>
+			<Key ID="STR_A3_export_tool_format_default">
+				<Original>default</Original>
+				<English>default</English>
+			</Key>
+			<Key ID="STR_A3_export_tool_format_mission">
+				<Original>mission</Original>
+				<English>mission</English>
+			</Key>
+			<Key ID="STR_A3_export_tool_format_xCam">
+				<Original>xCam</Original>
+				<English>xCam</English>
+			</Key>
+			<Key ID="STR_A3_export_tool_with_relative_pos">
+				<Original>Relative pos</Original>
+				<English>Relative pos</English>
+			</Key>
+			<Key ID="STR_A3_export_tool_with_absolute_pos">
+				<Original>Absolute pos</Original>
+				<English>Absolute pos</English>
+			</Key>
+			<Key ID="STR_A3_export_tool_clipboard">
+				<Original>clipboard</Original>
+				<English>clipboard</English>
+			</Key>
+			<Key ID="STR_A3_export_tool_display">
+				<Original>display</Original>
+				<English>display</English>
+			</Key>
+			<Key ID="STR_A3_export_tool_all_libraries_text">
+				<Original>All libraries will be exported to</Original>
+				<English>All libraries will be exported to</English>
+			</Key>
+			<Key ID="STR_A3_export_tool_single_library_text">
+				<Original>library will be exported to</Original>
+				<English>library will be exported to</English>
+			</Key>
+			<Key ID="STR_A3_export_tool_single_element_text">
+				<Original>will be exported to</Original>
+				<English>will be exported to</English>
+			</Key>
+			<Key ID="STR_A3_export_tool_setup_exported">
+				<Original>Project will be exported to</Original>
+				<English>Project will be exported to</English>
+			</Key>
+			<Key ID="STR_A3_export_tool_with_pivots_exported">
+				<Original>All data will be properly saved. This is the best way to store your project between sessions.</Original>
+				<English>All data will be properly saved. This is the best way to store your project between sessions.</English>
+			</Key>
+			<Key ID="STR_A3_export_tool_without_pivots_exported">
+				<Original>Only objects will be exported. All pivots, parent/child relations, prefabs and collections data will not be exported</Original>
+				<English>Only objects will be exported. All pivots, parent/child relations, prefabs and collections data will not be exported</English>
+			</Key>
+			<Key ID="STR_A3_export_tool_default_format">
+				<Original>Composition tool output format will be used.</Original>
+				<English>Composition tool output format will be used.</English>
+			</Key>
+			<Key ID="STR_A3_export_tool_xCam_format">
+				<Original>xCam output format will be used.</Original>
+				<English>xCam output format will be used.</English>
+			</Key>
+			<Key ID="STR_A3_export_tool_mission_format">
+				<Original>Mission.sqm format will be used.</Original>
+				<English>Mission.sqm format will be used.</English>
+			</Key>
+			<Key ID="STR_A3_export_tool_include_temp_text">
+				<Original>include temporary</Original>
+				<English>include temporary</English>
+			</Key>
+			<Key ID="STR_A3_export_tool_includeTemp">
+				<Original>Temporary category will be included.</Original>
+				<English>Temporary category will be included.</English>
+			</Key>
+			<Key ID="STR_A3_export_tool_excludeTemp">
+				<Original>Temporary category will be excluded. Temporary elements, used elsewhere, will still be included</Original>
+				<English>Temporary category will be excluded. Temporary elements, used elsewhere, will still be included</English>
+			</Key>
+		</Container>
+	</Package>
+	<Package name="import_tool">
+		<Container name="import_tool">
+			<Key ID="STR_A3_import_tool_import_but">
+				<Original>Import</Original>
+				<English>Import</English>
+			</Key>
+			<Key ID="STR_A3_import_tool_load_but">
+				<Original>Load</Original>
+				<English>Load</English>
+			</Key>
+			<Key ID="STR_A3_import_tool_author_text">
+				<Original>Author:</Original>
+				<English>Author:</English>
+			</Key>
+			<Key ID="STR_A3_import_tool_date_text">
+				<Original>Date:</Original>
+				<English>Date:</English>
+			</Key>
+			<Key ID="STR_A3_import_tool_type_text">
+				<Original>Type:</Original>
+				<English>Type:</English>
+			</Key>
+			<Key ID="STR_A3_import_tool_fromDisp_text">
+				<Original>from display</Original>
+				<English>from display</English>
+			</Key>
+			<Key ID="STR_A3_import_tool_fromClip_text">
+				<Original>from clipboard</Original>
+				<English>from clipboard</English>
+			</Key>
+			<Key ID="STR_A3_import_tool_fromfile_text">
+				<Original>from file</Original>
+				<English>from file</English>
+			</Key>
+			<Key ID="STR_A3_import_tool_description_text">
+				<Original>Description:</Original>
+				<English>Description:</English>
+			</Key>
+			<Key ID="STR_A3_import_tool_overwrite_text">
+				<Original>overwrite</Original>
+				<English>overwrite</English>
+			</Key>
+			<Key ID="STR_A3_import_tool_add_text">
+				<Original>add</Original>
+				<English>add</English>
+			</Key>
+			<Key ID="STR_A3_import_tool_skip_text">
+				<Original>skip</Original>
+				<English>skip</English>
+			</Key>
+			<Key ID="STR_A3_import_tool_collision_text">
+				<Original>Elements name collision options</Original>
+				<English>Elements name collision options</English>
+			</Key>
+			<Key ID="STR_A3_import_tool_import_text">
+				<Original>Import menu</Original>
+				<English>Import menu</English>
+			</Key>
+		</Container>
+	</Package>
+	<Package name="misc">
+		<Container name="misc">
+			<Key ID="STR_A3_ct_eden_gui_toggle_hint">
+				<Original>Toggle Composition tool</Original>
+				<English>Toggle Composition tool</English>
+			</Key>
+			<Key ID="STR_A3_ct_eden_gui_start_but">
+				<Original>Launch CompoT</Original>
+				<English>Launch CompoT</English>
+			</Key>
+			<Key ID="STR_A3_ct_eden_gui_basic_tab">
+				<Original>Basic</Original>
+				<English>Basic</English>
+			</Key>
+			<Key ID="STR_A3_ct_eden_gui_advance_tab">
+				<Original>Advanced</Original>
+				<English>Advanced</English>
+			</Key>
+			<Key ID="STR_A3_ct_eden_gui_notYet_text">
+				<Original>Not yet implemented</Original>
+				<English>Not yet implemented</English>
+			</Key>
+			<Key ID="STR_A3_ct_log_editorInitedLog_text">
+				<Original>Loading CT. Mission init skipped.</Original>
+				<English>Loading CT. Mission init skipped.</English>
+			</Key>
+			<Key ID="STR_A3_ct_eden_chooseProject_combo">
+				<Original>Project will be built immediately after selection made</Original>
+				<English>Project will be built immediately after selection made</English>
+			</Key>
+			<Key ID="STR_A3_ct_eden_curProjectText_text">
+				<Original>Current project</Original>
+				<English>Current project</English>
+			</Key>
+			<Key ID="STR_A3_ct_eden_gui_newProject_hint">
+				<Original>Create new project</Original>
+				<English>Create new project</English>
+			</Key>
+			<Key ID="STR_A3_ct_eden_gui_deleteProject_hint">
+				<Original>Delete current project</Original>
+				<English>Delete current project</English>
+			</Key>
+			<Key ID="STR_A3_ct_eden_gui_toggleUnitSim_hint">
+				<Original>Toggle units simulation in CT editor</Original>
+				<English>Toggle units simulation in CT editor</English>
+			</Key>
+			<Key ID="STR_A3_ct_eden_gui_toggleObjectsSim_hint">
+				<Original>Toggle objects simulation in CT editor</Original>
+				<English>Toggle objects simulation in CT editor</English>
+			</Key>
+			<Key ID="STR_A3_ct_eden_gui_exportLib_hint">
+				<Original>Copy libraries to clipboard</Original>
+				<English>Copy libraries to clipboard</English>
+			</Key>
+			<Key ID="STR_A3_ct_eden_gui_exportProjects_hint">
+				<Original>Copy projects to clipboard</Original>
+				<English>Copy projects to clipboard</English>
+			</Key>
+			<Key ID="STR_A3_ct_eden_gui_confirmUnloadCT_warinng">
+				<Original>Do you really want to unload Compsition tool? All unsaved projects and libraries will be lost.</Original>
+				<English>Do you really want to unload Compsition tool? All unsaved projects and libraries will be lost.</English>
+			</Key>
+			<Key ID="STR_A3_ct_eden_gui_deleteProject_warning">
+				<Original>Do you really want to delete %1 project.</Original>
+				<English>Do you really want to delete %1 project.</English>
+			</Key>
+			<Key ID="STR_A3_ct_eden_gui_noProjects_error">
+				<Original>There are no projects at the moment, please create new project first.</Original>
+				<English>There are no projects at the moment, please create new project first.</English>
+			</Key>
+			<Key ID="STR_A3_ct_eden_gui_libsWrong_error">
+				<Original>Error while loading libraries, check ct_libraries.sqf.</Original>
+				<English>Error while loading libraries, check ct_libraries.sqf.</English>
+			</Key>
+			<Key ID="STR_A3_ct_eden_gui_inputName_warning">
+				<Original>Please specify name for new project.</Original>
+				<English>Please specify name for new project.</English>
+			</Key>
+			<Key ID="STR_A3_ct_eden_gui_nameEmpty_error">
+				<Original>Name field must not be empty.</Original>
+				<English>Name field must not be empty.</English>
+			</Key>
+			<Key ID="STR_A3_ct_eden_gui_libsToClipboard_warning">
+				<Original>Libraries exported to clipboard.</Original>
+				<English>Libraries exported to clipboard.</English>
+			</Key>
+			<Key ID="STR_A3_ct_eden_gui_projectsToClipboard_warning">
+				<Original>Projects exported to clipboard.</Original>
+				<English>Projects exported to clipboard.</English>
+			</Key>
+			<Key ID="STR_A3_ct_eden_gui_libsTofile_warning">
+				<Original>Libraries exported to file.</Original>
+				<English>Libraries exported to file.</English>
+			</Key>
+			<Key ID="STR_A3_ct_eden_gui_projectsTofile_warning">
+				<Original>Projects exported to file.</Original>
+				<English>Projects exported to file.</English>
+			</Key>
+		</Container>
+	</Package>
+</Project>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	

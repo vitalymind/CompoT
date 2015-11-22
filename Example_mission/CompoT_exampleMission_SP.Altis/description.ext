@@ -1,0 +1,4 @@
+enableDebugConsole = 1;
+author = "vitaly 'mind' chizhikov";
+overviewText = "This is an axample mission shipped with composition tool. It is designed in a way to show what composition tool can be used for. One can learn how to use composition tool in own missions by using this one as reference.";
+overviewPicture = "missin_logo.paa";

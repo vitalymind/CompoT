@@ -1,0 +1,12 @@
+name = "Composition Tool v0.1";
+picture = "logo_compot.paa";
+actionName = "GitHub";
+action = "https://github.com/vitalymind/composition_tool";
+description = "CompoT version 0.1";
+logo = "logo_compot.paa";
+logoOver = "logo_compot.paa";
+tooltip = "CompoT";
+tooltipOwned = "CompoT";
+overview = "Object placement and manipulation toolset with randomization capabilities. Designed for seamless integration into other mods/toolsets.";
+author = "vitaly 'mind' chizhikov";
+overviewPicture = "logo_compot.paa";

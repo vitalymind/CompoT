@@ -1,0 +1,2 @@
+#define PIVOT "Sign_Arrow_Large_F"
+#define CENTER_PIVOT "Sign_Arrow_Large_Cyan_F"
