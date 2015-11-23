@@ -22,8 +22,8 @@ please don’t hesitate to contact me, I will be happy to help integrate CompoT 
 
 # HOW TO BUILD
 1) Pack CompoT folder with you prefered PBO tool.</br>
----1.1) Make sure your PBO tool is able to read $PREFIX$ file. If addon prefix is not set</br>
----correctly with included file $PREFIX$, use method supported by your PBO tool to add prefix</br>
----to PBO file. prefix is "composition_tool".</br>
+1.1) Make sure your PBO tool is able to read $PREFIX$ file. If addon prefix is not set</br>
+correctly with included file $PREFIX$, use method supported by your PBO tool to add prefix</br>
+to PBO file. prefix is "composition_tool".</br>
 2) Place CompoT.pbo in ..\@compot\addons\CompoT.pbo</br>
 3) Start game with @compot addon.</br>
