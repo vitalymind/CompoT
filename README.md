@@ -19,3 +19,12 @@ certain level of battle field randomization.
 CompoT is aiming to support as much of community tools and utilities as it possibly can. 
 If you like to have CompoT`s functionality in your own project/addon/what-ever-you-are-doing, 
 please don’t hesitate to contact me, I will be happy to help integrate CompoT in your project.
+
+# HOW TO BUILD
+
+1) Pack CompoT folder with you prefered PBO tool.
+   1.1) Make sure your PBO tool is able to read $PREFIX$ file. If addon prefix is not set correctly with 
+   included file $PREFIX$, use method supported by your PBO tool to add prefix to PBO file.
+   prefix is "compsition_tool".
+2) Place CompoT.pbo in ..<arma3root>\@compot\addons\CompoT.pbo
+3) Start game with @compot addon.
