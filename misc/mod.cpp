@@ -1,7 +1,7 @@
 name = "Composition Tool v0.1";
 picture = "logo_compot.paa";
 actionName = "GitHub";
-action = "https://github.com/vitalymind/composition_tool";
+action = "https://github.com/vitalymind/CompoT";
 description = "CompoT version 0.1";
 logo = "logo_compot.paa";
 logoOver = "logo_compot.paa";

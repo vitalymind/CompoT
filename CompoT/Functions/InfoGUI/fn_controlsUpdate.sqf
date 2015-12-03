@@ -55,11 +55,12 @@ if (CT_var_curGUIMode == "info+cursorControls") then {
 		_resultText = composeText [_resultText,(parseText format["<t size='%1' align='left' color='#%2'>1<t align='right' color='#%3'>Toggle empty hands</t>", _textSize, _colorWhite,_colorYellow]), lineBreak];
 		_resultText = composeText [_resultText,(parseText format["<t size='%1' align='left' color='#%2'>TAB<t align='right' color='#%3'>Reset build height</t>", _textSize, _colorWhite,_colorYellow]), lineBreak];
 		_resultText = composeText [_resultText,(parseText format["<t size='%1' align='left' color='#%2'>LMB<t align='right' color='#%3'>Build element</t>", _textSize, _colorWhite,_colorYellow]), lineBreak];
+		_resultText = composeText [_resultText,(parseText format["<t size='%1' align='left' color='#%2'>CTRL+LMB<t align='right' color='#%3'>Build multiply elements</t>", _textSize, _colorWhite,_colorYellow]), lineBreak];
 		_resultText = composeText [_resultText,(parseText format["<t size='%1' align='left' color='#%2'>Hold RMB<t align='right' color='#%3'>Select building library</t>", _textSize, _colorWhite,_colorYellow]), lineBreak];
 		_resultText = composeText [_resultText,(parseText format["<t size='%1' align='left' color='#%2'>SHIFT+F<t align='right' color='#%3'>Build new pivot</t>", _textSize, _colorWhite,_colorYellow]), lineBreak];
 		_resultText = composeText [_resultText,(parseText format["<t size='%1' align='left' color='#%2'>SHIFT+MW<t align='right' color='#%3'>Rotate build tool</t>", _textSize, _colorWhite,_colorYellow]), lineBreak];
 		_resultText = composeText [_resultText,(parseText format["<t size='%1' align='left' color='#%2'>ALT+MW<t align='right' color='#%3'>Adjust build tool height</t>", _textSize, _colorWhite,_colorYellow]), lineBreak];
-		_rows = 7;
+		_rows = 8;
 		if (((CT_var_buildMode select 0) select 0) == "object") then {
 			_resultText = composeText [_resultText,(parseText format["<t size='%1' align='left' color='#%2'>SPACE<t align='right' color='#%3'>Object selection menu</t>", _textSize, _colorWhite,_colorYellow]), lineBreak];
 			_rows = _rows + 1;

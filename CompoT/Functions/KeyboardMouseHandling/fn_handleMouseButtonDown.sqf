@@ -26,6 +26,9 @@ switch (CT_var_cursorTool) do {
 			if (_shift AND !_ctrl AND !_alt) then {
 				[DIK_LMB,"clone"] call CT_fnc_handleBuildToolMouseButton;
 			};
+			if (!_shift AND _ctrl AND !_alt) then {
+				[DIK_LMB,"multy"] call CT_fnc_handleBuildToolMouseButton;
+			};
 		};
 		if (_button == DIK_RMB) then {
 			"open" call CT_fnc_buildToolGUI;

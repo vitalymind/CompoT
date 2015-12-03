@@ -49,5 +49,5 @@ if (_button == DIK_LMB) then {
 		[(_this select 3)] call CT_fnc_cloneComposition;
 		CT_var_btc = CT_var_btc - [_tc];
 	};
-	"buildTool" call CT_fnc_cursorChangeTool;
+	if (_type != "multy") then {"buildTool" call CT_fnc_cursorChangeTool};
 };

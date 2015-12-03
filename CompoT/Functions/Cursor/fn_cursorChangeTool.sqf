@@ -13,7 +13,7 @@ _case = _this;
 switch (_case) do {
 	case "buildTool": {
 		if SOMETHING_SELECTED then {
-			if (SEL_STATE in ["busy","busySpecial"]) then {
+			if (SEL_STATE in ["busy","busySpecial","emptySpecial"]) then {
 				["release"] call CT_fnc_cursorGrab;
 			};
 		};
