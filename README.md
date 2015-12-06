@@ -18,7 +18,7 @@ certain level of battle field randomization.
  
 CompoT is aiming to support as much of community tools and utilities as it possibly can. 
 If you like to have CompoT`s functionality in your own project/addon/what-ever-you-are-doing, 
-please don’t hesitate to contact me, I will be happy to help integrate CompoT in your project.
+please donâ€™t hesitate to contact me, I will be happy to help integrate CompoT in your project.
 
 # HOW TO BUILD
 1) Pack CompoT folder with you prefered PBO tool.</br>
