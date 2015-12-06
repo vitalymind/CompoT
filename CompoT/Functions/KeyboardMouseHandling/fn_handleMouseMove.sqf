@@ -16,7 +16,7 @@ call CT_fnc_cursorUpdate;
 
 if (!CT_var_camIsRotating) then {CT_var_camIsRotating = true};
 
-if (CT_var_GUIdelayCounter < 20) then {
+if (CT_var_GUIdelayCounter < (diag_fps * 0.33)) then {
 	CT_var_GUIdelayCounter = CT_var_GUIdelayCounter + 1;
 } else {
 	CT_var_GUIdelayCounter = 0;

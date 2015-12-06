@@ -32,7 +32,7 @@ if (_button == DIK_LMB) then {
 			_pivot = FIRST_SELECTION;
 		};
 	};
-	call CT_fnc_clearPreview;
+	if (_type != "multy") then {call CT_fnc_clearPreview};
 	_naming = "exact";
 	if (_type == "default") then {
 		if (_libraryName == "composition") then {
@@ -40,7 +40,7 @@ if (_button == DIK_LMB) then {
 		};
 	};
 	
-	[_libraryName, _element, _pos, _pivot,_naming] spawn { //Nasty hack, because of PhysX behaviour (physic calculations postponed to next frame, resulting in collision to object deleted in previous frame)
+	[_libraryName, _element, _pos, _pivot,_naming] spawn {
 		_tc = count CT_var_btc; CT_var_btc pushBack _tc;
 		sleep 0.01;
 		["normal",(_this select 0),["asParent",(_this select 1)],(_this select 2),CT_var_buildToolAngle,(_this select 3),(_this select 4)] call CT_fnc_build;

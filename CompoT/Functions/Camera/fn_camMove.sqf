@@ -8,10 +8,11 @@
 */ 
 #include "defines.hpp" 
 
-private ["_check", "_motion", "_angel","_heightChange","_dir","_oldPos","_newPos","_newHeight","_heightDiff"];
+private ["_check", "_motion", "_angel","_heightChange","_dir","_oldPos","_newPos","_newHeight","_heightDiff","_fps"];
 _motion = 0;
 _angel = 0;
 _heightChange = 0;
+_fps = diag_fps;
 
 call {
 	private ["_up","_down","_forw","_back","_left","_rght"];
@@ -43,8 +44,8 @@ _oldPos = getPosASL CT_var_cam;
 _heightDiff = (_oldPos select 2) - (getTerrainHeightASL _oldPos);
 _heightDiff = _heightDiff max 0;
 _newPos = [
-	(_oldPos select 0) + ((sin _dir) * _motion * CT_var_camSpeed),
-	(_oldPos select 1) + ((cos _dir) * _motion * CT_var_camSpeed)
+	(_oldPos select 0) + ((sin _dir) * _motion * (CT_var_camSpeed / (_fps / 60))),
+	(_oldPos select 1) + ((cos _dir) * _motion * (CT_var_camSpeed / (_fps / 60)))
 ];
 _newHeight = ((getTerrainHeightASL _newPos) + _heightDiff) + ((_heightChange * CT_var_camSpeed) * 0.7);
 _newPos pushBack _newHeight;

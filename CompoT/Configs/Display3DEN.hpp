@@ -168,6 +168,10 @@ class Cfg3DEN {
 			text = "$STR_A3_ct_eden_gui_libsWrong_error";
 			isWarning = 1;
 		};
+		class CT_noPlayer {
+			text = "$STR_A3_ct_eden_gui_noPlayer_error";
+			isWarning = 1;
+		};
 	};
 };
 class Display3DEN {

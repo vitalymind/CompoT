@@ -39,6 +39,7 @@ switch (_case) do {
 				_skip = false;
 				_className = _x select 0;
 				_scope = _x select 1;
+				if (typeName _scope != "SCALAR") then {_scope = 0};
 				_model = _x select 2;
 				_displayName = _x select 3;
 				_mapSize = _x select 4;

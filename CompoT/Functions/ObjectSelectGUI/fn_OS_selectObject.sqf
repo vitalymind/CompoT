@@ -47,7 +47,6 @@ if ((uinameSpace getVariable ["CT_var_gui_runMode",""]) == "3den") then {
 		};
 		uinamespace setvariable ["bis_fnc_3DENControlsHint_place",[""]];
 	};
-}; 
 } else {
 	(CT_var_buildMode select 0) set [1, (_element select 6)];
 	(CT_var_buildMode select 0) set [2, (_element select 7)];

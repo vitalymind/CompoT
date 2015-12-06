@@ -586,6 +586,10 @@
 				<Original>Error while loading libraries, check ct_libraries.sqf.</Original>
 				<English>Error while loading libraries, check ct_libraries.sqf.</English>
 			</Key>
+			<Key ID="STR_A3_ct_eden_gui_noPlayer_error">
+				<Original>There must be playable unit in scene.</Original>
+				<English>There must be playable unit in scene.</English>
+			</Key>
 			<Key ID="STR_A3_ct_eden_gui_inputName_warning">
 				<Original>Please specify name for new project.</Original>
 				<English>Please specify name for new project.</English>

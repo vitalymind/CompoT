@@ -48,7 +48,7 @@ switch (_input) do {
 	case "enterEditor": {
 		if (!(uinamespace getVariable ["CT_var_gui_editorLoaded", false])) exitWith {};
 		if (count (uinamespace getVariable ["CT_var_gui_projects",[]]) == 0) exitWith {["message","CT_noProject",5] call CT_fnc_handler};
-		//if (({_x get3DENAttribute "control" == "controlled by player"} count (all3DENEntities select 0)) == 0) exitWith {["message","CT_noPlayer",5] call CT_fnc_handler};
+		if (isNull player) exitWith {["message","CT_noPlayer",5] call CT_fnc_handler};
 		uiNameSpace setVariable ["CT_var_gui_runMode", "editor"];
 		uiNameSpace setVariable ["CT_var_gui_camera",[getPosATL get3DENCamera, getDir get3DENCamera, (get3DENCamera call CT_fnc_getPB)]];
 		do3DENAction "MissionPreview";

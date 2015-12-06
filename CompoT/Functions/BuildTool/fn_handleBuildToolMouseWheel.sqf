@@ -19,7 +19,7 @@ _categoryIndex = (CT_var_buildMode select 0) select 1;
 _elementIndex = (CT_var_buildMode select 0) select 2;
 
 //Temp solution to block element/category switching vai mousewheel for objects. Except ObjectSelection GUI Whole system of element selection due to change later on
-if ((!CT_var_openedGUI) AND (((CT_var_buildMode select 0) select 0) == "object")) exitWith {};
+//if ((!CT_var_openedGUI) AND (((CT_var_buildMode select 0) select 0) == "object")) exitWith {};
 
 switch (_case) do {
 	case "element": {_task = if (_direction == 1) then {"nextElem"} else {"prevElem"}};
