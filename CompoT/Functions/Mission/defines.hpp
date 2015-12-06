@@ -63,8 +63,8 @@
 
 //CONSTATS
 #define RADIUS_CHANGE		1
-#define ANGLE_CHANGE		1
-#define HEIGHT_CHANGE		0.05
+#define ANGLE_CHANGE		0.5
+#define HEIGHT_CHANGE		0.02
 
 //SHORTCUTS
 #define NOTHING_SELECTED 	(count ct_var_sel == 0)

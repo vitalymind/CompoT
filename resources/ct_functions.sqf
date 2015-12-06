@@ -556,6 +556,7 @@ CT_fnc_errorMsg = {
 	};
 };
 CT_fnc_initMission = {
+	private ["_projectName","_projectIndex"];
 	//INIT VARIABLE
 	CT_var_usedNames = [];
 	CT_var_slopeMode = "sea";
@@ -571,8 +572,15 @@ CT_fnc_initMission = {
 	ct_var_projects = call compile preprocessFileLineNumbers "ct_projects.sqf";
 	
 	//BUILDING
+	_projectName = _this param [0, ""];
+	_projectIndex = 0;
+	if (_projectName != "") then {
+		{
+			if (((_x select 5) select 0) == _projectName) exitWith {_projectIndex = _forEachIndex};
+		} forEach ct_var_projects;
+	};
 	call CT_fnc_buildMainPivot;
-	((ct_var_projects select 0) select 5) call CT_fnc_importStructure;
+	((ct_var_projects select _projectIndex) select 5) call CT_fnc_importStructure;
 	
 	//HIDE PIVOTS
 	{

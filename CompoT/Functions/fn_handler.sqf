@@ -48,6 +48,7 @@ switch (_input) do {
 	case "enterEditor": {
 		if (!(uinamespace getVariable ["CT_var_gui_editorLoaded", false])) exitWith {};
 		if (count (uinamespace getVariable ["CT_var_gui_projects",[]]) == 0) exitWith {["message","CT_noProject",5] call CT_fnc_handler};
+		//if (({_x get3DENAttribute "control" == "controlled by player"} count (all3DENEntities select 0)) == 0) exitWith {["message","CT_noPlayer",5] call CT_fnc_handler};
 		uiNameSpace setVariable ["CT_var_gui_runMode", "editor"];
 		uiNameSpace setVariable ["CT_var_gui_camera",[getPosATL get3DENCamera, getDir get3DENCamera, (get3DENCamera call CT_fnc_getPB)]];
 		do3DENAction "MissionPreview";
@@ -109,6 +110,7 @@ switch (_input) do {
 		(_display displayCtrl CT_WARNINGTEXT_IDC) ctrlSetText (localize "STR_A3_ct_eden_gui_inputName_warning");
 		(_display displayCtrl CT_PROMTWINEDITBOX_IDC) ctrlShow true;
 		(_display displayCtrl CT_PROMTWINEDITBOX_IDC) ctrlEnable true;
+		ctrlSetFocus (_display displayCtrl CT_PROMTWINEDITBOX_IDC);
 		
 		(_display displayCtrl CT_PROMTWINOKBUT_IDC) buttonSetAction "['newProjectNameConfirmed'] call CT_fnc_handler";
 		(_display displayCtrl CT_PROMTWINCANCELBUT_IDC) buttonSetAction "['newProjectCancel'] call CT_fnc_handler";
