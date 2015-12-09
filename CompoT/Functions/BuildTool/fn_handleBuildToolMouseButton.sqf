@@ -23,8 +23,13 @@ if (_button == DIK_LMB) then {
 	_pos set [2,0];
 	
 	if (_libraryName in ["object","collection"]) then {
-		_pos set [2,CT_var_buildToolHeight];
+		if (CT_var_stickToObjectMode) then {
+			_pos set [2,((getPosATL CT_var_cursor) select 2)];
+		} else {
+			_pos set [2,CT_var_buildToolHeight];
+		};
 	};
+	
 	
 	_pivot = CT_var_mainPivot;
 	if SOMETHING_SELECTED then {

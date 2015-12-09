@@ -8,8 +8,9 @@
 */ 
 #include "defines.hpp" 
 
-private ["_pos","_objPos","_objDir","_id","_points","_objHeight","_contact","_posCam","_posTarget","_skipIntersect","_oldPos",
-"_size","_distance","_skipSpecial","_data","_dirOffset","_distanceOffset","_heightOffset","_object","_height","_newHeight"];
+private ["_pos","_objPos","_objDir","_id","_points","_objHeight","_contact","_posCam","_posTarget","_skipIntersect","_oldPos","_newPos",
+"_selectedObjects", "_size","_distance","_skipSpecial","_data","_dirOffset","_distanceOffset","_heightOffset","_object","_height",
+"_newHeight","_intersections","_primaryObjectHeight"];
 
 if (CT_var_camIsMoving OR CT_var_camIsRotating) then {
 	if (!CT_var_cursorMoving) then {CT_var_cursorMoving = true};
@@ -18,11 +19,15 @@ if (!CT_var_camIsMoving AND !CT_var_camIsRotating) then {
 	if (CT_var_cursorMoving) then {CT_var_cursorMoving = false};
 };
 switch (CT_var_cursorTool) do {
-	case "buildTool": {			
+	case "buildTool": {
 		_pos = screenToWorld CT_var_mousePos;
 		_pos = [(_pos select 0), (_pos select 1), (getTerrainHeightASL _pos)];
+		if ((count CT_var_builtPreview == 0) AND CT_var_stickToObjectMode) then {
+			_intersections = lineIntersectsSurfaces [getPosASL ct_var_cam, _pos, objNull, objNull, true, 1];
+			if (count _intersections != 0) then {_pos = (_intersections select 0) select 0};
+		};
 		CT_var_cursor setPosASL _pos;
-
+		
 		if (count CT_var_builtPreview != 0) then {
 			if (((CT_var_buildMode select 0) select 0) in ["composition","prefab"]) then {
 				CT_var_cursor hideObject false;
@@ -39,13 +44,22 @@ switch (CT_var_cursorTool) do {
 			
 			if (((CT_var_buildMode select 0) select 0) in ["object","collection"]) then {
 				CT_var_cursor hideObject true;
-				_pos set [2,((getTerrainHeightASL _pos) + CT_var_buildToolHeight)];
-				
 				_object = (CT_var_builtPreview select 0);
+				_intersections = [];
+				if (CT_var_stickToObjectMode) then {
+					_intersections = lineIntersectsSurfaces [getPosASL ct_var_cam, _pos, _object, objNull, true, 1];
+				};
+				if (count _intersections != 0) then {
+					_pos = (_intersections select 0) select 0;
+					_pos set [2,((_pos select 2) + CT_var_buildToolHeight)];
+				} else {
+					_pos set [2,((getTerrainHeightASL _pos) + CT_var_buildToolHeight)];
+				};
 				[_object, 0, 0] call CT_fnc_setPB;
 
 				_object setPosASL _pos;
 				[_object] call CT_fnc_alignWithSurface;
+				CT_var_cursor setPosASL _pos;
 			};
 		};
 	};
@@ -79,48 +93,70 @@ switch (CT_var_cursorTool) do {
 		};
 		
 		_pos = screenToWorld CT_var_mousePos;
-		
-		if (CT_var_selectToolSize == "big") then {_pos set [2, 0.5]};
-		if (CT_var_selectToolSize == "small") then {_pos set [2, 0.02]};
 
 		_contact = [];
 		if (!_skipIntersect) then {
 			_posCam = getPosASL CT_var_cam;
 			_posTarget = screenToWorld CT_var_mousePos;
-			_posTarget = [_posTarget select 0, _posTarget select 1, getterrainheightasl _posTarget];
-			_contact = (lineIntersectsObjs [_posCam, _posTarget, objnull,objnull,false,2]);
+			_posTarget = [_posTarget select 0, _posTarget select 1, getTerrainHeightASL _posTarget];
+			_contact = lineIntersectsSurfaces [_posCam, _posTarget, objnull, objNull, true, 1];
 			if (count _contact != 0) then {
-				if ((_contact select 0) in CT_var_builtObjects) then {
-					_size = sizeOf (typeOf (_contact select 0));
-					_distance = CT_var_cam distance (_contact select 0);
-					_pos = CT_var_cam modelToWorldVisual [0,_distance - (_size/2),0];
-					if (CT_var_mouseCursorActive) then {
-						_pos = getPosATL (_contact select 0);
-						_height = _pos select 2;
-						_pos set [2, (_height +(_size/2))];
-					};
-					CT_var_cursorBestSelect = _contact select 0;
+				_pos = ASLToATL ((_contact select 0) select 0);
+				if (((_contact select 0) select 3) in CT_var_builtObjects) then {
+					CT_var_cursorBestSelect = (_contact select 0) select 3;
 				} else {CT_var_cursorBestSelect = objNull};
 			} else {CT_var_cursorBestSelect = objNull;};
 		};
-
+		
 		CT_var_cursor setPosATL _pos;
+		CT_var_cursor hideObject false;
 		if SOMETHING_SELECTED then {
 			if (SEL_STATE == "busy") then {
+				CT_var_cursor hideObject true;
+				_mousePos = screenToWorld CT_var_mousePos;
+				_primaryObjectHeight = 0;
+				_selectedObjects = [];
+				{
+					_selectedObjects pushBack (_x select 0);
+					if ((_x select 0) == ([_selectedObjects] call CT_fnc_cursorFindClosestObject)) then {_primaryObjectHeight = (_x select 3) select 2};
+				} forEach SELECTION;
+				
+				if (CT_var_stickToObjectMode) then {
+					_posCam = getPosASL CT_var_cam;
+					_posTarget = _mousePos;
+					_posTarget = [_posTarget select 0, _posTarget select 1, getTerrainHeightASL _posTarget];
+					_contact = lineIntersectsSurfaces [_posCam, _posTarget, objNull, objNull, true, 10];
+					{
+						if ((_x select 3) in _selectedObjects) then {_contact set [_forEachIndex, "delMe"]};
+					} forEach _contact;
+					_contact = _contact - ["delMe"];
+					if (count _contact != 0) then {
+						_pos = ASLtoATL ((_contact select 0) select 0);
+					};
+				} else {
+					_lengthT = _primaryObjectHeight * ((sin 90) / (sin (((ct_var_cam call ct_fnc_getPB) select 0) * -1)));
+					_endPosT = _mousePos;
+					_startPosT = getPosATL ct_var_cam;
+					_distanceT = _endPosT distance _startPosT;
+					_pos = (((_endPosT vectorDiff _startPosT) vectorMultiply (1 - (_lengthT / _distanceT))) vectorAdd _startPosT);
+				};
 				{
 					_object = (_x select 0);
 					[_object, 0, 0] call CT_fnc_setPB;
-					
+					_newPos = []; _newHeight = 0;
 					_relPos = _x select 2;
-					_oldPos = getPosASL _object;
-					_heightDiff = (_oldPos select 2) - (getTerrainHeightASL _oldPos);
 					_newPos = [
 						(_pos select 0) - (_relPos select 0),
 						(_pos select 1) - (_relPos select 1)
 					];
-					_newHeight = (getTerrainHeightASL _newPos) + _heightDiff;
+					if (CT_var_stickToObjectMode) then {
+						_newHeight = (_pos select 2) - (_relPos select 2);
+					} else {
+						_newHeight = _primaryObjectHeight - (_relPos select 2);
+					};
+					
 					_newPos pushBack _newHeight;
-					_object setPosASL _newPos;
+					_object setPosATL _newPos;
 					[_object] call CT_fnc_alignWithSurface;
 				} forEach SELECTION;
 			};

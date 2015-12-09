@@ -20,6 +20,7 @@ ct_var_cursor = objNull;
 ct_var_cursorTool = "";
 ct_var_cursorMoving = true;
 ct_var_valueBeingChanged = "rotateAngle";
+CT_var_stickToObjectMode = false;
 
 //MOUSE CURSOR
 ct_var_mouseCursorActive = false;
@@ -83,7 +84,6 @@ ct_var_GUIdelayCounter = 0;
 //OBJECT LIBRARY GUI
 ct_var_ObL_previewDistance = 2;
 ct_var_ObL_activeCtrl = "list";
-ct_var_ObL_configContent = [];
 ct_var_ObL_selection = "content";
 
 //COMPOSITION LIBRARY GUI

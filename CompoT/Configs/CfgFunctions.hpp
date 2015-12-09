@@ -38,6 +38,7 @@ class CfgFunctions {
 			class cursorChangeTool{}; 
 			class cursorChangeValue{}; 
 			class alignWithSurface{}; 
+			class toggleStickToObjectMode{}; 
 		}; 
 		class MouseCursor {
 			file = "composition_tool\functions\MouseCursor"; 

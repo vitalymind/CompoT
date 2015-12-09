@@ -468,7 +468,7 @@ class save_compo
 			x = 0.360737 * safezoneW + safezoneX;
 			y = 0.335 * safezoneH + safezoneY;
 			w = 0.283684 * safezoneW;
-			h = 0.198 * safezoneH;
+			h = 0.25 * safezoneH;
 		};
 		class cat_list: compo_list_base
 		{
@@ -476,7 +476,7 @@ class save_compo
 			x = 0.371053 * safezoneW + safezoneX;
 			y = 0.39 * safezoneH + safezoneY;
 			w = 0.108316 * safezoneW;
-			h = 0.132 * safezoneH;
+			h = 0.184 * safezoneH;
 		};
 		class name_field: compo_edit_base
 		{
@@ -490,15 +490,15 @@ class save_compo
 		{
 			idc = 300;
 			x = 0.494842 * safezoneW + safezoneX;
-			y = 0.478 * safezoneH + safezoneY;
+			y = 0.53 * safezoneH + safezoneY;
 			w = 0.0618947 * safezoneW;
 			h = 0.044 * safezoneH;
 		};
-		class camcel_but: compo_button_base
+		class cancel_but: compo_button_base
 		{
 			idc = 301;
 			x = 0.57221 * safezoneW + safezoneX;
-			y = 0.478 * safezoneH + safezoneY;
+			y = 0.53 * safezoneH + safezoneY;
 			w = 0.0618947 * safezoneW;
 			h = 0.044 * safezoneH;
 		};
@@ -515,9 +515,18 @@ class save_compo
 		{
 			idc = -1;
 			text = "Composition name";
-			x = 0.489684 * safezoneW + safezoneX;
+			x = 0.489 * safezoneW + safezoneX;
 			y = 0.357 * safezoneH + safezoneY;
-			w = 0.0825262 * safezoneW;
+			w = 0.0825 * safezoneW;
+			h = 0.022 * safezoneH;
+		};
+		class keepName_text: compo_text_base
+		{
+			idc = -1;
+			text = "keep name";
+			x = 0.573 * safezoneW + safezoneX;
+			y = 0.357 * safezoneH + safezoneY;
+			w = 0.0451 * safezoneW;
 			h = 0.022 * safezoneH;
 		};
 		class info_text: compo_text_base
@@ -526,7 +535,15 @@ class save_compo
 			x = 0.494842 * safezoneW + safezoneX;
 			y = 0.423 * safezoneH + safezoneY;
 			w = 0.139263 * safezoneW;
-			h = 0.044 * safezoneH;
+			h = 0.096 * safezoneH;
+		};
+		class keepName_check: compo_check_base
+		{
+			idc = 500;
+			x = 0.6182 * safezoneW + safezoneX;
+			y = 0.357 * safezoneH + safezoneY;
+			w = 0.0144 * safezoneW;
+			h = 0.0264 * safezoneH;
 		};
 	};
 };

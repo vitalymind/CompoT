@@ -41,10 +41,11 @@ if (CT_var_curGUIMode == "info+basicControls") then {
 	_resultText = composeText [_resultText,(parseText format["<t size='%1' align='left' color='#%2'>L<t align='right' color='#%3'>Toggle alignment mode</t>", _textSize, _colorWhite,_colorYellow]), lineBreak];
 	_resultText = composeText [_resultText,(parseText format["<t size='%1' align='left' color='#%2'>CAPSLOCK<t align='right' color='#%3'>Toggle cursor mode</t>", _textSize, _colorWhite,_colorYellow]), lineBreak];
 	_resultText = composeText [_resultText,(parseText format["<t size='%1' align='left' color='#%2'>CTRL+Q<t align='right' color='#%3'>Toggle rotation mode</t>", _textSize, _colorWhite,_colorYellow]), lineBreak];
+	_resultText = composeText [_resultText,(parseText format["<t size='%1' align='left' color='#%2'>CTRL+S<t align='right' color='#%3'>Toggle stick to object mode</t>", _textSize, _colorWhite,_colorYellow]), lineBreak];
 	_resultText = composeText [_resultText,(parseText format["<t size='%1' align='left' color='#%2'>SHIFT+CTRL+K<t align='right' color='#%3'>Delete everything</t>", _textSize, _colorWhite,_colorYellow]), lineBreak];
 	_resultText = composeText [_resultText,(parseText format["<t size='%1' align='left' color='#%2'>SHIFT+CTRL+E<t align='right' color='#%3'>Re-Build everything</t>", _textSize, _colorWhite,_colorYellow]), lineBreak];
 	_resultText = composeText [_resultText,(parseText format["<t size='%1' align='left' color='#%2'>CTRL+G<t align='right' color='#%3'>Set main pivot position</t>", _textSize, _colorWhite,_colorYellow]), lineBreak];
-	_rows = 21;
+	_rows = 22;
 	_posY = 1 - (_rows * 0.021);
 	_height = _rows * 0.021;
 };

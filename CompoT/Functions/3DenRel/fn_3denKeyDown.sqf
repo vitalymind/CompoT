@@ -17,10 +17,9 @@ _ctrlKey = _this select 3;
 _alt = _this select 4;
 _handled = false;
 
-
-if (_shift) then {["shift", true] call CT_fnc_toggleKeys};
-if (_ctrlKey) then {["ctrl", true] call CT_fnc_toggleKeys};
-if (_alt) then {["alt", true] call CT_fnc_toggleKeys};
+["shift", _shift] call CT_fnc_toggleKeys;
+["ctrl", _ctrlKey] call CT_fnc_toggleKeys;
+["alt", _alt] call CT_fnc_toggleKeys;
 
 if (_shift AND !_ctrlKey AND !_alt) then {
 	if (_dikCode == DIK_SPACE) then {
