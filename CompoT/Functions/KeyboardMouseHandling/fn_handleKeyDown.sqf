@@ -16,9 +16,9 @@ _ctrlKey = _this select 3;
 _alt = _this select 4;
 _handled = false;
 
-if (_shift) then {["shift", true] call CT_fnc_toggleKeys};
-if (_ctrlKey) then {["ctrl", true] call CT_fnc_toggleKeys};
-if (_alt) then {["alt", true] call CT_fnc_toggleKeys};
+["shift", _shift] call CT_fnc_toggleKeys;
+["ctrl", _ctrlKey] call CT_fnc_toggleKeys;
+["alt", _alt] call CT_fnc_toggleKeys;
 
 if (CT_var_openedGUI) exitWith {false};
 
@@ -82,6 +82,7 @@ if (!_shift AND _ctrlKey AND !_alt) then {
 	if (_dikCode == DIK_Q) then {_handled = true; call CT_fnc_toggleRotateMode};
 	if (_dikCode == DIK_E) then {_handled = true; [] call CT_fnc_reBuild};
 	if (_dikCode == DIK_G) then {_handled = true; (getPosATL CT_var_cursor) call CT_fnc_changeCenterPos};
+	if (_dikCode == DIK_S) then {_handled = true; call CT_fnc_toggleStickToObjectMode};
 };
 if (_shift AND _ctrlKey AND !_alt) then {
 	if (_dikCode == DIK_DELETE) then {_handled = true; ["transfer"] call CT_fnc_deleteObject};

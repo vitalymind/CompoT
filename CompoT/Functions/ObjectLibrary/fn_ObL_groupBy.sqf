@@ -25,6 +25,43 @@ _checkBoxScope1 = cbChecked (_dialog displayCtrl 501);
 _checkBoxModelEmpty = cbChecked (_dialog displayCtrl 502);
 _checkBoxModelEmpty2 = cbChecked (_dialog displayCtrl 503);
 
+_checkModandScope = {
+	if (_sort != "no sorting") then {
+		if (_sort == "CUP") then {
+			if (_mod != "CUP") then {_skip = true};
+		};
+		if (_sort == "STD") then {
+			if (!(_mod in ["STD","kart","heli","mark","curator"])) then {_skip = true};
+		};
+		if (_sort == "PLP Beach objects") then {
+			if (_mod != "PLP Beach objects") then {_skip = true};
+		};
+		if (_sort == "PLP Containers") then {
+			if (_mod != "PLP Containers") then {_skip = true};
+		};
+		if (_sort == "MBG Killhouses") then {
+			if (_mod != "MBG Killhouses") then {_skip = true};
+		};
+		if (_sort == "mattaust buildings") then {
+			if (_mod != "mattaust buildings") then {_skip = true};
+		};
+		if (_sort == "ArmA nature") then {
+			if (_mod != "ArmA nature") then {_skip = true};
+		};
+		if (_sort == "BRG African Foliage") then {
+			if (_mod != "BRG African Foliage") then {_skip = true};
+		};
+		if (_sort == "other mods") then {
+			if (_mod in (ct_var_mods + ["kart","heli","mark","curator"])) then {_skip = true};
+		};
+	};
+	if (_displayName == "") then {_displayName = "no display name"};
+
+	if (_checkBoxScope0) then {if (_scope == 0) then {_skip = true};};
+	if (_checkBoxScope1) then {if (_scope == 1) then {_skip = true};};
+	if (_checkBoxModelEmpty) then {if (_model in ["\A3\Weapons_F\empty.p3d","","\core\default\default.p3d","\A3\Weapons_f\empty","\A3\Weapons_f\dummyweapon.p3d"]) then {_skip = true};};
+};
+
 switch (_case) do {
 	case "default": {
 		private ["_mapSize","_model","_vehicleClass","_scope","_className","_displayName","_skip","_data","_parentLayer","_count"];
@@ -44,32 +81,14 @@ switch (_case) do {
 				_displayName = _x select 3;
 				_mapSize = _x select 4;
 				_mod = _x select 5;
-				if (_sort != "no sorting") then {
-					if (_sort == "CUP") then {
-						if (_mod != "CUP") then {_skip = true};
-					};
-					if (_sort == "STD") then {
-						if (!(_mod in ["STD","kart","heli","mark","curator"])) then {_skip = true};
-					};
-					if (_sort == "xCam") then {
-						if (_mod != "xCam") then {_skip = true};
-					};
-					if (_sort == "other mods") then {
-						if (_mod in ["STD","CUP","xCam","kart","heli","mark","curator"]) then {_skip = true};
-					};
-				};
-				if (_displayName == "") then {_displayName = "no display name"};
-
-				if (_checkBoxScope0) then {if (_scope == 0) then {_skip = true};};
-				if (_checkBoxScope1) then {if (_scope == 1) then {_skip = true};};
-				if (_checkBoxModelEmpty) then {if (_model in ["\A3\Weapons_F\empty.p3d","","\core\default\default.p3d","\A3\Weapons_f\empty","\A3\Weapons_f\dummyweapon.p3d"]) then {_skip = true};};
+				call _checkModandScope;
 
 				if (!_skip) then {
 					_index = _tree tvAdd [[_parentLayer], _className];
 					_tree tvSetData [[_parentLayer,_index], format ['["%1",%2,"%3","%4",%5,"%6"]',_className,_scope,_model,_displayName,_mapSize,_mod]];
 				};
 			} forEach _data;
-		} forEach CT_var_ObL_configContent;
+		} forEach (uinamespace getVariable ["CT_var_GUI_ObL_configContent",[]]);
 		_count = _tree tvCount [];
 		for "_i" from 0 to _count - 1 do {
 			_count = _tree tvCount [_i];
@@ -89,31 +108,13 @@ switch (_case) do {
 				_displayName = _x select 3;
 				_mapSize = _x select 4;
 				_mod = _x select 5;
-				if (_sort != "no sorting") then {
-					if (_sort == "CUP") then {
-						if (_mod != "CUP") then {_skip = true};
-					};
-					if (_sort == "STD") then {
-						if (!(_mod in ["STD","kart","heli","mark","curator"])) then {_skip = true};
-					};
-					if (_sort == "xCam") then {
-						if (_mod != "xCam") then {_skip = true};
-					};
-					if (_sort == "other mods") then {
-						if (_mod in ["STD","CUP","xCam","kart","heli","mark","curator"]) then {_skip = true};
-					};
-				};
-				if (_displayName == "") then {_displayName = "no display name"};
-
-				if (_checkBoxScope0) then {if (_scope == 0) then {_skip = true};};
-				if (_checkBoxScope1) then {if (_scope == 1) then {_skip = true};};
-				if (_checkBoxModelEmpty) then {if (_model in ["\A3\Weapons_F\empty.p3d","","\core\default\default.p3d","\A3\Weapons_f\empty","\A3\Weapons_f\dummyweapon.p3d"]) then {_skip = true};};
-
+				call _checkModandScope;
+				
 				if (!_skip) then {
 					_index = _tree tvAdd [[], _className];
 					_tree tvSetData [[_index], format ['["%1",%2,"%3","%4",%5,"%6"]',_className,_scope,_model,_displayName,_mapSize,_mod]];
 				};
 			} forEach _data;
-		} forEach CT_var_ObL_configContent;
+		} forEach (uinamespace getVariable ["CT_var_GUI_ObL_configContent",[]]);
 	};
 };

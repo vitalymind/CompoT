@@ -8,14 +8,20 @@
 */ 
 #include "defines.hpp" 
 
+startLoadingScreen ["Scanning configs, please wait..."];
+
 private ["_filter","_configs","_result","_scope","_array","_mapSize","_allVehicleClasses","_mod","_displayName",
-"_model","_modFolder"];
+"_model","_modFolder","_addon","_configContent"];
 _filter = "true";
 _configs = _filter configClasses (configFile >> "CfgVehicles");
+_configContent = uinamespace getVariable "CT_var_GUI_ObL_configContent";
 _allVehicleClasses = [];
+_addon = "";
 {
 	_vehicleClass = (configFile >> 'CfgVehicles' >> (configName _x) >> 'vehicleClass') call BIS_fnc_getCfgData;
-	if (!(_vehicleClass in _allVehicleClasses)) then {_allVehicleClasses pushBack _vehicleClass};
+	if (!isnil "_vehicleClass") then {
+		if (!(_vehicleClass in _allVehicleClasses)) then {_allVehicleClasses pushBack _vehicleClass};
+	};
 	true;
 } count _configs;
 {
@@ -28,8 +34,8 @@ _allVehicleClasses = [];
 		_scope = (configFile >> 'CfgVehicles' >> (configName _x) >> 'scope') call BIS_fnc_getCfgData;
 		_displayName = (configFile >> 'CfgVehicles' >> (configName _x) >> 'displayName') call BIS_fnc_getCfgData;
 		_mapSize = (configFile >> 'CfgVehicles' >> (configName _x) >> 'mapSize') call BIS_fnc_getCfgData;
-		_mod = "";
 		_modFolder = configSourceMod (configFile >> 'CfgVehicles' >> (configName _x));
+		_mod = _modFolder;
 		switch (_modFolder) do {
 			case "": {_mod = "STD"};
 		
@@ -55,7 +61,16 @@ _allVehicleClasses = [];
 			case "Heli": {_mod = "heli"};
 			case "Mark": {_mod = "mark"};
 			case "curator": {_mod = "curator"};
-			default {_mod = _modFolder};
+			default {
+				_addon = (unitAddons (configName _x)) select 0;
+				if (isNil "_addon") exitWith {};
+				if (_addon == "brg_africa") exitWith {_mod = "BRG African Foliage"};
+				if (_addon in ["A3_Bush","A3_Plants","A3_rocks","A3_Trees"]) exitWith {_mod = "ArmA nature"};
+				if (_addon in ["mm_bank","mm_buildings","mm_buildings2","mm_buildings3","mm_buildings4","mm_fence","MM_objects","mm_post","mm_residential","mm_residential2","MM_Shopping","mm_showroom"]) exitWith {_mod = "mattaust buildings"};
+				if (_addon == "mbg_killhouses_a3") exitWith {_mod = "MBG Killhouses"};
+				if (_addon == "plp_beachobjects") exitWith {_mod = "PLP Beach objects"};
+				if (_addon == "plp_containers") exitWith {_mod = "PLP Containers"};
+			};
 		};
 		
 		if (isNil "_model") then {_model = "n/a"};
@@ -71,5 +86,9 @@ _allVehicleClasses = [];
 		_result pushBack _array;
 		true;
 	} count _configs;
-	CT_var_ObL_configContent pushBack [_x, _result];
+	_configContent pushBack [_x, _result];
+	progressLoadingScreen (_forEachIndex / count _allVehicleClasses);
 } forEach _allVehicleClasses;
+
+endLoadingScreen;
+call CT_fnc_ObL_openGUI;

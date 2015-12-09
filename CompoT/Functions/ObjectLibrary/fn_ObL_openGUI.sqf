@@ -12,13 +12,18 @@ disableSerialization;
 private ["_dialog", "_configTree","_categoryList","_groupByCombo","_sortByCombo",
 "_scope0Check","_scope1Check","_noModelCheck","_searchEdit","_newCatEdit","_modelEdit",
 "_scopeEdit","_classnameEdit","_displaynameEdit","_3dPreview","_name","_data",
-"_newCatBut","_renameBut","_contentList","_modEdit","_modCombo"];	
+"_newCatBut","_renameBut","_contentList","_modEdit","_modCombo","_configContent"];	
+_configContent = uinamespace getVariable ["CT_var_GUI_ObL_configContent",[]];
+if (count _configContent == 0) exitWith {
+	uinamespace setVariable ["CT_var_GUI_ObL_configContent",[]];
+	[] spawn CT_fnc_ObL_collectConfigData;
+};
+
 createDialog "object_library";
 CT_var_openedGUI = true;
 "close" call CT_fnc_infoGUI;
 "close" call CT_fnc_controlsGUI;
 CT_var_holdenKeys = [false,false,false,false,false,false,false,false,false];
-if (count CT_var_ObL_configContent == 0) then {call CT_fnc_ObL_collectConfigData};
 
 _dialog = findDisplay 25250;
 

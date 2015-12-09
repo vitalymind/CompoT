@@ -10,11 +10,12 @@
 
 disableSerialization;
 private ["_dialog","_givenName","_compoNameEdit","_warningsText","_saveBut","_pivot","_overwrite","_catPointer",
-"_map","_composition","_categoryList","_found","_selectedCatIndex","_clones","_elemPointer","_selectedCatName"];
+"_map","_composition","_categoryList","_found","_selectedCatIndex","_clones","_elemPointer","_selectedCatName","_keepNameCheck"];
 _dialog = findDisplay 25254;
 _compoNameEdit = _dialog displayCtrl 200;
 _givenName = ctrlText _compoNameEdit;
 _warningsText = _dialog displayCtrl 400;
+_keepNameCheck = _dialog displayCtrl 500;
 _saveBut = _dialog displayCtrl 300;
 _categoryList = _dialog displayCtrl 100;
 _warningsText ctrlSetText "";
@@ -79,3 +80,8 @@ _dialog closeDisplay 0;
 CT_var_openedGUI = false;
 uinamespace setVariable ["CT_var_GUI_scPivot",objNull];
 uinamespace setVariable ["CT_var_GUI_scOverwrite",""];
+
+if (!cbChecked _keepNameCheck) then {
+	["silent",_pivot,_givenName] call CT_fnc_changeName;
+	[(_pivot getvariable "pivot")] call CT_fnc_saveElement;
+};

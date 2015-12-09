@@ -9,7 +9,7 @@
 #include "defines.hpp"
 	
 if (!(uinamespace getVariable ["CT_var_gui_editorLoaded", false])) exitWith {};
-private ["_button","_shift","_ctrl","_alt","_obj","_class"];
+private ["_button","_shift","_ctrl","_alt","_obj","_class","_entity","_handled"];
 
 _button = _this select 1;
 _shift = _this select 4;
@@ -22,7 +22,10 @@ if (!isNull _obj) then {
 	if (_button == DIK_LMB) then {
 		_handled = true;
 		_class = uinamespace getVariable ["CT_var_gui_pickedObjectClass",""];
-		create3DENEntity ["Object", _class, getPos _obj];
+		_entity = create3DENEntity ["Object", _class, getPosATL _obj];
+		if (_shift) then {
+			[_entity, 0,0] call ct_fnc_setPB;
+		};
 		if (!_ctrl) then {
 			deleteVehicle _obj;
 			uinamespace setVariable ["CT_var_gui_pickedObject", objNull];

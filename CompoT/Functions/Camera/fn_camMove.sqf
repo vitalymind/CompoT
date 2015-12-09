@@ -47,6 +47,6 @@ _newPos = [
 	(_oldPos select 0) + ((sin _dir) * _motion * (CT_var_camSpeed / (_fps / 60))),
 	(_oldPos select 1) + ((cos _dir) * _motion * (CT_var_camSpeed / (_fps / 60)))
 ];
-_newHeight = ((getTerrainHeightASL _newPos) + _heightDiff) + ((_heightChange * CT_var_camSpeed) * 0.7);
+_newHeight = ((getTerrainHeightASL _newPos) + _heightDiff) + (_heightChange * (CT_var_camSpeed / (_fps / 60)) * 0.7);
 _newPos pushBack _newHeight;
 CT_var_cam setPosASL _newPos;

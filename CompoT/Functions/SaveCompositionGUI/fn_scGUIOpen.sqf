@@ -28,12 +28,13 @@ _warningsText = _dialog displayCtrl 400;
 
 _dialog displayAddEventHandler ["unload", "CT_var_openedGUI = false;"];
 _saveBut ctrlSetText (localize "STR_A3_save_composition_save_but");
+_cancelBut ctrlSetText (localize "STR_A3_save_composition_cancel_but");
 
 _saveBut ctrlSetEventHandler ["ButtonClick", "call CT_fnc_scGUISaveComposition; true;"];
 _cancelBut ctrlSetEventHandler ["ButtonClick", "
 	if (uinamespace getVariable ['CT_var_GUI_scOverwrite', false]) then {
 		((findDisplay 25254) displayCtrl 400) ctrlSetText '';
-		((findDisplay 25254) displayCtrl 301) ctrlSetText (localize 'STR_A3_save_composition_save_but');
+		((findDisplay 25254) displayCtrl 300) ctrlSetText (localize 'STR_A3_save_composition_save_but');
 		uinamespace setVariable ['CT_var_GUI_scOverwrite', false];
 	} else {
 		(findDisplay 25254) closeDisplay 0; 
