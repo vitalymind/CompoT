@@ -2146,80 +2146,68 @@ class object_select
 		};
 		
 		//TEXTS 300
-		
-		class cat_name_text: compo_text_base
-		{
-			idc = 300;
-			text = "";
-			x = 0.545 * safezoneW + safezoneX;
-			y = 0.032 * safezoneH + safezoneY;
-			w = 0.4 * safezoneW;
-			h = 0.06 * safezoneH;
-			Size = 0.07;
-		};
-		class cat_text: compo_text_base
+		class cat_text: compo_text_base 
 		{
 			idc = 301;
 			text = $STR_A3_info_gui_category;
-			x = 0.425 * safezoneW + safezoneX;
-			y = 0.028 * safezoneH + safezoneY;
-			w = 0.12 * safezoneW;
-			h = 0.06 * safezoneH;
+			x = 0.25 * safezoneW + safezoneX;
+			y = 0.05 * safezoneH + safezoneY;
+			w = 0.2 * safezoneW;
+			h = 0.04 * safezoneH;
 			Size = 0.08;
-			class Attributes 
-			{
-				align = "right";
-			};
 		};
-		class groupby_text: compo_text_base
+		class groupby_text: compo_text_base 
 		{
 			idc = -1;
 			text = $STR_A3_object_select_groupby;
-			x = 0.025 * safezoneW + safezoneX;
-			y = 0.028 * safezoneH + safezoneY;
-			w = 0.1375 * safezoneW;
-			h = 0.06 * safezoneH;
+			x = 0.02 * safezoneW + safezoneX;
+			y = 0.05 * safezoneH + safezoneY;
+			w = 0.2 * safezoneW;
+			h = 0.04 * safezoneH;
 			Size = 0.08;
-			class Attributes 
-			{
-				align = "left";
-			};
 		};
-		class search_text: compo_text_base
+		class search_text: compo_text_base 
 		{
 			idc = -1;
 			text = $STR_A3_object_select_search;
-			x = 0.175 * safezoneW + safezoneX;
-			y = 0.028 * safezoneH + safezoneY;
-			w = 0.1375 * safezoneW;
-			h = 0.06 * safezoneH;
+			x = 0.48 * safezoneW + safezoneX;
+			y = 0.05 * safezoneH + safezoneY;
+			w = 0.2 * safezoneW;
+			h = 0.04 * safezoneH;
 			Size = 0.08;
-			class Attributes 
-			{
-				align = "left";
-			};
 		};
 		
 		//COMBO 350
 		
-		class groupby_combo: compo_combo_base
+		class groupby_combo: compo_combo_base 
 		{
 			idc = 350;
-			x = 0.025 * safezoneW + safezoneX;
-			y = 0.08 * safezoneH + safezoneY;
-			w = 0.1375 * safezoneW;
+			x = 0.02 * safezoneW + safezoneX;
+			y = 0.1 * safezoneH + safezoneY;
+			w = 0.2 * safezoneW;
 			h = 0.04 * safezoneH;
 			sizeEx = 0.041;
+		};
+		class cat_name_combo: compo_combo_base 
+		{
+			idc = 351;
+			text = "";
+			x = 0.25 * safezoneW + safezoneX;
+			y = 0.1 * safezoneH + safezoneY;
+			w = 0.2 * safezoneW;
+			h = 0.04 * safezoneH;
+			Size = 0.07;
+			wholeHeight = 1.3;
 		};
 		
 		//EDITS 360
 		
-		class search_edit: compo_edit_base
+		class search_edit: compo_edit_base 
 		{
 			idc = 360;
-			x = 0.175 * safezoneW + safezoneX;
-			y = 0.08 * safezoneH + safezoneY;
-			w = 0.225 * safezoneW;
+			x = 0.48 * safezoneW + safezoneX;
+			y = 0.1 * safezoneH + safezoneY;
+			w = 0.2 * safezoneW;
 			h = 0.04 * safezoneH;
 			sizeEx = 0.041;
 		};

@@ -29,6 +29,8 @@ switch (_case) do {
 		_parentPiv = _object getVariable "pivot";
 		_points = [getPosATL _object, _size] call CT_fnc_findCirclePoints;
 		_id pushBack (["add","circle",_points] call CT_fnc_handleDrawOrders);
+		_points = [getPosATL _object, _size, getDir _object] call CT_fnc_findSquarePoints;
+		_id pushBack (["add","circle",_points] call CT_fnc_handleDrawOrders);
 		_points = _childrenObj call CT_fnc_findLineUpPoints;
 		_id pushBack (["add","lineUp",_points] call CT_fnc_handleDrawOrders);
 		_points = _object call CT_fnc_findToClonesPoints;

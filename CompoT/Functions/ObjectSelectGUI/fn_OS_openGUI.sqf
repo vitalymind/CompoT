@@ -62,6 +62,7 @@ if ((uinameSpace getVariable ["CT_var_gui_runMode",""]) == "3den") then {
 	_dialog = findDisplay 25259;
 	_groupByCombo = _dialog displayCtrl 350;
 	_searchEdit = _dialog displayCtrl 360;
+	_catCombo = _dialog displayCtrl 351;
 
 	for "_i" from 201 to 232 do {
 		_ctrl = _dialog displayCtrl _i;
@@ -78,6 +79,11 @@ if ((uinameSpace getVariable ["CT_var_gui_runMode",""]) == "3den") then {
 
 	_groupByCombo lbAdd "category";
 	_groupByCombo lbAdd "no grouping";
+	lbClear _catCombo;
+	{
+		_catCombo lbAdd (_x select 0);
+	} forEach ct_var_objects;
+	
 	if (CT_var_OS_grouping == "category") then {_groupByCombo lbSetCurSel 0};
 	if (CT_var_OS_grouping == "no grouping") then {_groupByCombo lbSetCurSel 1};
 
@@ -88,5 +94,6 @@ if ((uinameSpace getVariable ["CT_var_gui_runMode",""]) == "3den") then {
 	};	
 
 	_groupByCombo ctrlSetEventHandler ["LBSelChanged", "[true] call CT_fnc_OS_groupBy"];
+	_catCombo ctrlSetEventHandler ["LBSelChanged", "(_this select 1) call CT_fnc_OS_selectCat"];
 	_searchEdit ctrlSetEventHandler ["KeyUp", "[1, true,(_this select 1)] call CT_fnc_OS_search;"];
 };

@@ -22,12 +22,12 @@ if ((uinameSpace getVariable ["CT_var_gui_runMode",""]) == "3den") then {
 	_dialog = findDisplay 313;
 	_groupByCombo = _dialog displayCtrl CT_OSMGROUPBY_IDC;
 	_catCombo = _dialog displayCtrl CT_OSMCATCOMBO_IDC;
-	_searchEdit = _dialog displayCtrl CT_OSMSEARCH_IDC;
 	_catNameText = _dialog displayCtrl CT_OSMCATNAMETEXT_IDC;
+	_searchEdit = _dialog displayCtrl CT_OSMSEARCH_IDC;
 } else {
 	_dialog = findDisplay 25259;
 	_groupByCombo = _dialog displayCtrl 350;
-	_catCombo = _dialog displayCtrl 300;
+	_catCombo = _dialog displayCtrl 351;
 	_catNameText = _dialog displayCtrl 301;
 	_searchEdit = _dialog displayCtrl 360;
 };

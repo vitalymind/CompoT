@@ -32,6 +32,11 @@ if (_alt AND _categories AND ((uinameSpace getVariable ["CT_var_gui_runMode",""]
 	[_direction, "category"] call CT_fnc_handleBuildToolMouseWheel;
 	call CT_fnc_clearPreview;
 	[true] call CT_fnc_OS_groupBy;
+	_dialog = findDisplay 25259;
+	_catCombo = _dialog displayCtrl 351;
+	_nextSel = ((lbCurSel _catCombo) + _direction) max 0 min ((lbSize _catCombo) - 1);
+	if (_nextSel == (lbCurSel _catCombo)) exitWith {};
+	_catCombo lbSetCurSel _nextSel;
 };
 if (_alt AND _categories AND ((uinameSpace getVariable ["CT_var_gui_runMode",""]) == "3den")) exitWith {
 	_dialog = findDisplay 313;

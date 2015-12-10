@@ -39,14 +39,6 @@ if ((uinameSpace getVariable ["CT_var_gui_runMode",""]) == "3den") then {
 	uinamespace setVariable ["CT_var_gui_pickedObject", _veh];
 	uinamespace setVariable ["CT_var_gui_pickedObjectClass", (_element select 0)];
 	call CT_fnc_OS_closeGUI;
-	// [] spawn {
-		// while {!isNull(uinamespace getVariable ["CT_var_gui_pickedObject", objNull])} do {
-			// sleep 0.01;
-			// uinamespace setvariable ["bis_fnc_3DENControlsHint_place",["Land_TentA_F",false]];
-			// ["loop","CreateObject"] call BIS_fnc_3DENControlsHint;
-		// };
-		// uinamespace setvariable ["bis_fnc_3DENControlsHint_place",[""]];
-	// };
 } else {
 	(CT_var_buildMode select 0) set [1, (_element select 6)];
 	(CT_var_buildMode select 0) set [2, (_element select 7)];

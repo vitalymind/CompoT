@@ -30,6 +30,7 @@ class CfgFunctions {
 			file = "composition_tool\functions\Cursor"; 
 			class cursorFindClosestObject{}; 
 			class findCirclePoints{}; 
+			class findSquarePoints{}; 
 			class findLineUpPoints{}; 
 			class findToClonesPoints{}; 
 			class drawSelection{}; 
