@@ -71,6 +71,7 @@ _scope1Check ctrlSetEventHandler ["CheckedChanged", "call CT_fnc_ObL_groupBy"];
 _noModelCheck ctrlSetEventHandler ["CheckedChanged", "call CT_fnc_ObL_groupBy"];
 _renameBut ctrlSetEventHandler ["ButtonClick", "call CT_fnc_ObL_renameCat;"];
 _newCatBut ctrlSetEventHandler ["ButtonClick", "call CT_fnc_ObL_newCategory;"];
+_searchEdit ctrlSetEventHandler ["KeyUp", "[1,(_this select 1)] call CT_fnc_ObL_search;"];
 
 {
 	ctrlShow [_x, false];

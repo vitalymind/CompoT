@@ -208,6 +208,7 @@ class CfgFunctions {
 			class ObL_collectConfigData{}; 
 			class ObL_showInfo{}; 
 			class ObL_adjustPreviewDistance{}; 
+			class ObL_search{}; 
 		}; 
 		class CompositionLibrary {
 			file = "composition_tool\functions\CompositionLibrary"; 
@@ -243,6 +244,7 @@ class CfgFunctions {
 			class CiL_addObject{}; 
 			class CiL_handleKeydown{}; 
 			class CiL_move{}; 
+			class CiL_search{}; 
 		}; 
 		class PrefabLibrary {
 			file = "composition_tool\functions\PrefabLibrary"; 

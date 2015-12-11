@@ -322,28 +322,6 @@ class screen_text_base
 		shadowColor = "#524300";
 	};
 };
-class compo_arrow_base
-{
-	access = 0;
-	type = 0;
-	idc = -1;
-	style = 48;
-	shadow = 0;
-	colorText[] = {1,1,1,1};
-	colorBackground[] = {0,0,0,0};
-	text = "";
-	font = "PuristaMedium";
-	sizeEx = 0;
-	lineSpacing = 0;
-	fixedWidth = 0;
-	x = 0;
-	y = 0;
-	w = 0.2;
-	h = 0.15;
-	tooltipColorText[] = {1,1,1,1};
-	tooltipColorBox[] = {1,1,1,1};
-	tooltipColorShade[] = {0,0,0,0.65}; 
-};
 class compo_screen_base
 {
 	access = 0;
@@ -365,26 +343,6 @@ class compo_screen_base
 	tooltipColorText[] = {1,1,1,1};
 	tooltipColorBox[] = {1,1,1,1};
 	tooltipColorShade[] = {0,0,0,0.65};
-};
-class change_name
-{
-	name = "change_name";
-	idd = 25251;
-	movingEnable = false; 
-	enableSimulation = true; 
-	class Controls
-	{
-		//BACKGROUND
-		class main_background: compo_background_base
-		{
-			idc = 100;
-			text = "";
-			x = safezoneW;
-			y = safezoneH;
-			w = safezoneW;
-			h = safezoneH;
-		};
-	};
 };
 class mouse_cursor
 {
@@ -524,9 +482,9 @@ class save_compo
 		{
 			idc = -1;
 			text = "keep name";
-			x = 0.573 * safezoneW + safezoneX;
+			x = 0.572 * safezoneW + safezoneX;
 			y = 0.357 * safezoneH + safezoneY;
-			w = 0.0451 * safezoneW;
+			w = 0.06 * safezoneW;
 			h = 0.022 * safezoneH;
 		};
 		class info_text: compo_text_base
@@ -663,10 +621,10 @@ class object_library
 		{
 			idc = 400;
 			text = "";
-			x = 0.0730624 * safezoneW + safezoneX;
-			y = 0.0952 * safezoneH + safezoneY;
-			w = 0.116527 * safezoneW;
-			h = 0.0242 * safezoneH;
+			x = 0.065 * safezoneW + safezoneX;
+			y = 0.114 * safezoneH + safezoneY;
+			w = 0.117 * safezoneW;
+			h = 0.022 * safezoneH;
 		};
 		class new_cat_edit: compo_edit_base
 		{
@@ -809,9 +767,9 @@ class object_library
 		{
 			idc = 701;
 			text = $STR_A3_object_library_search_text;
-			x = 0.0267095 * safezoneW + safezoneX;
-			y = 0.0944518 * safezoneH + safezoneY;
-			w = 0.0360938 * safezoneW;
+			x = 0.0235 * safezoneW + safezoneX;
+			y = 0.114 * safezoneH + safezoneY;
+			w = 0.039 * safezoneW;
 			h = 0.022 * safezoneH;
 			class Attributes 
 			{
@@ -1493,7 +1451,16 @@ class collection_library
 		};
 
 		//EDITS - 400
-
+		
+		class search_edit: compo_edit_base
+		{
+			idc = 407;
+			text = "";
+			x = 0.072 * safezoneW + safezoneX;
+			y = 0.106 * safezoneH + safezoneY;
+			w = 0.117 * safezoneW;
+			h = 0.022 * safezoneH;
+		};
 		class newcat_edit: compo_edit_base
 		{
 			idc = 400;
@@ -1600,6 +1567,19 @@ class collection_library
 			text = $STR_A3_object_library_groupby_text;
 			x = 0.018 * safezoneW + safezoneX;
 			y = 0.0378 * safezoneH + safezoneY;
+			w = 0.047 * safezoneW;
+			h = 0.022 * safezoneH;
+			class Attributes 
+			{
+				align = "right";
+			};
+		};
+		class search_text: compo_text_base
+		{
+			idc = 700;
+			text = $STR_A3_object_library_search_text;
+			x = 0.018 * safezoneW + safezoneX;
+			y = 0.0982 * safezoneH + safezoneY;
 			w = 0.047 * safezoneW;
 			h = 0.022 * safezoneH;
 			class Attributes 

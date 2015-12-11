@@ -6,6 +6,10 @@
 				<Original>Unknown mod. Please select correct mod manually.</Original>
 				<English>Unknown mod. Please select correct mod manually.</English>
 			</Key>
+			<Key ID="STR_A3_object_library_search_text">
+				<Original>search</Original>
+				<English>search</English>
+			</Key>
 			<Key ID="STR_A3_object_library_sort_by_text">
 				<Original>sort by</Original>
 				<English>sort by</English>
@@ -19,8 +23,8 @@
 				<English>mods</English>
 			</Key>
 			<Key ID="STR_A3_object_library_mod_text">
-				<Original>Mod</Original>
-				<English>Mod</English>
+				<Original>Mod:</Original>
+				<English>Mod:</English>
 			</Key>
 			<Key ID="STR_A3_object_library_Configentries_text">
 				<Original>Config entries</Original>
@@ -55,8 +59,8 @@
 				<English>Classname:</English>
 			</Key>
 			<Key ID="STR_A3_object_library_mapsize_text">
-				<Original>Object size</Original>
-				<English>Object size</English>
+				<Original>Object size:</Original>
+				<English>Object size:</English>
 			</Key>
 			<Key ID="STR_A3_object_library_lib_text">
 				<Original>Object library</Original>

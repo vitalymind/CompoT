@@ -18,6 +18,7 @@ CT_var_openedGUI = true;
 CT_var_holdenKeys = [false,false,false,false,false,false,false,false,false];
 _dialog = findDisplay 25257;
 _categoryList = _dialog displayCtrl 250;
+_searchEdit = _dialog displayCtrl 407;
 _collectionList = _dialog displayCtrl 251;
 _contentList = _dialog displayCtrl 252;
 _groupCombo = _dialog displayCtrl 301;
@@ -41,6 +42,7 @@ _newCatBut ctrlSetEventHandler ["ButtonClick", "call CT_fnc_CiL_NewCat;"];
 _newColBut ctrlSetEventHandler ["ButtonClick", "call CT_fnc_CiL_NewCol;"];
 _renameCatBut ctrlSetEventHandler ["ButtonClick", "call CT_fnc_CiL_renameCat;"];
 _renameColBut ctrlSetEventHandler ["ButtonClick", "call CT_fnc_CiL_renameCol;"];
+_searchEdit ctrlSetEventHandler ["KeyUp", "[1,(_this select 1)] call CT_fnc_CiL_search;"];
 
 _groupCombo lbAdd "categories";
 _groupCombo lbAdd "no grouping";

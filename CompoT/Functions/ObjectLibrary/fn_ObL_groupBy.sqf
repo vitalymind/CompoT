@@ -8,7 +8,7 @@
 */ 
 #include "defines.hpp" 
 
-private ["_case","_ctrl","_index","_dialog","_tree","_sortByCombo","_sort",
+private ["_case","_ctrl","_index","_dialog","_tree","_sortByCombo","_sort","_checkModandScope",
 "_checkBoxScope0","_checkBoxScope1","_checkBoxModelEmpty","_checkBoxModelEmpty2"];
 disableSerialization;
 _dialog = findDisplay 25250;
@@ -94,6 +94,9 @@ switch (_case) do {
 			_count = _tree tvCount [_i];
 			if (_count == 0) then {_tree tvDelete [_i]};
 		};
+		{
+			ctrlShow [_x, false];
+		} forEach [400, 701];
 	};
 	case "no grouping": {
 		private ["_mapSize","_model","_scope","_className","_displayName","_skip","_data"];
@@ -104,6 +107,7 @@ switch (_case) do {
 				_skip = false;
 				_className = _x select 0;
 				_scope = _x select 1;
+				if (typeName _scope != "SCALAR") then {_scope = 0};
 				_model = _x select 2;
 				_displayName = _x select 3;
 				_mapSize = _x select 4;
@@ -116,5 +120,8 @@ switch (_case) do {
 				};
 			} forEach _data;
 		} forEach (uinamespace getVariable ["CT_var_GUI_ObL_configContent",[]]);
+		{
+			ctrlShow [_x, true];
+		} forEach [400, 701];
 	};
 };

@@ -605,6 +605,7 @@ class Display3DEN {
 					w = 60 * GRID_W;
 					h = 8 * GRID_H;
 					Size = 0.07;
+					wholeHeight = 1.3;
 				};
 				class cat_text: ctrlStatic {
 					idc = CT_OSMCATNAMETEXT_IDC;

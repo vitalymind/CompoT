@@ -29,6 +29,9 @@ switch (_case) do {
 				};
 			} forEach (_x select 1);
 		} forEach CT_var_objects;
+		{
+			ctrlShow [_x, false];
+		} forEach [407, 700];
 	};
 	case "no grouping": {
 		{
@@ -40,5 +43,8 @@ switch (_case) do {
 				};
 			} forEach (_x select 1);
 		} forEach CT_var_objects;
+		{
+			ctrlShow [_x, true];
+		} forEach [407, 700];
 	};
 };
