@@ -12,8 +12,8 @@ disableSerialization;
 private ["_classname","_result"];
 _classname = _this;
 _result = if (_classname in CT_var_OS_allClassesWithPictures) then {
-	format ["composition_tool\Data\objects\%1.paa", _classname];
+	format ["composition_tool_data\Data\objects\%1.paa", _classname];
 } else {
-	"composition_tool\Data\objects\no_image.paa";
+	"composition_tool_data\Data\objects\no_image.paa";
 };
 _result;

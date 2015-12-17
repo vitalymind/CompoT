@@ -14,6 +14,7 @@
 #define CT_MODETAB_H	6
 #define CT_PANEL_W 60
 #define CT_ADVANCEDTAB_H 60
+#define CT_BASICTAB_H 12
 #define CT_PROMTWIN_W 90
 #define CT_PROMTWIN_H 40
 #define CT_SCREENSIDE 40
@@ -49,6 +50,7 @@
 #define CT_OSMSEARCH_IDC 758367
 #define CT_OSMGROUPBY_IDC 758368
 #define CT_OSMCATNAMETEXT_IDC 758369
+#define CT_ROTATIONCLAMPTOGGLE_IDC 758370
 
 #define CT_SCREEN_01_IDC 758501
 #define CT_SCREEN_02_IDC 758502
@@ -193,7 +195,7 @@ class Display3DEN {
 						class promtButton : ctrlButtonToolbar {
 							idc = CT_PROMTUNLOADCTBUT_IDC;
 							action = "['loadOrUnloadCT'] call CT_fnc_handler";
-							text = "composition_tool\data\UI\ct_but_off.paa";
+							text = "composition_tool_data\data\UI\ct_but_off.paa";
 							tooltip = "$STR_A3_ct_eden_gui_toggle_hint";
 							onLoad = "";
 							x = 0;
@@ -214,16 +216,16 @@ class Display3DEN {
 							onCheckedChanged = "";
 							onLoad = "";
 							tooltip = "$STR_A3_ct_eden_gui_toggle_hint";
-							textureChecked = "composition_tool\data\UI\ct_but_on.paa";
-							textureUnchecked = "composition_tool\data\UI\ct_but_off.paa";
-							textureFocusedChecked = "composition_tool\data\UI\ct_but_on.paa";
-							textureFocusedUnchecked = "composition_tool\data\UI\ct_but_off.paa";
-							textureHoverChecked = "composition_tool\data\UI\ct_but_on.paa";
-							textureHoverUnchecked = "composition_tool\data\UI\ct_but_off.paa";
-							texturePressedChecked = "composition_tool\data\UI\ct_but_on.paa";
-							texturePressedUnchecked = "composition_tool\data\UI\ct_but_off.paa";
-							textureDisabledChecked = "composition_tool\data\UI\ct_but_on.paa";
-							textureDisabledUnchecked = "composition_tool\data\UI\ct_but_off.paa";
+							textureChecked = "composition_tool_data\data\UI\ct_but_on.paa";
+							textureUnchecked = "composition_tool_data\data\UI\ct_but_off.paa";
+							textureFocusedChecked = "composition_tool_data\data\UI\ct_but_on.paa";
+							textureFocusedUnchecked = "composition_tool_data\data\UI\ct_but_off.paa";
+							textureHoverChecked = "composition_tool_data\data\UI\ct_but_on.paa";
+							textureHoverUnchecked = "composition_tool_data\data\UI\ct_but_off.paa";
+							texturePressedChecked = "composition_tool_data\data\UI\ct_but_on.paa";
+							texturePressedUnchecked = "composition_tool_data\data\UI\ct_but_off.paa";
+							textureDisabledChecked = "composition_tool_data\data\UI\ct_but_on.paa";
+							textureDisabledUnchecked = "composition_tool_data\data\UI\ct_but_off.paa";
 							x = 0;
 							y = 0;
 							h = SIZE_M * GRID_H;
@@ -276,18 +278,38 @@ class Display3DEN {
 					idc = CT_BASICMODETAB_IDC;
 					x = 0;
 					y = 6 * GRID_H;
-					w = 0 * GRID_W;
-					h = 0 * GRID_H;
+					w = CT_PANEL_W * GRID_W;
+					h = CT_BASICTAB_H * GRID_H;
 					
 					class Controls {
-						class Background_ct : ctrlStaticMulti {
+						class Background_ct : ctrlStatic {
 							idc = -1;
 							text = "";
 							x = 0;
 							y = 0;
-							w = 0 * GRID_W;
-							h = 0 * GRID_H;
+							w = CT_PANEL_W * GRID_W;
+							h = CT_BASICTAB_H * GRID_H;
 							colorBackground[] = {0.2, 0.2, 0.2, 1};
+						};
+						class rotationClampToggle : ctrlCheckboxToolbar {
+							idc = CT_ROTATIONCLAMPTOGGLE_IDC;
+							onCheckedChanged = "['toggleRotationClamp', _this] call CT_fnc_handler";
+							onLoad = "";
+							tooltip = "$STR_A3_ct_eden_gui_toggleRotationClamp_hint";
+							textureChecked = "composition_tool_data\data\UI\ct_clamp_on.paa";
+							textureUnchecked = "composition_tool_data\data\UI\ct_clamp_off.paa";
+							textureFocusedChecked = "composition_tool_data\data\UI\ct_clamp_on.paa";
+							textureFocusedUnchecked = "composition_tool_data\data\UI\ct_clamp_off.paa";
+							textureHoverChecked = "composition_tool_data\data\UI\ct_clamp_on.paa";
+							textureHoverUnchecked = "composition_tool_data\data\UI\ct_clamp_off.paa";
+							texturePressedChecked = "composition_tool_data\data\UI\ct_clamp_on.paa";
+							texturePressedUnchecked = "composition_tool_data\data\UI\ct_clamp_off.paa";
+							textureDisabledChecked = "composition_tool_data\data\UI\ct_clamp_on.paa";
+							textureDisabledUnchecked = "composition_tool_data\data\UI\ct_clamp_off.paa";
+							x = 2 * GRID_W;
+							y = 1 * GRID_H;
+							w = 10 * GRID_W;
+							h = 10 * GRID_H;
 						};
 					};
 				};
@@ -378,7 +400,7 @@ class Display3DEN {
 						class deleteProject : ctrlButtonToolbar {
 							idc = CT_DELETEPROJECTBUT_IDC;
 							action = "['deleteProject'] call CT_fnc_handler";
-							text = "composition_tool\data\UI\ct_but_delete.paa";
+							text = "composition_tool_data\data\UI\ct_but_delete.paa";
 							tooltip = "$STR_A3_ct_eden_gui_deleteProject_hint";
 							onLoad = "";
 							x = ((CT_PANEL_W * 0.75) + 2 + 5) * GRID_W;
@@ -395,16 +417,16 @@ class Display3DEN {
 							onCheckedChanged = "['toggleUnitSim', _this] call CT_fnc_handler";
 							onLoad = "";
 							tooltip = "$STR_A3_ct_eden_gui_toggleUnitSim_hint";
-							textureChecked = "composition_tool\data\UI\ct_unitSim_on.paa";
-							textureUnchecked = "composition_tool\data\UI\ct_unitSim_off.paa";
-							textureFocusedChecked = "composition_tool\data\UI\ct_unitSim_on.paa";
-							textureFocusedUnchecked = "composition_tool\data\UI\ct_unitSim_off.paa";
-							textureHoverChecked = "composition_tool\data\UI\ct_unitSim_on.paa";
-							textureHoverUnchecked = "composition_tool\data\UI\ct_unitSim_off.paa";
-							texturePressedChecked = "composition_tool\data\UI\ct_unitSim_on.paa";
-							texturePressedUnchecked = "composition_tool\data\UI\ct_unitSim_off.paa";
-							textureDisabledChecked = "composition_tool\data\UI\ct_unitSim_on.paa";
-							textureDisabledUnchecked = "composition_tool\data\UI\ct_unitSim_off.paa";
+							textureChecked = "composition_tool_data\data\UI\ct_unitSim_on.paa";
+							textureUnchecked = "composition_tool_data\data\UI\ct_unitSim_off.paa";
+							textureFocusedChecked = "composition_tool_data\data\UI\ct_unitSim_on.paa";
+							textureFocusedUnchecked = "composition_tool_data\data\UI\ct_unitSim_off.paa";
+							textureHoverChecked = "composition_tool_data\data\UI\ct_unitSim_on.paa";
+							textureHoverUnchecked = "composition_tool_data\data\UI\ct_unitSim_off.paa";
+							texturePressedChecked = "composition_tool_data\data\UI\ct_unitSim_on.paa";
+							texturePressedUnchecked = "composition_tool_data\data\UI\ct_unitSim_off.paa";
+							textureDisabledChecked = "composition_tool_data\data\UI\ct_unitSim_on.paa";
+							textureDisabledUnchecked = "composition_tool_data\data\UI\ct_unitSim_off.paa";
 							x = 2 * GRID_W;
 							y = (21 + (7 * CT_SPC)) * GRID_H;
 							w = 10 * GRID_W;
@@ -415,16 +437,16 @@ class Display3DEN {
 							onCheckedChanged = "['toggleObjectsSim', _this] call CT_fnc_handler";
 							onLoad = "";
 							tooltip = "$STR_A3_ct_eden_gui_toggleObjectsSim_hint";
-							textureChecked = "composition_tool\data\UI\ct_objectsSim_on.paa";
-							textureUnchecked = "composition_tool\data\UI\ct_objectsSim_off.paa";
-							textureFocusedChecked = "composition_tool\data\UI\ct_objectsSim_on.paa";
-							textureFocusedUnchecked = "composition_tool\data\UI\ct_objectsSim_off.paa";
-							textureHoverChecked = "composition_tool\data\UI\ct_objectsSim_on.paa";
-							textureHoverUnchecked = "composition_tool\data\UI\ct_objectsSim_off.paa";
-							texturePressedChecked = "composition_tool\data\UI\ct_objectsSim_on.paa";
-							texturePressedUnchecked = "composition_tool\data\UI\ct_objectsSim_off.paa";
-							textureDisabledChecked = "composition_tool\data\UI\ct_objectsSim_on.paa";
-							textureDisabledUnchecked = "composition_tool\data\UI\ct_objectsSim_off.paa";
+							textureChecked = "composition_tool_data\data\UI\ct_objectsSim_on.paa";
+							textureUnchecked = "composition_tool_data\data\UI\ct_objectsSim_off.paa";
+							textureFocusedChecked = "composition_tool_data\data\UI\ct_objectsSim_on.paa";
+							textureFocusedUnchecked = "composition_tool_data\data\UI\ct_objectsSim_off.paa";
+							textureHoverChecked = "composition_tool_data\data\UI\ct_objectsSim_on.paa";
+							textureHoverUnchecked = "composition_tool_data\data\UI\ct_objectsSim_off.paa";
+							texturePressedChecked = "composition_tool_data\data\UI\ct_objectsSim_on.paa";
+							texturePressedUnchecked = "composition_tool_data\data\UI\ct_objectsSim_off.paa";
+							textureDisabledChecked = "composition_tool_data\data\UI\ct_objectsSim_on.paa";
+							textureDisabledUnchecked = "composition_tool_data\data\UI\ct_objectsSim_off.paa";
 							x = (2 + 10 + 2) * GRID_W;
 							y = (21 + (7 * CT_SPC)) * GRID_H;
 							w = 10 * GRID_W;
@@ -437,7 +459,7 @@ class Display3DEN {
 						class exportLibs : ctrlButtonToolbar {
 							idc = CT_EXPORTLIBSBUT_IDC;
 							action = "['exportLib'] call CT_fnc_handler";
-							text = "composition_tool\data\UI\ct_exportLibs.paa";
+							text = "composition_tool_data\data\UI\ct_exportLibs.paa";
 							tooltip = "$STR_A3_ct_eden_gui_exportLib_hint";
 							onLoad = "";
 							x = 2 * GRID_W;
@@ -448,7 +470,7 @@ class Display3DEN {
 						class exportProjects : ctrlButtonToolbar {
 							idc = CT_EXPORTPROJECTSBUT_IDC;
 							action = "['exportProjects'] call CT_fnc_handler";
-							text = "composition_tool\data\UI\ct_exportProjects.paa";
+							text = "composition_tool_data\data\UI\ct_exportProjects.paa";
 							tooltip = "$STR_A3_ct_eden_gui_exportProjects_hint";
 							onLoad = "";
 							x = (2 + 10 + 2) * GRID_W;
@@ -478,16 +500,16 @@ class Display3DEN {
 							onCheckedChanged = "['toggleCT', _this] call CT_fnc_handler";
 							onLoad = "";
 							tooltip = "";
-							textureChecked = "composition_tool\data\UI\ct_hideCT_up.paa";
-							textureUnchecked = "composition_tool\data\UI\ct_hideCT_down.paa";
-							textureFocusedChecked = "composition_tool\data\UI\ct_hideCT_up.paa";
-							textureFocusedUnchecked = "composition_tool\data\UI\ct_hideCT_down.paa";
-							textureHoverChecked = "composition_tool\data\UI\ct_hideCT_up.paa";
-							textureHoverUnchecked = "composition_tool\data\UI\ct_hideCT_down.paa";
-							texturePressedChecked = "composition_tool\data\UI\ct_hideCT_up.paa";
-							texturePressedUnchecked = "composition_tool\data\UI\ct_hideCT_down.paa";
-							textureDisabledChecked = "composition_tool\data\UI\ct_hideCT_up.paa";
-							textureDisabledUnchecked = "composition_tool\data\UI\ct_hideCT_down.paa";
+							textureChecked = "composition_tool_data\data\UI\ct_hideCT_up.paa";
+							textureUnchecked = "composition_tool_data\data\UI\ct_hideCT_down.paa";
+							textureFocusedChecked = "composition_tool_data\data\UI\ct_hideCT_up.paa";
+							textureFocusedUnchecked = "composition_tool_data\data\UI\ct_hideCT_down.paa";
+							textureHoverChecked = "composition_tool_data\data\UI\ct_hideCT_up.paa";
+							textureHoverUnchecked = "composition_tool_data\data\UI\ct_hideCT_down.paa";
+							texturePressedChecked = "composition_tool_data\data\UI\ct_hideCT_up.paa";
+							texturePressedUnchecked = "composition_tool_data\data\UI\ct_hideCT_down.paa";
+							textureDisabledChecked = "composition_tool_data\data\UI\ct_hideCT_up.paa";
+							textureDisabledUnchecked = "composition_tool_data\data\UI\ct_hideCT_down.paa";
 							x = 0 * GRID_W;
 							y = 1 * GRID_W;
 							w = 3 * GRID_W;
@@ -524,7 +546,7 @@ class Display3DEN {
 				};
 				class warningSign : ctrlStaticPicture {
 					idc = CT_WARNINGIMAGE_IDC;
-					text = "composition_tool\data\UI\ct_warning.paa";
+					text = "composition_tool_data\data\UI\ct_warning.paa";
 					x = (CT_PROMTWIN_W * 0.034) * GRID_W;
 					y = (CT_PROMTWIN_H * 0.22) * GRID_H;
 					w = (CT_PROMTWIN_W * 0.166) * GRID_W;

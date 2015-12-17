@@ -562,6 +562,10 @@
 				<Original>Toggle units simulation in CT editor</Original>
 				<English>Toggle units simulation in CT editor</English>
 			</Key>
+			<Key ID="STR_A3_ct_eden_gui_toggleRotationClamp_hint">
+				<Original>Toggle objects rotation lock</Original>
+				<English>Toggle objects rotation lock</English>
+			</Key>
 			<Key ID="STR_A3_ct_eden_gui_toggleObjectsSim_hint">
 				<Original>Toggle objects simulation in CT editor</Original>
 				<English>Toggle objects simulation in CT editor</English>

@@ -198,7 +198,7 @@ switch (_input) do {
 		_name = _combo lbText (lbCurSel _combo);
 		(_display displayCtrl CT_PROMTWINDOW_IDC) ctrlShow true;
 		(_display displayCtrl CT_PROMTWINDOW_IDC) ctrlEnable true;
-		(_display displayCtrl CT_WARNINGIMAGE_IDC) ctrlSetText "composition_tool\data\UI\ct_warning.paa";
+		(_display displayCtrl CT_WARNINGIMAGE_IDC) ctrlSetText "composition_tool_data\data\UI\ct_warning.paa";
 		(_display displayCtrl CT_WARNINGTEXT_IDC) ctrlSetText (format [localize "STR_A3_ct_eden_gui_deleteProject_warning", _name]);
 		(_display displayCtrl CT_PROMTWINEDITBOX_IDC) ctrlShow false;
 		(_display displayCtrl CT_PROMTWINEDITBOX_IDC) ctrlEnable false;
@@ -268,7 +268,7 @@ switch (_input) do {
 			(_display displayCtrl CT_PROMTWINDOW_IDC) ctrlShow true;
 			(_display displayCtrl CT_PROMTWINDOW_IDC) ctrlEnable true;
 			(_display displayCtrl CT_WARNINGTEXT_IDC) ctrlSetText (localize "STR_A3_ct_eden_gui_confirmUnloadCT_warinng");
-			(_display displayCtrl CT_WARNINGIMAGE_IDC) ctrlSetText "composition_tool\data\UI\ct_warning.paa";
+			(_display displayCtrl CT_WARNINGIMAGE_IDC) ctrlSetText "composition_tool_data\data\UI\ct_warning.paa";
 			(_display displayCtrl CT_PROMTWINOKBUT_IDC) buttonSetAction "['confirmUnloadCT'] call CT_fnc_handler";
 			(_display displayCtrl CT_PROMTWINCANCELBUT_IDC) buttonSetAction "['discardUnloadCT'] call CT_fnc_handler";
 			(_display displayCtrl CT_PROMTWINEDITBOX_IDC) ctrlShow false;
@@ -306,6 +306,30 @@ switch (_input) do {
 	};
 	
 	//OPTIONS
+	case "toggleRotationClamp": {
+		_toggle = (_this select 1) select 1;
+		if (_toggle == 0) then {
+			terminate ct_clapRotation_handle;
+		} else {
+			terminate ct_clapRotation_handle;
+			ct_clapRotation_handle = [] spawn {
+				while {true} do {
+					waitUntil {current3DENOperation == "MoveItems"};
+					_vectors = [];
+					_objects = get3DENSelected "object";
+					if (count _objects != 0) then {
+						{
+							_vectors pushBack ((_x get3DENAttribute "rotation") select 0);
+						} forEach _objects;
+					};
+					waitUntil {current3DENOperation != "MoveItems"};
+					{
+						_x set3DENAttribute ["rotation", (_vectors select _forEachIndex)];
+					} forEach _objects;
+				};
+			};
+		};
+	};
 	case "toggleUnitSim": {
 		diag_log "ct toggle unit sim";
 		_toggle = (_this select 1) select 1;
