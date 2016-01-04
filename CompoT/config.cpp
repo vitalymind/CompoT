@@ -3345,7 +3345,8 @@ class RscTitles
 				text = "";
 				x = 0 * safezoneW + safezoneX;
 				y = 0.82 * safezoneH + safezoneY;
-				w = 0.25 * safezoneW;
+				w = 0.20 * safezoneW;
+				//w = 0.25 * safezoneW;
 				h = 0.18 * safezoneH;
 			};
 			class text_field: compo_text_base
@@ -3430,4 +3431,5 @@ class RscTitles
 
 #include "Configs\CfgFunctions.hpp"
 #include "Configs\Display3DEN.hpp"
+#include "Configs\ct_screenshots.hpp"
 

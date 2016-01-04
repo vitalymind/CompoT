@@ -17,7 +17,6 @@ switch (_input) do {
 	case "previewEnd": {
 		if (!(uinamespace getVariable ["CT_var_gui_editorLoaded", false])) exitWith {};
 		call compile preprocessfilelinenumbers "composition_tool\Data\CT_variables.sqf";
-		call compile preprocessfilelinenumbers "composition_tool\Data\CT_classes.sqf";
 		ct_var_disableSim = true;
 		call CT_fnc_updateProjectsList;
 		call CT_fnc_linkLibsAndProjects;
@@ -68,7 +67,6 @@ switch (_input) do {
 	case "newMission": {
 		if (!(uinamespace getVariable ["CT_var_gui_editorLoaded", false])) exitWith {};
 		call compile preprocessfilelinenumbers "composition_tool\Data\CT_variables.sqf";
-		call compile preprocessfilelinenumbers "composition_tool\Data\CT_classes.sqf";
 		call CT_fnc_deleteAll;
 		call CT_fnc_initLibraries;
 		call CT_fnc_initProjects;

@@ -15,7 +15,6 @@ waitUntil {!isNull (findDisplay 46)};
 
 //INIT VARIABLE
 call compile preprocessfilelinenumbers "composition_tool\Data\CT_variables.sqf";
-call compile preprocessfilelinenumbers "composition_tool\Data\CT_classes.sqf";
 
 call CT_fnc_buildMainPivot;
 

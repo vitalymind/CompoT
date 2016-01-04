@@ -12,8 +12,6 @@ if (isClass (configfile >> "CfgPatches" >> "CUP_Worlds")) then {CT_var_mods push
 if (isClass (configfile >> "CfgPatches" >> "plp_beachobjects")) then {CT_var_mods pushBack "PLP Beach objects"};
 if (isClass (configfile >> "CfgPatches" >> "plp_containers")) then {CT_var_mods pushBack "PLP Containers"};
 if (isClass (configfile >> "CfgPatches" >> "mbg_killhouses_a3")) then {CT_var_mods pushBack "MBG Killhouses"};
-if (isClass (configfile >> "CfgPatches" >> "mm_bank")) then {CT_var_mods pushBack "mattaust buildings"};
-if (isClass (configfile >> "CfgPatches" >> "brg_africa")) then {CT_var_mods pushBack "BRG African Foliage"};
 if (
 	isClass (configfile >> "CfgPatches" >> "A3_Bush") OR
 	isClass (configfile >> "CfgPatches" >> "A3_Plants") OR

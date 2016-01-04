@@ -42,14 +42,8 @@ _checkModandScope = {
 		if (_sort == "MBG Killhouses") then {
 			if (_mod != "MBG Killhouses") then {_skip = true};
 		};
-		if (_sort == "mattaust buildings") then {
-			if (_mod != "mattaust buildings") then {_skip = true};
-		};
 		if (_sort == "ArmA nature") then {
 			if (_mod != "ArmA nature") then {_skip = true};
-		};
-		if (_sort == "BRG African Foliage") then {
-			if (_mod != "BRG African Foliage") then {_skip = true};
 		};
 		if (_sort == "other mods") then {
 			if (_mod in (ct_var_mods + ["kart","heli","mark","curator"])) then {_skip = true};

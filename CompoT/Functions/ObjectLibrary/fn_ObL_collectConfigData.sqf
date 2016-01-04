@@ -38,25 +38,8 @@ _addon = "";
 		_mod = _modFolder;
 		switch (_modFolder) do {
 			case "": {_mod = "STD"};
-		
-			case "@CUP_Terrains": {_mod = "CUP"};
-			case "@CUP_Bukovina": {_mod = "CUP"};
-			case "@CUP_Bystrica": {_mod = "CUP"};
-			case "@CUP_Chernarus": {_mod = "CUP"};
-			case "@CUP_Chernarus_Summer": {_mod = "CUP"};
-			case "@CUP_Desert": {_mod = "CUP"};
-			case "@CUP_Porto": {_mod = "CUP"};
-			case "@CUP_Proving_Grounds": {_mod = "CUP"};
-			case "@CUP_Rahmadi": {_mod = "CUP"};
-			case "@CUP_Sahrani": {_mod = "CUP"};
-			case "@CUP_Sahrani_Lite": {_mod = "CUP"};
-			case "@CUP_Shapur": {_mod = "CUP"};
-			case "@CUP_Takistan": {_mod = "CUP"};
-			case "@CUP_Takistan_Mountains": {_mod = "CUP"};
-			case "@CUP_United_Sahrani": {_mod = "CUP"};
-			case "@CUP_Utes": {_mod = "CUP"};
-			case "@CUP_Zargabad": {_mod = "CUP"};
-
+			case "@CUP Terrains - Core": {_mod = "CUP"};
+			case "@CUP Terrains - Maps": {_mod = "CUP"};
 			case "Kart": {_mod = "kart"};
 			case "Heli": {_mod = "heli"};
 			case "Mark": {_mod = "mark"};
@@ -64,9 +47,7 @@ _addon = "";
 			default {
 				_addon = (unitAddons (configName _x)) select 0;
 				if (isNil "_addon") exitWith {};
-				if (_addon == "brg_africa") exitWith {_mod = "BRG African Foliage"};
 				if (_addon in ["A3_Bush","A3_Plants","A3_rocks","A3_Trees"]) exitWith {_mod = "ArmA nature"};
-				if (_addon in ["mm_bank","mm_buildings","mm_buildings2","mm_buildings3","mm_buildings4","mm_fence","MM_objects","mm_post","mm_residential","mm_residential2","MM_Shopping","mm_showroom"]) exitWith {_mod = "mattaust buildings"};
 				if (_addon == "mbg_killhouses_a3") exitWith {_mod = "MBG Killhouses"};
 				if (_addon == "plp_beachobjects") exitWith {_mod = "PLP Beach objects"};
 				if (_addon == "plp_containers") exitWith {_mod = "PLP Containers"};
@@ -76,7 +57,7 @@ _addon = "";
 		if (isNil "_model") then {_model = "n/a"};
 		if (isNil "_scope") then {_scope = "n/a"};
 		if (isNil "_displayName") then {_displayName = "n/a"};
-		if (isNil "_mapSize") then {_mapSize = 10};
+		if (isNil "_mapSize") then {_mapSize = 0};
 		_array pushback (configName _x);
 		_array pushback _scope;
 		_array pushback _model;

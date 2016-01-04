@@ -14,7 +14,6 @@ Switch (_this) do {
 	case "load": {
 		//INIT VARIABLE
 		call compile preprocessfilelinenumbers "composition_tool\Data\CT_variables.sqf";
-		call compile preprocessfilelinenumbers "composition_tool\Data\CT_classes.sqf";
 
 		//RESET UINAMESPACE VARIABLE
 		uinamespace setVariable ["CT_var_gui_editorLoaded", nil];
