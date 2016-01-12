@@ -12,6 +12,7 @@ private ["_direction","_changeSpeed","_newSpeed"];
 _direction = _this;
 _changeSpeed = 0;
 _changeSpeed = switch true do {
+	case (CT_var_camSpeed < 0.01): {0.01};
 	case (CT_var_camSpeed <= 0.05 AND CT_var_camSpeed >= 0.01): {0.01};
 	case (CT_var_camSpeed <= 0.2 AND CT_var_camSpeed > 0.05): {0.02};
 	case (CT_var_camSpeed <= 0.5 AND CT_var_camSpeed > 0.2): {0.05};

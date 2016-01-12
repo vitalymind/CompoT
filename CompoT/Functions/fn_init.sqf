@@ -8,13 +8,14 @@
 */ 
 #include "defines.hpp"
 
-private ["_center","_ehs"];
+private ["_center","_ehs","_objectRotateSpeed","_objectHeightChange","_compositionRadiusChange","_objectSelectRange",
+"_cameraRotateSpeed","_cameraMoveSpeed"];
 
 Switch (_this) do {
 	case "load": {
 		//INIT VARIABLE
 		call compile preprocessfilelinenumbers "composition_tool\Data\CT_variables.sqf";
-
+		
 		//RESET UINAMESPACE VARIABLE
 		uinamespace setVariable ["CT_var_gui_editorLoaded", nil];
 		uinamespace setVariable ["CT_var_gui_runMode", nil];
@@ -89,8 +90,6 @@ Switch (_this) do {
 		diag_log "CT Loaded";
 	};
 	case "unload": {
-		//TODO PROMT FOR USER PERMISSION
-		
 		//UNLOAD LIBRARIES AND PROJECTS
 		uinamespace setVariable ["CT_var_gui_libraries", nil];
 		uinamespace setVariable ["CT_var_gui_projects", nil];

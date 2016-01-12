@@ -1,14 +1,12 @@
-//#define pixelW  (1 / (getResolution select 2))
-//#define pixelH  (1 / (getResolution select 3))
 #define pixelScale	1.25
 #define pixelGrid 4
 #define GRID_W (pixelW * pixelScale * pixelGrid)
 #define GRID_H (pixelH * pixelScale * pixelGrid)
+
 #define PANEL_W	60
 #define SIZE_M	5
 #define MENUBAR_H	SIZE_M
 #define TOOLBAR_H	(SIZE_M + 2)
-
 #define CT_SPC 1
 #define CT_SPC_SCR 3
 #define CT_MODETAB_H	6
@@ -21,8 +19,6 @@
 
 #define CT_SEPARATORCOLOR 0.4,0.4,0.4,0.8
 
-#define CT_CTTOOLBAR_IDC 758341
-#define CT_CTTOGGLE_IDC 758342
 #define CT_PANEL_IDC 758343
 #define CT_STRATCTBUTTON_IDC 758344
 #define CT_MODETOOLBOX_IDC 758345
@@ -37,7 +33,6 @@
 #define CT_EXPORTPROJECTSBUT_IDC 758354
 #define CT_HIDECTBUT_IDC 758355
 #define CT_MODETAB_IDC 758356
-#define CT_PROMTUNLOADCTBUT_IDC 758357
 #define CT_PROMTWINDOW_IDC 758358
 #define CT_WARNINGTEXT_IDC 758359
 #define CT_PROMTWINOKBUT_IDC 758360
@@ -117,9 +112,6 @@
 #define CT_SCREENTEXT_31_IDC 758631
 #define CT_SCREENTEXT_32_IDC 758632
 
-
-
-
 class ctrlControlsGroupNoScrollbars; //External class reference
 class ctrlCheckboxToolbar; //External class reference
 class ctrlButtonToolbar; //External class reference
@@ -130,6 +122,7 @@ class ctrlCombo; //External class reference
 class ctrlStaticMulti; //External class reference
 class ctrlStaticPicture; //External class reference
 class ctrlEdit; //External class reference
+class ctrlMenuStrip; //External class reference
 
 class Cfg3DEN {
 	class EventHandlers {
@@ -178,60 +171,18 @@ class Cfg3DEN {
 };
 class Display3DEN {
 	class Controls {
-		class Toolbar : ctrlControlsGroupNoScrollbars {
-			class Controls {
-				class Separator1; //External class reference
-				class Separator6: Separator1 {
-					x = 32 * SIZE_M * GRID_W;
+		class MenuStrip: ctrlMenuStrip {
+			class Items
+			{
+				class Tools
+				{
+					items[] += {"ct_toggle"};
 				};
-				class CTtoolbar : ctrlControlsGroupNoScrollbars {
-					idc = CT_CTTOOLBAR_IDC;
-					x = 32.5 * SIZE_M * GRID_W;
-					y = 1 * GRID_H;
-					w = 1 * SIZE_M * GRID_W;
-					h = SIZE_M * GRID_H;
-					
-					class Controls {
-						class promtButton : ctrlButtonToolbar {
-							idc = CT_PROMTUNLOADCTBUT_IDC;
-							action = "['loadOrUnloadCT'] call CT_fnc_handler";
-							text = "composition_tool_data\data\UI\ct_but_off.paa";
-							tooltip = "$STR_A3_ct_eden_gui_toggle_hint";
-							onLoad = "";
-							x = 0;
-							y = 0;
-							h = SIZE_M * GRID_H;
-							W = SIZE_M * GRID_W;
-							offsetPressedX = 0;
-							offsetPressedY = 0;
-							// colorText[] = {0, 0, 0, 0};
-							// colorDisabled[] = {0, 0, 0, 0};
-							// colorBackground[] = {0, 0, 0, 0};
-							// colorBackgroundDisabled[] = {0, 0, 0, 0};
-							// colorBackgroundActive[] = {0,0,0,0};
-							// colorFocused[] = {0,0,0,0};
-						};
-						class CTtoggle : ctrlCheckboxToolbar {
-							idc = CT_CTTOGGLE_IDC;
-							onCheckedChanged = "";
-							onLoad = "";
-							tooltip = "$STR_A3_ct_eden_gui_toggle_hint";
-							textureChecked = "composition_tool_data\data\UI\ct_but_on.paa";
-							textureUnchecked = "composition_tool_data\data\UI\ct_but_off.paa";
-							textureFocusedChecked = "composition_tool_data\data\UI\ct_but_on.paa";
-							textureFocusedUnchecked = "composition_tool_data\data\UI\ct_but_off.paa";
-							textureHoverChecked = "composition_tool_data\data\UI\ct_but_on.paa";
-							textureHoverUnchecked = "composition_tool_data\data\UI\ct_but_off.paa";
-							texturePressedChecked = "composition_tool_data\data\UI\ct_but_on.paa";
-							texturePressedUnchecked = "composition_tool_data\data\UI\ct_but_off.paa";
-							textureDisabledChecked = "composition_tool_data\data\UI\ct_but_on.paa";
-							textureDisabledUnchecked = "composition_tool_data\data\UI\ct_but_off.paa";
-							x = 0;
-							y = 0;
-							h = SIZE_M * GRID_H;
-							W = SIZE_M * GRID_W;
-						};
-					};
+				class ct_toggle
+				{
+					text = "Composition Tool";
+					picture = "composition_tool_data\data\UI\ct_but_off.paa";
+					action = "['loadOrUnloadCT'] call CT_fnc_handler";
 				};
 			};
 		};
@@ -664,7 +615,7 @@ class Display3DEN {
 					h = 9 * GRID_H;
 					Size = 0.08;
 				};
-				class search_edit: compo_edit_base {
+				class search_edit: ct_edit_base {
 					idc = CT_OSMSEARCH_IDC;
 					x = 150 * GRID_W;
 					y = 10 * GRID_H;
@@ -949,48 +900,3 @@ class Display3DEN {
 		};
 	};
 };
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

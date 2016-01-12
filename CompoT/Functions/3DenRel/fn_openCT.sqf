@@ -16,6 +16,20 @@ waitUntil {!isNull (findDisplay 46)};
 //INIT VARIABLE
 call compile preprocessfilelinenumbers "composition_tool\Data\CT_variables.sqf";
 
+//LOAD USER SETTINGS
+_objectRotateSpeed = profileNamespace getVariable ["ct_var_PN_objectRotateSpeed", -1];
+_objectHeightChange = profileNamespace getVariable ["ct_var_PN_objectHeightChange", -1];
+_compositionRadiusChange = profileNamespace getVariable ["ct_var_PN_compositionRadiusChange", -1];
+_objectSelectRange = profileNamespace getVariable ["ct_var_PN_objectSelectRange", -1];
+_cameraRotateSpeed = profileNamespace getVariable ["ct_var_PN_cameraRotateSpeed", -1];
+_cameraMoveSpeed = profileNamespace getVariable ["ct_var_PN_cameraMoveSpeed", -1];
+if (_objectRotateSpeed != -1) then {ct_var_rotateAngle = _objectRotateSpeed};
+if (_objectHeightChange != -1) then {ct_var_heightChange = _objectHeightChange};
+if (_compositionRadiusChange != -1) then {ct_var_radiusChange = _compositionRadiusChange};
+if (_objectSelectRange != -1) then {ct_var_selectRange = _objectSelectRange};
+if (_cameraRotateSpeed != -1) then {ct_var_camRotateSpeed = _cameraRotateSpeed};
+if (_cameraMoveSpeed != -1) then {ct_var_camSpeed = _cameraMoveSpeed};
+
 call CT_fnc_buildMainPivot;
 
 //DISABLE/ENABLE SIMULATION
@@ -23,12 +37,14 @@ if (!(uinamespace getVariable ["CT_var_gui_enableUnitsSim", false])) then {
 	{
 		_x enableSimulation false;
 		_x allowDamage false;
-	} forEach (allUnits + vehicles);	
+	} forEach (allUnits + vehicles);
+	ct_var_disableUnitSim = true;
 } else {
 	{
 		_x enableSimulation true;
 		_x allowDamage true;
 	} forEach (allUnits + vehicles);
+	ct_var_disableUnitSim = false;
 };
 if (uinamespace getVariable ["CT_var_gui_enableObjectsSim", false]) then {
 	ct_var_disableSim = false;

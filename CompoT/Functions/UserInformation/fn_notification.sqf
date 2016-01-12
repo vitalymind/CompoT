@@ -10,7 +10,7 @@
 
 disableSerialization;
 private ["_text","_dialog","_control","_textSize","_colorYellow","_resultText","_colorWhite"];
-7 cutRsc ["message_GUI","PLAIN",0];
+7 cutRsc ["ct_message_GUI","PLAIN",0];
 _dialog = (uiNamespace getVariable 'CT_var_GUI_messageHandle');
 _control = _dialog displayCtrl 100;
 _textSize = (1 / (getResolution select 5));

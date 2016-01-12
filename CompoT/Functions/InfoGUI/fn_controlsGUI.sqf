@@ -10,7 +10,7 @@
 
 if (_this == "open") then {
 	if (CT_var_curGUIMode in ["info+cursorControls","info+basicControls"]) then {
-		CT_var_controlsGuiVisible = true; 6 cutRsc ["controls_GUI","PLAIN",0];
+		CT_var_controlsGuiVisible = true; 6 cutRsc ["ct_controls_GUI","PLAIN",0];
 	};
 };
 if (_this == "close") then {CT_var_controlsGuiVisible = false; 6 cutText ["","PLAIN",0]};

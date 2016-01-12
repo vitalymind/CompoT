@@ -19,7 +19,7 @@ if (count _configContent == 0) exitWith {
 	[] spawn CT_fnc_ObL_collectConfigData;
 };
 
-createDialog "object_library";
+createDialog "ct_object_library";
 CT_var_openedGUI = true;
 "close" call CT_fnc_infoGUI;
 "close" call CT_fnc_controlsGUI;

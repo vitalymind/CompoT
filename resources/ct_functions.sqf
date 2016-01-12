@@ -542,7 +542,7 @@ CT_fnc_errorMsg = {
 	disableSerialization;
 	if ((uiNameSpace getVariable ["CT_var_gui_runMode", "mission"]) == "editor") then {
 		private ["_text","_dialog","_control","_textSize","_colorYellow","_resultText","_colorRed"];
-		7 cutRsc ["message_GUI","PLAIN",0];
+		7 cutRsc ["ct_message_GUI","PLAIN",0];
 		_dialog = (uiNamespace getVariable 'CT_var_GUI_messageHandle');
 		_control = _dialog displayCtrl 100;
 		_textSize = (1 / (getResolution select 5));

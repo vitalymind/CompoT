@@ -8,7 +8,7 @@
 */ 
 #include "defines.hpp"
 
-private ["_input","_display","_cam","_toggle","_ctrl","_pos","_posY","_curSel","_mode","_basicCtrl","_advancedCtrl","_ctrlPlay","_checked"];
+private ["_loaded","_input","_display","_cam","_toggle","_ctrl","_pos","_posY","_curSel","_mode","_basicCtrl","_advancedCtrl","_ctrlPlay","_checked"];
 _input = param [0, ""];
 _display = finddisplay 313;
 
@@ -114,13 +114,11 @@ switch (_input) do {
 		(_display displayCtrl CT_PROMTWINCANCELBUT_IDC) buttonSetAction "['newProjectCancel'] call CT_fnc_handler";
 		
 		//FREEZE ALL CT CONTROLS
-		(_display displayCtrl CT_CTTOOLBAR_IDC) ctrlEnable false;
 		(_display displayCtrl CT_PANEL_IDC) ctrlEnable false;
 		diag_log "ct promt user before closing CT";
 	};
 	case "newProjectCancel": {
 		//UN-FREEZE ALL CT CONTROLS
-		(_display displayCtrl CT_CTTOOLBAR_IDC) ctrlEnable true;
 		(_display displayCtrl CT_PANEL_IDC) ctrlEnable true;
 		
 		(_display displayCtrl CT_PROMTWINOKBUT_IDC) buttonSetAction "";
@@ -134,7 +132,6 @@ switch (_input) do {
 		_name = ctrltext (_display displayCtrl CT_PROMTWINEDITBOX_IDC);
 		if (_name == "") exitWith {["message","CT_nameEmpty",5] call CT_fnc_handler};
 		//UN-FREEZE ALL CT CONTROLS
-		(_display displayCtrl CT_CTTOOLBAR_IDC) ctrlEnable true;
 		(_display displayCtrl CT_PANEL_IDC) ctrlEnable true;
 		
 		(_display displayCtrl CT_PROMTWINDOW_IDC) ctrlShow false;
@@ -154,7 +151,6 @@ switch (_input) do {
 	};
 	case "deleteProjectConfirm": {
 		//UN-FREEZE ALL CT CONTROLS
-		(_display displayCtrl CT_CTTOOLBAR_IDC) ctrlEnable true;
 		(_display displayCtrl CT_PANEL_IDC) ctrlEnable true;
 		
 		(_display displayCtrl CT_PROMTWINDOW_IDC) ctrlShow false;
@@ -180,7 +176,6 @@ switch (_input) do {
 	};
 	case "deleteProjectCancel": {
 		//UN-FREEZE ALL CT CONTROLS
-		(_display displayCtrl CT_CTTOOLBAR_IDC) ctrlEnable true;
 		(_display displayCtrl CT_PANEL_IDC) ctrlEnable true;
 		
 		(_display displayCtrl CT_PROMTWINOKBUT_IDC) buttonSetAction "";
@@ -205,7 +200,6 @@ switch (_input) do {
 		(_display displayCtrl CT_PROMTWINCANCELBUT_IDC) buttonSetAction "['deleteProjectCancel'] call CT_fnc_handler";
 		
 		//FREEZE ALL CT CONTROLS
-		(_display displayCtrl CT_CTTOOLBAR_IDC) ctrlEnable false;
 		(_display displayCtrl CT_PANEL_IDC) ctrlEnable false;
 	};
 	
@@ -236,7 +230,6 @@ switch (_input) do {
 	};
 	case "discardUnloadCT": {
 		//UN-FREEZE ALL CT CONTROLS
-		(_display displayCtrl CT_CTTOOLBAR_IDC) ctrlEnable true;
 		(_display displayCtrl CT_PANEL_IDC) ctrlEnable true;
 		
 		(_display displayCtrl CT_PROMTWINOKBUT_IDC) buttonSetAction "";
@@ -248,9 +241,7 @@ switch (_input) do {
 	};
 	case "confirmUnloadCT": {
 		//UN-FREEZE ALL CT CONTROLS
-		(_display displayCtrl CT_CTTOOLBAR_IDC) ctrlEnable true;
 		(_display displayCtrl CT_PANEL_IDC) ctrlEnable true;
-		(_display displayCtrl CT_CTTOGGLE_IDC) cbSetChecked false;
 		
 		(_display displayCtrl CT_PROMTWINDOW_IDC) ctrlShow false;
 		(_display displayCtrl CT_PROMTWINDOW_IDC) ctrlEnable false;
@@ -261,8 +252,8 @@ switch (_input) do {
 		'unload' call CT_fnc_init;
 	};
 	case "loadOrUnloadCT": {
-		_checked = cbChecked (_display displayCtrl CT_CTTOGGLE_IDC);
-		if (_checked) then {
+		_loaded = uinamespace getVariable ["CT_var_gui_editorLoaded", false];
+		if (_loaded) then {
 			(_display displayCtrl CT_PROMTWINDOW_IDC) ctrlShow true;
 			(_display displayCtrl CT_PROMTWINDOW_IDC) ctrlEnable true;
 			(_display displayCtrl CT_WARNINGTEXT_IDC) ctrlSetText (localize "STR_A3_ct_eden_gui_confirmUnloadCT_warinng");
@@ -273,11 +264,9 @@ switch (_input) do {
 			(_display displayCtrl CT_PROMTWINEDITBOX_IDC) ctrlEnable false;
 			
 			//FREEZE ALL CT CONTROLS
-			(_display displayCtrl CT_CTTOOLBAR_IDC) ctrlEnable false;
 			(_display displayCtrl CT_PANEL_IDC) ctrlEnable false;
 			diag_log "ct promt user before closing CT";
 		} else {
-			(_display displayCtrl CT_CTTOGGLE_IDC) cbSetChecked true;
 			'load' call CT_fnc_init;
 			["modeChange", 0,1] call CT_fnc_handler;
 		};

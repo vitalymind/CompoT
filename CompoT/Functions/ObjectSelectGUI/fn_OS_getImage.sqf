@@ -11,8 +11,8 @@
 disableSerialization;
 private ["_classname","_result"];
 _classname = _this;
-_result = if (isClass (configFile >> "ct_screenshots" >> _classname)) then {
-	getText (configFile >> "ct_screenshots" >> _classname >> "picture");
+_result = if (isClass (configFile >> "ct_CfgScreenshots" >> _classname)) then {
+	getText (configFile >> "ct_CfgScreenshots" >> _classname >> "picture");
 } else {
 	"composition_tool_data\Data\objects\no_image.paa";
 };

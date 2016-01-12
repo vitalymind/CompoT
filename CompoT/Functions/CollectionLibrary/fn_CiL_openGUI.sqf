@@ -11,7 +11,7 @@
 disableSerialization;
 private ["_dialog","_categoryList","_collectionList","_contentList","_groupCombo","_tree","_newCatBut","_newColBut",
 "_renameCatBut","_renameColBut"];	
-createDialog "collection_library";
+createDialog "ct_collection_library";
 CT_var_openedGUI = true;
 "close" call CT_fnc_infoGUI;
 "close" call CT_fnc_controlsGUI;

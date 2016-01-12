@@ -16,7 +16,7 @@ if ((_type == "open") AND (!CT_var_buildToolGUIShown)) then {
 	CT_var_buildToolGUIShown = true;
 	CT_var_openedGUI = true;
 	CT_var_holdenKeys = [false,false,false,false,false,false,false,false,false];
-	createDialog "build_tool_menu";
+	createDialog "ct_buildToolMenu";
 	_dialog = findDisplay 25253;
 	_objectBut = _dialog displayCtrl 100;
 	_compositionBut = _dialog displayCtrl 101;

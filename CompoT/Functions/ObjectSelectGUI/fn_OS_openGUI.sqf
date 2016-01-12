@@ -58,7 +58,7 @@ if ((uinameSpace getVariable ["CT_var_gui_runMode",""]) == "3den") then {
 	CT_var_holdenKeys = [false,false,false,false,false,false,false,false,false];
 	"close" call CT_fnc_infoGUI;
 	"close" call CT_fnc_controlsGUI;
-	createDialog "object_select";
+	createDialog "ct_object_select";
 	_dialog = findDisplay 25259;
 	_groupByCombo = _dialog displayCtrl 350;
 	_searchEdit = _dialog displayCtrl 360;

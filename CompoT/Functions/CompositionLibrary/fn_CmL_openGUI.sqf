@@ -12,7 +12,7 @@ disableSerialization;
 private ["_dialog","_leftList","_rightList","_leftCatCombo","_rightCatCombo","_objectsList","_compositionsList",
 "_collectionsList","_prefabsList","_excludeTempCheck","_nameEdit","_nameBut","_sizeText","_objectsText",
 "_compositionsText","_collectionsText","_prefabsText","_newcatEdit","_newcatBut","_categoriesList","_renameCatBut"];	
-createDialog "composition_library";
+createDialog "ct_composition_library";
 CT_var_openedGUI = true;
 CT_var_holdenKeys = [false,false,false,false,false,false,false,false,false];
 "close" call CT_fnc_infoGUI;

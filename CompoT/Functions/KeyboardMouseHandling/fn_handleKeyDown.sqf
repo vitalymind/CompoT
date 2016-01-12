@@ -43,6 +43,7 @@ if (_dikCode == DIK_ESC) then {
 };
 
 if (!_shift AND !_ctrlKey AND !_alt) then {
+	if (_dikCode == DIK_F1) then {_handled = true;call ct_fnc_OM_openGUI};
 	if (_dikCode == DIK_F2) then {_handled = true;call CT_fnc_switchGUIMode};
 	if (_dikCode == DIK_F3) then {_handled = true; call CT_fnc_EM_openGUI};
 	if (_dikCode == DIK_F4) then {_handled = true; call CT_fnc_IM_openGUI};

@@ -16,7 +16,7 @@ CT_var_openedGUI = true;
 "close" call CT_fnc_infoGUI;
 "close" call CT_fnc_controlsGUI;
 CT_var_holdenKeys = [false,false,false,false,false,false,false,false,false];
-createDialog "import_menu";
+createDialog "ct_import_menu";
 _dialog = findDisplay 25261;
 _okBut = _dialog displayCtrl 100;
 _cancelBut = _dialog displayCtrl 101;

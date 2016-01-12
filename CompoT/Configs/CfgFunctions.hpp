@@ -290,5 +290,15 @@ class CfgFunctions {
 			class 3denMouseZChange{}; 
 			class updateUsedNames{}; 
 		};
+		class OptionMenu {
+			file = "composition_tool\functions\OptionMenu";
+			class OM_closeGUI{};
+			class OM_handleEdit{};
+			class OM_handleSlider{};
+			class OM_handleToggle{};
+			class OM_openGUI{};
+			class OM_setValue{};
+			class OM_switchTab{};
+		};
 	};
 };

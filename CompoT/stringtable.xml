@@ -624,30 +624,60 @@
 			</Key>
 		</Container>
 	</Package>
+	<Package name="ct_optionMenu">
+		<Container name="ct_optionMenu">
+			<Key ID="STR_A3_option_menu_general_tab">
+				<Original>General</Original>
+				<English>General</English>
+			</Key>
+			<Key ID="STR_A3_option_menu_tutorials_tab">
+				<Original>Tutorials</Original>
+				<English>Tutorials</English>
+			</Key>
+			<Key ID="STR_A3_option_menu_manipulation_sliders">
+				<Original>Object manipulations</Original>
+				<English>Object manipulations</English>
+			</Key>
+			<Key ID="STR_A3_option_menu_camera_sliders">
+				<Original>Camera speed</Original>
+				<English>Camera speed</English>
+			</Key>
+			<Key ID="STR_A3_option_menu_toggles">
+				<Original>Editor toggles</Original>
+				<English>Editor toggles</English>
+			</Key>
+			<Key ID="STR_A3_option_menu_sliders_rotation_text">
+				<Original>Object`s rotation angle</Original>
+				<English>Object`s rotation angle</English>
+			</Key>
+			<Key ID="STR_A3_option_menu_sliders_height_text">
+				<Original>Object`s height change</Original>
+				<English>Object`s height change</English>
+			</Key>
+			<Key ID="STR_A3_option_menu_sliders_radius_text">
+				<Original>Composition`s radius change</Original>
+				<English>Composition`s radius change</English>
+			</Key>
+			<Key ID="STR_A3_option_menu_sliders_select_text">
+				<Original>Object selection range</Original>
+				<English>Object selection range</English>
+			</Key>
+			<Key ID="STR_A3_option_menu_sliders_camRotate_text">
+				<Original>Camera rotation speed</Original>
+				<English>Camera rotation speed</English>
+			</Key>
+			<Key ID="STR_A3_option_menu_sliders_camMove_text">
+				<Original>Camera move speed</Original>
+				<English>Camera move speed</English>
+			</Key>
+			<Key ID="STR_A3_option_menu_tutorials_text">
+				<Original>Not yet implemented</Original>
+				<English>Not yet implemented</English>
+			</Key>
+			<Key ID="STR_A3_option_menu_slider_edit_tooltip">
+				<Original>Type in number and press ENTER to confirm.</Original>
+				<English>Type in number and press ENTER to confirm.</English>
+			</Key>
+		</Container>
+	</Package>
 </Project>
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	

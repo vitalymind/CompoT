@@ -12,6 +12,7 @@ ct_var_holdenKeys = [false,false,false,false,false,false,false,false,false];
 
 //CAMERA
 ct_var_camSpeed = 0.4;
+ct_var_camRotateSpeed = 1;
 ct_var_camIsMoving = false;
 ct_var_camIsRotating = false;
 
@@ -45,6 +46,7 @@ ct_var_builtPreview = [];
 ct_var_buildMode = [["object",0,0],[0,0],[0,0],[0,0],[0,0]];
 ct_var_btc = []; 
 ct_var_disableSim = true;
+ct_var_mainPivot = objNull;
 
 //CLIPBOARD
 ct_var_clipboard = [];
@@ -112,4 +114,5 @@ ct_var_collections = [];
 ct_var_prefabs = [];
 ct_var_projects = [];
 
-ct_var_mainPivot = objNull;
+//MISC
+ct_var_disableUnitSim = false;

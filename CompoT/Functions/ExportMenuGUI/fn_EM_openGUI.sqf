@@ -15,7 +15,7 @@ CT_var_openedGUI = true;
 "close" call CT_fnc_infoGUI;
 "close" call CT_fnc_controlsGUI;
 CT_var_holdenKeys = [false,false,false,false,false,false,false,false,false];
-createDialog "export_menu";
+createDialog "ct_export_menu";
 _dialog = findDisplay 25260;
 _firstList = _dialog displayCtrl 100;
 _secondList = _dialog displayCtrl 101;

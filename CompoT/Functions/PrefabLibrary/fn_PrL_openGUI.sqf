@@ -11,7 +11,7 @@
 disableSerialization;
 private ["_dialog","_groupCombo","_newCatBut","_newPrefBut","_renameCatBut","_renamePrefBut","_categoryList",
 "_prefabsList","_contentList","_tree"];	
-createDialog "prefab_library";
+createDialog "ct_prefab_library";
 CT_var_openedGUI = true;
 "close" call CT_fnc_infoGUI;
 "close" call CT_fnc_controlsGUI;

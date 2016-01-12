@@ -38,7 +38,7 @@ if (CT_var_curGUIMode == "info+basicControls") then {
 	_resultText = composeText [_resultText,(parseText format["<t size='%1' align='left' color='#%2'>F11<t align='right' color='#%3'>Open/close editor</t>", _textSize, _colorWhite,_colorYellow]), lineBreak];
 	_resultText = composeText [_resultText,(parseText format["<t size='%1' align='left' color='#%2'>1<t align='right' color='#%3'>Build tool</t>", _textSize, _colorWhite,_colorYellow]), lineBreak];
 	_resultText = composeText [_resultText,(parseText format["<t size='%1' align='left' color='#%2'>2<t align='right' color='#%3'>Select tool</t>", _textSize, _colorWhite,_colorYellow]), lineBreak];
-	_resultText = composeText [_resultText,(parseText format["<t size='%1' align='left' color='#%2'>L<t align='right' color='#%3'>Toggle alignment mode</t>", _textSize, _colorWhite,_colorYellow]), lineBreak];
+	_resultText = composeText [_resultText,(parseText format["<t size='%1' align='left' color='#%2'>T<t align='right' color='#%3'>Toggle alignment mode</t>", _textSize, _colorWhite,_colorYellow]), lineBreak];
 	_resultText = composeText [_resultText,(parseText format["<t size='%1' align='left' color='#%2'>CAPSLOCK<t align='right' color='#%3'>Toggle cursor mode</t>", _textSize, _colorWhite,_colorYellow]), lineBreak];
 	_resultText = composeText [_resultText,(parseText format["<t size='%1' align='left' color='#%2'>CTRL+Q<t align='right' color='#%3'>Toggle rotation mode</t>", _textSize, _colorWhite,_colorYellow]), lineBreak];
 	_resultText = composeText [_resultText,(parseText format["<t size='%1' align='left' color='#%2'>CTRL+S<t align='right' color='#%3'>Toggle stick to object mode</t>", _textSize, _colorWhite,_colorYellow]), lineBreak];

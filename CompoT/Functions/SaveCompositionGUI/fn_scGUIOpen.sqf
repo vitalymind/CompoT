@@ -18,7 +18,7 @@ if (SOMETHING_SELECTED AND (isNull _pivot)) then {
 if (isNull _pivot) exitWith {["Pivot must be selected"] call CT_fnc_errorMsg};
 CT_var_openedGUI = true;
 CT_var_holdenKeys = [false,false,false,false,false,false,false,false,false];
-createDialog "save_compo";
+createDialog "ct_saveComposition";
 _dialog = findDisplay 25254;
 _categoryList = _dialog displayCtrl 100;
 _saveBut = _dialog displayCtrl 300;

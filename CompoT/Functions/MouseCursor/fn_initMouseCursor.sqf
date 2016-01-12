@@ -17,7 +17,7 @@ if (CT_var_mouseCursorActive) exitWith {
 };
 
 private ["_dialog","_screen"];
-createDialog "mouse_cursor";
+createDialog "ct_mouseCursor";
 CT_var_mouseCursorActive = true;
 
 _dialog = findDisplay 25252;

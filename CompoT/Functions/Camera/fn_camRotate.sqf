@@ -13,5 +13,5 @@ _fps = diag_fps;
 _horizontal = ((_this select 1) / (_fps / 60));
 _vertical = ((_this select 2) / (_fps / 60));
 _pitchBank = CT_var_cam call CT_fnc_getPB;
-CT_var_cam setDir ((getDir CT_var_cam) + _horizontal);
-[CT_var_cam, (_pitchBank select 0) + (_vertical*-1), 0] call CT_fnc_setPB;
+CT_var_cam setDir ((getDir CT_var_cam) + (_horizontal * ct_var_camRotateSpeed));
+[CT_var_cam, (_pitchBank select 0) + ((_vertical * ct_var_camRotateSpeed)*-1), 0] call CT_fnc_setPB;
