@@ -51,16 +51,26 @@ switch (_firstIndex) do {
 		} forEach _library;
 		_thirdList lbSetCurSel 0;
 	};
-	case 3: { //"Setup"
+	case 3: { //"Single category"
+		_library = [];
 		switch (_secIndex) do {
-			case 1: {//"Objects only"
-				ctrlShow [400, true]; ctrlShow [602, true];
-				_formatCombo lbAdd (localize "STR_A3_export_tool_format_default");
-				_formatCombo lbAdd (localize "STR_A3_export_tool_format_mission");
-				_formatCombo lbAdd (localize "STR_A3_export_tool_format_xCam");
-				_formatCombo lbSetCurSel 0;
+			case 0: {//"Objects"
+				_library = CT_var_objects;
+			};
+			case 1: {//"Compositions"
+				_library = CT_var_compositions;
+			};
+			case 2: {//"Collections"
+				_library = CT_var_collections;
+			};
+			case 3: {//"Prefabs"
+				_library = CT_var_prefabs;
 			};
 		};
+		{
+			_index = _thirdList lbAdd (_x select 0);
+			_thirdList lbSetData [_index, str(_x)];
+		} forEach _library;
 	};
 };
 call CT_fnc_EM_thirdListHandle;

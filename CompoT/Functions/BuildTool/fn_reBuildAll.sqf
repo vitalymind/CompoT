@@ -36,3 +36,5 @@ _pivotDir = getDir CT_var_mainPivot;
 } forEach (_map select 2);
 ["clean"] call CT_fnc_drawSelection;
 call CT_fnc_clearSelect;
+
+["Project rebuilt"] call CT_fnc_notification;

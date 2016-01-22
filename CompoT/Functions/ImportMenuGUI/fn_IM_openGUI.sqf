@@ -11,7 +11,7 @@
 disableSerialization;
 private ["_dialog","_okBut","_cancelBut","_loadBut","_fromClipCheck","_fromDispCheck","_fromfileCheck","_skipCheck","_addCheck",
 "_overwriteCheck","_dropEdit","_descriptionEdit","_dateEdit","_typeEdit","_authorEdit","_importList","_hintText","_overWriteText",
-"_addText","_skipText","_collisionText"];
+"_addText","_skipText","_collisionText","_destinationText","_destinationEdit"];
 CT_var_openedGUI = true;
 "close" call CT_fnc_infoGUI;
 "close" call CT_fnc_controlsGUI;
@@ -32,12 +32,14 @@ _descriptionEdit = _dialog displayCtrl 301;
 _dateEdit = _dialog displayCtrl 302;
 _typeEdit = _dialog displayCtrl 303;
 _authorEdit = _dialog displayCtrl 304;
+_destinationEdit = _dialog displayCtrl 305;
 _importList = _dialog displayCtrl 400;
 _hintText = _dialog displayCtrl 500;
 _overWriteText = _dialog displayCtrl 501;
 _addText = _dialog displayCtrl 502;
 _skipText = _dialog displayCtrl 503;
 _collisionText = _dialog displayCtrl 504;
+_destinationText = _dialog displayCtrl 505;
 
 _dialog displayAddEventHandler ["unload", "call CT_fnc_IM_closeGUI"];
 _importList ctrlSetEventHandler ["LBSelChanged", "call CT_fnc_IM_handleImportSelection; call CT_fnc_IM_updateHint;"];
@@ -51,6 +53,7 @@ _okBut ctrlSetEventHandler ["ButtonClick", "call CT_fnc_IM_performImport"];
 _cancelBut ctrlSetEventHandler ["ButtonClick", "(findDisplay 25261) closeDisplay 0"];
 _loadBut ctrlSetEventHandler ["ButtonClick", "call CT_fnc_IM_preloadInput"];
 _importList ctrlSetEventHandler ["KeyDown", "(_this select 1) call CT_fnc_IM_handleKeydown;"];
+_destinationEdit ctrlSetEventHandler ["KeyUp", "(_this select 1) call CT_fnc_IM_setCategory;"];
 
 _fromClipCheck cbSetChecked true;
-{ctrlShow [_x, false]}forEach [501,502,503,504,203,204,205,300];
+{ctrlShow [_x, false]}forEach [501,502,503,504,203,204,205,300,305,505];

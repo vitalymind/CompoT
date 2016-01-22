@@ -58,10 +58,15 @@ if (_fl == 2) then {
 	_text = _text + ']' + _newLine;
 };
 if (_fl == 3) then {
-	if (_sl == 0) then {
-		_text = _text + 'Project, with all data'+ (toString [34,44]) + _newLine + '[3,0], ' + ([CT_var_mainPivot] call CT_fnc_exportStructure);
-	};
-	if (_sl == 1) then {};
+	_text = _text + 'Single category, ';
+	_data = [];
+	{
+		_data pushBack (call compile(_thirdList lbData _x));
+	} forEach _tl;
+	if (_sl == 0) then {_text = _text + 'objects' + '",' + _newLine + '[3,0], ' + str _data};
+	if (_sl == 1) then {_text = _text + 'compositions' + '",' + _newLine + '[3,1], ' + str _data};
+	if (_sl == 2) then {_text = _text + 'collections' + '",' + _newLine + '[3,2], ' + str _data};
+	if (_sl == 3) then {_text = _text + 'prefabs' + '",' + _newLine + '[3,3], ' + str _data};
 	_text = _text + ']' + _newLine;
 };
 if (_to == 0) then {

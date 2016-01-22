@@ -9,10 +9,11 @@
 #include "defines.hpp" 
 
 disableSerialization;
-private ["_dialog","_categoryList","_collectionList","_contentList","_index"];
+private ["_dialog","_categoryList","_collectionList","_contentList","_index","_newCatEdit"];
 _dialog = findDisplay 25250;
 _categoryList = _dialog displayCtrl 251;
 _contentList = _dialog displayCtrl 250;
+_newCatEdit = _dialog displayCtrl 401;
 lbClear _categoryList;
 lbClear _contentList;
 {
@@ -20,3 +21,5 @@ lbClear _contentList;
 	_categoryList lbSetData [_index, str(_x select 1)];
 } forEach CT_var_objects;
 call CT_fnc_ObL_fillContent;
+
+_newCatEdit ctrlSetText (_categoryList lbText (lbCurSel _categoryList));
