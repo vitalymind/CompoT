@@ -78,6 +78,7 @@ class ct_import_menu
 			y = 0.35 * safezoneH + safezoneY;
 			w = 0.0145 * safezoneW;
 			h = 0.03 * safezoneH;
+			tooltip = $STR_A3_import_tool_skip_tooltip;
 		};
 		class rename_check: ct_check_base
 		{
@@ -86,6 +87,7 @@ class ct_import_menu
 			y = 0.35 * safezoneH + safezoneY;
 			w = 0.0145 * safezoneW;
 			h = 0.03 * safezoneH;
+			tooltip = $STR_A3_import_tool_add_tooltip;
 		};
 		class overwrite_check: ct_check_base
 		{
@@ -94,6 +96,7 @@ class ct_import_menu
 			y = 0.35 * safezoneH + safezoneY;
 			w = 0.0145 * safezoneW;
 			h = 0.03 * safezoneH;
+			tooltip = $STR_A3_import_tool_overwrite_tooltip;
 		};
 		
 		//EDITSBOXES 300
@@ -141,6 +144,15 @@ class ct_import_menu
 			w = 0.15 * safezoneW;
 			h = 0.03 * safezoneH;
 			canModify = 0;
+		};
+		class destination_edit: ct_edit_base
+		{
+			idc = 305;
+			x = 0.5 * safezoneW + safezoneX;
+			y = 0.35 * safezoneH + safezoneY;
+			w = 0.11875 * safezoneW;
+			h = 0.03 * safezoneH;
+			canModify = 1;
 		};
 		
 		//LISTBOXES 400
@@ -208,6 +220,19 @@ class ct_import_menu
 			idc = 504;
 			text = $STR_A3_import_tool_collision_text;
 			x = 0.3 * safezoneW + safezoneX;
+			y = 0.33 * safezoneH + safezoneY;
+			w = 0.175 * safezoneW;
+			h = 0.02 * safezoneH;
+			class Attributes 
+			{
+				align = "left";
+			};
+		};
+		class destination_text: ct_text_base
+		{
+			idc = 505;
+			text = $STR_A3_import_tool_destination_text;
+			x = 0.5 * safezoneW + safezoneX;
 			y = 0.33 * safezoneH + safezoneY;
 			w = 0.175 * safezoneW;
 			h = 0.02 * safezoneH;

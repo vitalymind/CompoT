@@ -21,18 +21,13 @@ lbClear _secondList;
 if (_index == 0) then {
 	_incTempCheck cbSetChecked false; ctrlShow [302, true]; ctrlShow [601, true];
 };
-if (_index in [1,2]) then {
+if (_index in [1,2,3]) then {
 	_secondList lbAdd (localize "STR_A3_export_tool_objects");
 	_secondList lbAdd (localize "STR_A3_export_tool_compositons");
 	_secondList lbAdd (localize "STR_A3_export_tool_Collections");
 	_secondList lbAdd (localize "STR_A3_export_tool_prefabs");
 	if (_index == 1) then {_incTempCheck cbSetChecked false; ctrlShow [302, true]; ctrlShow [601, true];};
-	if (_index == 2) then {_incTempCheck cbSetChecked false; ctrlShow [302, false]; ctrlShow [601, false];};
-};
-if (_index == 3) then {
-	_secondList lbAdd (localize "STR_A3_export_tool_with_pivots");
-	_secondList lbAdd (localize "STR_A3_export_tool_objects_only");
-	_incTempCheck cbSetChecked false; ctrlShow [302, false]; ctrlShow [601, false];
+	if (_index in [2,3]) then {_incTempCheck cbSetChecked false; ctrlShow [302, false]; ctrlShow [601, false];};
 };
 if (_index in [1,2,3]) then {_secondList lbSetCurSel 0};
 call CT_fnc_EM_secondListHandle;

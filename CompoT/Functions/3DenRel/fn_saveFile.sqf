@@ -42,7 +42,7 @@ if ((_makeFileVersion != "") AND (_filePath != "") AND HK_SHIFT) then {
 			_text = _text + '[0], [' + (str ct_var_objects) + ',' + _nl;
 			_text = _text + (str ct_var_compositions) + ',' + _nl;
 			_text = _text + (str ct_var_collections) + ',' + _nl;
-			_text = _text + (str ct_var_prefabs) + ']];' + _nl;
+			_text = _text + (str ct_var_prefabs) + ']]' + _nl;
 			"make_file" callExtension (_filePath + "CT_libraries.sqf" + "|" + _text);
 			["message","CT_libsToFile",5] call CT_fnc_handler;
 		};
@@ -54,7 +54,7 @@ if ((_makeFileVersion != "") AND (_filePath != "") AND HK_SHIFT) then {
 				_text = _text + '[3,0], ' + (str _x) + ']';
 				if (_forEachIndex != (count _projects - 1)) then {_text = _text + ',' + _nl};
 			} forEach _projects;
-			_text = _text + '];' + _nl + ' ';
+			_text = _text + ']' + _nl + ' ';
 			"make_file" callExtension (_filePath + "CT_projects.sqf" + "|" + _text);
 			["message","CT_projectsToFile",5] call CT_fnc_handler;
 		};
@@ -80,7 +80,7 @@ if ((_makeFileVersion != "") AND (_filePath != "") AND HK_SHIFT) then {
 				_newLine + '"Type:' + _tab + _tab + _tab + 'Project, with all data",' + _newLine + '[3,0], ' + (str _x) + ']';
 				if (_forEachIndex != (count _projects - 1)) then {_text = _text + ',' + _newLine};
 			} forEach _projects;
-			_text = _text + '];' + _newLine + ' ';
+			_text = _text + ']' + _newLine + ' ';
 			copyToClipboard _text;
 			["message","CT_projectsToClipboard",5] call CT_fnc_handler;
 		};

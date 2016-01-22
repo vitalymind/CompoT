@@ -46,21 +46,13 @@ if (_fl == 2) then {
 	_text = _text + format ["%1",localize "STR_A3_export_tool_single_element_text"];
 };
 if (_fl == 3) then {
-	_text = _text + format ["%1 ",localize "STR_A3_export_tool_setup_exported"];
-	if (_to == 0) then {_text = _text + format ["%1. ", localize "STR_A3_export_tool_clipboard"]};
-	if (_to == 1) then {_text = _text + format ["%1. ", localize "STR_A3_export_tool_display"]};
-	if (_sl == 0) then {
-		_text = _text + format ["%1 ",localize "STR_A3_export_tool_with_pivots_exported"];
-	};
-	if (_sl == 1) then {
-		_text = _text + format [" %1 ",localize "STR_A3_export_tool_without_pivots_exported"];
-		if (_ef == 0) then {_text = _text + format [" %1.",localize "STR_A3_export_tool_default_format"]};
-		if (_ef == 1) then {_text = _text + format [" %1.",localize "STR_A3_export_tool_mission_format"]};
-		if (_ef == 2) then {_text = _text + format [" %1.",localize "STR_A3_export_tool_xCam_format"]};
-	};
+	if (_sl == 0) then {_text = _text + format ["%1 ", localize "STR_A3_export_tool_objectCategory"]};
+	if (_sl == 1) then {_text = _text + format ["%1 ", localize "STR_A3_export_tool_compositonCategory"]};
+	if (_sl == 2) then {_text = _text + format ["%1 ", localize "STR_A3_export_tool_CollectionCategory"]};
+	if (_sl == 3) then {_text = _text + format ["%1 ", localize "STR_A3_export_tool_prefabCategory"]};
 };
-if ((_to == 0) AND (_fl in [0,1,2])) then {_text = _text + format [" %1.", localize "STR_A3_export_tool_clipboard"]};
-if ((_to == 1) AND (_fl in [0,1,2])) then {_text = _text + format [" %1.", localize "STR_A3_export_tool_display"]};
+if ((_to == 0) AND (_fl in [0,1,2,3])) then {_text = _text + format [" %1.", localize "STR_A3_export_tool_clipboard"]};
+if ((_to == 1) AND (_fl in [0,1,2,3])) then {_text = _text + format [" %1.", localize "STR_A3_export_tool_display"]};
 if ((_tc) AND (_fl in [0,1])) then {_text = _text + format [" %1.",localize "STR_A3_export_tool_includeTemp"]};
 if ((!_tc) AND (_fl in [0,1])) then {_text = _text + format [" %1.",localize "STR_A3_export_tool_excludeTemp"]};
 _hintText ctrlSetText _text;

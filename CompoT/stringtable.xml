@@ -334,9 +334,9 @@
 				<Original>Single element</Original>
 				<English>Single element</English>
 			</Key>
-			<Key ID="STR_A3_export_tool_Setup">
-				<Original>Project</Original>
-				<English>Project</English>
+			<Key ID="STR_A3_export_tool_Single_category">
+				<Original>Single category</Original>
+				<English>Single category</English>
 			</Key>
 			<Key ID="STR_A3_export_tool_objects">
 				<Original>Objects</Original>
@@ -418,29 +418,21 @@
 				<Original>will be exported to</Original>
 				<English>will be exported to</English>
 			</Key>
-			<Key ID="STR_A3_export_tool_setup_exported">
-				<Original>Project will be exported to</Original>
-				<English>Project will be exported to</English>
+			<Key ID="STR_A3_export_tool_objectCategory">
+				<Original>Selected categories from object library will be exported to</Original>
+				<English>Selected categories from object library will be exported to</English>
 			</Key>
-			<Key ID="STR_A3_export_tool_with_pivots_exported">
-				<Original>All data will be properly saved. This is the best way to store your project between sessions.</Original>
-				<English>All data will be properly saved. This is the best way to store your project between sessions.</English>
+			<Key ID="STR_A3_export_tool_compositonCategory">
+				<Original>Selected categories from composition library will be exported to</Original>
+				<English>Selected categories from composition library will be exported to</English>
 			</Key>
-			<Key ID="STR_A3_export_tool_without_pivots_exported">
-				<Original>Only objects will be exported. All pivots, parent/child relations, prefabs and collections data will not be exported</Original>
-				<English>Only objects will be exported. All pivots, parent/child relations, prefabs and collections data will not be exported</English>
+			<Key ID="STR_A3_export_tool_CollectionCategory">
+				<Original>Selected categories from collection library will be exported to</Original>
+				<English>Selected categories from collection library will be exported to</English>
 			</Key>
-			<Key ID="STR_A3_export_tool_default_format">
-				<Original>Composition tool output format will be used.</Original>
-				<English>Composition tool output format will be used.</English>
-			</Key>
-			<Key ID="STR_A3_export_tool_xCam_format">
-				<Original>xCam output format will be used.</Original>
-				<English>xCam output format will be used.</English>
-			</Key>
-			<Key ID="STR_A3_export_tool_mission_format">
-				<Original>Mission.sqm format will be used.</Original>
-				<English>Mission.sqm format will be used.</English>
+			<Key ID="STR_A3_export_tool_prefabCategory">
+				<Original>Selected categories from prefab library will be exported to</Original>
+				<English>Selected categories from prefab library will be exported to</English>
 			</Key>
 			<Key ID="STR_A3_export_tool_include_temp_text">
 				<Original>include temporary</Original>
@@ -498,17 +490,33 @@
 				<Original>overwrite</Original>
 				<English>overwrite</English>
 			</Key>
+			<Key ID="STR_A3_import_tool_overwrite_tooltip">
+				<Original>Overwrite with import if element already exist in library</Original>
+				<English>Overwrite with import if element already exist in library</English>
+			</Key>
 			<Key ID="STR_A3_import_tool_add_text">
 				<Original>add</Original>
 				<English>add</English>
+			</Key>
+			<Key ID="STR_A3_import_tool_add_tooltip">
+				<Original>Force import if element already exist in library</Original>
+				<English>Force import if element already exist in library</English>
 			</Key>
 			<Key ID="STR_A3_import_tool_skip_text">
 				<Original>skip</Original>
 				<English>skip</English>
 			</Key>
+			<Key ID="STR_A3_import_tool_skip_tooltip">
+				<Original>Skip import if element already exist in library</Original>
+				<English>Skip import if element already exist in library</English>
+			</Key>
 			<Key ID="STR_A3_import_tool_collision_text">
 				<Original>Elements name collision options</Original>
 				<English>Elements name collision options</English>
+			</Key>
+			<Key ID="STR_A3_import_tool_destination_text">
+				<Original>Destination category</Original>
+				<English>Destination category</English>
 			</Key>
 			<Key ID="STR_A3_import_tool_import_text">
 				<Original>Import menu</Original>

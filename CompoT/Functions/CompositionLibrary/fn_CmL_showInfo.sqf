@@ -11,7 +11,7 @@
 disableSerialization;
 private ["_dialog","_list","_index","_sizeText","_objectsText","_compositionsText","_collectionsText","_prefabsText",
 "_objects","_compositions","_collections","_prefabs","_data","_objectsList","_compositionsList","_collectionsList",
-"_prefabsList","_nameEdit"];
+"_prefabsList","_nameEdit","_newcatEdit","_categoriesList"];
 _dialog = findDisplay 25256;
 _sizeText = _dialog displayCtrl 600;
 _objectsText = _dialog displayCtrl 601;
@@ -22,7 +22,9 @@ _objectsList = _dialog displayCtrl 102;
 _compositionsList = _dialog displayCtrl 103;
 _collectionsList = _dialog displayCtrl 104;
 _prefabsList = _dialog displayCtrl 105;
+_categoriesList = _dialog displayCtrl 106;
 _nameEdit = _dialog displayCtrl 400;
+_newcatEdit = _dialog displayCtrl 401;
 lbClear _objectsList;
 lbClear _compositionsList;
 lbClear _collectionsList;
@@ -38,6 +40,7 @@ if (_this == "right") then {
 };
 if (_this == "category") exitWith {
 	CT_var_CmL_selection set [2, "category"];
+	_newCatEdit ctrlSetText (_categoriesList lbText (lbCurSel _categoriesList));
 };
 _index = lbCurSel _list;
 if (_index == -1) exitWith {

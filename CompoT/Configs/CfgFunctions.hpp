@@ -153,9 +153,10 @@ class CfgFunctions {
 			class IM_performImport{}; 
 			class IM_importLibrary{}; 
 			class IM_importElement{}; 
-			class IM_importProject{}; 
 			class IM_preloadInput{}; 
 			class IM_updateHint{}; 
+			class IM_importCategory{}; 
+			class IM_setCategory{}; 
 		}; 
 		class BuildToolSelectGUI {
 			file = "composition_tool\functions\BuildToolSelectGUI"; 

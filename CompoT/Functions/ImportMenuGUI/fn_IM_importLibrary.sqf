@@ -8,11 +8,11 @@
 */ 
 #include "defines.hpp" 
 
-private ["_libraryName","_collision","_import","_library","_catName","_catData","_index","_elemAddress","_elemMap","_catMap",
-"_catIndex","_elemIndex","_namesToChange","_nameIsGood","_i","_newName"];
+private ["_libraryName","_collision","_import","_library","_libMap","_catData","_catIndex"];
 _libraryName = _this select 0;
 _collision = _this select 1;
 _import = _this select 2;
+
 _library = switch (_libraryName) do {
 	case "object": {CT_var_objects};
 	case "composition": {CT_var_compositions};
@@ -20,8 +20,10 @@ _library = switch (_libraryName) do {
 	case "prefab": {CT_var_prefabs};
 	default {[]};
 };
-_catMap = []; _index = -1;
-if (_libraryName == "object") then {
+
+//EXEPTIONAL SHORTCUT FOR OBJECT LIBRARY
+if (_libraryName == "object") exitWith {
+	_catMap = [];
 	{
 		_catMap pushBack (_x select 0);
 	} forEach _library;
@@ -38,64 +40,17 @@ if (_libraryName == "object") then {
 		};
 	} forEach _import;
 };
-_elemAddress = []; _elemMap = []; _catMap = [];
-if (_libraryName in ["composition","collection","prefab"]) then {
-	//MAKE MAP OF CATEGORIES AND ELEMENTS IN LIBRARY
+
+//MAKE MAP OF ELEMENTS IN LIBRARY
+_libMap = [];
+{
+	_catIndex = _forEachIndex;
 	{
-		_catMap pushBack (_x select 0);
-		_index = _forEachIndex;
-		{
-			_elemMap pushBack (_x select 0);
-			_elemAddress pushBack _index;
-		} forEach (_x select 1);
-	} forEach _library;
-	
-	//IF ADD COLLISION OPTION, RENAME ALL ELEMENTS IN IMPORT BEFORE IMPORTING
-	_namesToChange = [];
-	if (_collision == 1) then {
-		{
-			{
-				if ((_x select 0) in _elemMap) then {
-					_namesToChange pushBack (_x select 0);
-				};
-			} forEach (_x select 1);
-		} forEach _import;
-		{
-			_nameIsGood = false;
-			_i = 0;
-			_newName = "";
-			while {!_nameIsGood} do {
-				_i = _i + 1;
-				_newName = format ["%1_%2",_x,_i];
-				if (!(_newName in _elemMap)) then {_nameIsGood = true};
-			};
-			[_import, _x, _newName] call CT_fnc_replaceDeep;
-		} forEach _namesToChange;
-	};
-	
-	//PERFORM IMPORTING TO LIBRARY
-	{
-		_catName = _x select 0;
-		{
-			_catIndex = _catMap find _catName;
-			_elemIndex = _elemMap find (_x select 0);
-			
-			if ((_catIndex == -1) AND (_elemIndex == -1)) then { //NO ELEMENT, NO CATEGORY
-				_library pushBack [_catName, [_x]]; _catMap pushBack _catName;
-			};
-			if ((_catIndex != -1) AND (_elemIndex != -1)) then { //ELEMENT AND CATEGORY FOUND
-				if (_collision == 0) then {
-					((_library select _catIndex) select 1) set [_elemIndex, _x];
-				};
-			};
-			if ((_catIndex != -1) AND (_elemIndex == -1)) then { //NO ELEMENT, CATEGORY FOUND
-				((_library select _catIndex) select 1) pushBack _x;
-			};
-			if ((_catIndex == -1) AND (_elemIndex != -1)) then { //NO CATEGORY, ELEMENT FOUND
-				if (_collision == 0) then {
-					((_library select (_elemAddress select _elemIndex)) select 1) set [_elemIndex, _x];
-				};
-			};
-		} forEach (_x select 1);
-	} forEach _import;
-};
+		_libMap pushBack (_x select 0);
+		_libMap pushBack [_catIndex, _forEachIndex];
+	} forEach (_x select 1);
+} forEach _library;
+
+{
+	[_libraryName,_collision,_x,_libMap] call CT_fnc_IM_importCategory;
+} forEach _import;
