@@ -24,7 +24,7 @@ if (!isNull _obj) then {
 		_class = uinamespace getVariable ["CT_var_gui_pickedObjectClass",""];
 		_entity = create3DENEntity ["Object", _class, getPosATL _obj];
 		if (_shift) then {
-			[_entity, 0,0] call ct_fnc_setPB;
+			_entity set3DENAttribute ["rotation", [0,0,0]];
 		};
 		if (!_ctrl) then {
 			deleteVehicle _obj;

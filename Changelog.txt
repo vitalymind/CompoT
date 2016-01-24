@@ -1,0 +1,42 @@
+﻿---/VERSION 0.1
+Initial release
+
+---/DEVELOPMENT BRANCH
+Added:
+- Check if playable unit is placed before CT launch
+- Object surface snapping while building and grabbing (CTRL+S)
+- Better object grabbing mechanism
+- Loading screen while loading configs
+- Config loading only once per arma lunch
+- Object surface snapping while building and grabbing (CTRL+S)
+- Objects snapping in eden
+- While in eden SHIFT+LMB to place object straight up on any surface
+- Category selection in object browser moved to combo box
+- Square representation of composition in addition to circle
+- Searching for Objects and Collections libraries
+- Rotation lock function in Eden
+- About 100 new objects for CUP
+- Option menu
+- User settings now saved to profile namespace
+- Import/export of single category
+Fixed:
+- Multiply objects placing with (CTRL+LMB)
+- Scope bug in object library
+- Ctrl, shift, alt keys got stacked sometimes
+- Minor GUI issues
+Changed:
+- Camera speed is not related to framerate any more
+- All textures moved to separate pbo, for faster iterations
+- Screenshot reference moved to config file
+- Info GUI made smaller
+- Resources separated into individual files
+- "CT" button moved from toolbar to menu strip
+- Minor changes to resources
+- project import/export excluded from GUI menu (will be re-introduced in project manager GUI)
+- Several minor changes in library GUIs
+- Major re-factoring of import system
+Removed:
+- Building tooltip while in eden
+
+
+Changes mentioned from oldest to newest
