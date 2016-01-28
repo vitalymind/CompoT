@@ -43,7 +43,9 @@ class CfgFunctions {
 		}; 
 		class MouseCursor {
 			file = "composition_tool\functions\MouseCursor"; 
-			class initMouseCursor{}; 
+			class MC_init{}; 
+			class MC_handleMouseButtonUp{}; 
+			class MC_handleMouseButtonDown{}; 
 		}; 
 		class SelectTool {
 			file = "composition_tool\functions\SelectTool"; 

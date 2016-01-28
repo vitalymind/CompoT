@@ -109,7 +109,7 @@ switch (CT_var_cursorTool) do {
 		};
 		
 		CT_var_cursor setPosATL _pos;
-		CT_var_cursor hideObject false;
+		if (CT_var_mouseCursorActive) then {CT_var_cursor hideObject true} else {CT_var_cursor hideObject false};
 		if SOMETHING_SELECTED then {
 			if (SEL_STATE == "busy") then {
 				CT_var_cursor hideObject true;

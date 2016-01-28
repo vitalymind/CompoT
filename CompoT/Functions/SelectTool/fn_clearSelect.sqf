@@ -8,5 +8,6 @@
 */ 
 #include "defines.hpp" 
 
-CT_var_sel = [];
+CT_var_sel deleteRange [0, count CT_var_sel];
+ct_var_selDrawIcons deleteRange [0, count ct_var_selDrawIcons];
 CT_var_selectedClone = objNull;

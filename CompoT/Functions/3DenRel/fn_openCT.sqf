@@ -80,6 +80,7 @@ ct_var_curProject call CT_fnc_importStructure;
 "buildTool" call CT_fnc_cursorChangeTool; "buildTool" call CT_fnc_cursorChangeTool;
 "open" call CT_fnc_infoGUI;
 "open" call CT_fnc_controlsGUI;
+showHUD [true, true, true, true, true, true, false, true];
 
 //SET PATH TO MISSION ROOT
 uiNameSpace setVariable ["CT_var_gui_pathToMission",""];

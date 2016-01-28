@@ -24,11 +24,14 @@ ct_var_valueBeingChanged = "rotateAngle";
 CT_var_stickToObjectMode = false;
 
 //MOUSE CURSOR
+ct_var_frameSelect = [];
+CT_var_forceCamRotate = false;
 ct_var_mouseCursorActive = false;
 ct_var_mousePos = [0.5,0.5];
 
 //SELECT TOOL
 ct_var_sel = [];
+ct_var_selDrawIcons = [];
 ct_var_selectedClone = objNull;
 ct_var_selectToolSize = "big";
 ct_var_cursorBestSelect = objNull;

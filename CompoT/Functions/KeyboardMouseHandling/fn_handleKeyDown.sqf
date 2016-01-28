@@ -63,7 +63,7 @@ if (!_shift AND !_ctrlKey AND !_alt) then {
 	if (_dikCode == DIK_MINUS) then {_handled = true; ["adjust", -1] call CT_fnc_cursorChangeValue};
 	if (_dikCode == DIK_PLUS) then {_handled = true; ["adjust", 1] call CT_fnc_cursorChangeValue};
 	if (_dikCode == DIK_TAB) then {_handled = true; call CT_fnc_selectToolChangeSize; call CT_fnc_buildToolresetHeight;};
-	if (_dikCode == DIK_CAPS) then {_handled = true; call CT_fnc_initMouseCursor};
+	if (_dikCode == DIK_CAPS) then {_handled = true; call CT_fnc_MC_init};
 	if (_dikCode == DIK_R) then {_handled = true; call CT_fnc_reclaimObject};
 	if (_dikCode == DIK_T) then {_handled = true; call CT_fnc_toggleSlopeMode};
 };

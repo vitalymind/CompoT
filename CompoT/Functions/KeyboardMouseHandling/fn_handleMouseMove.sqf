@@ -10,7 +10,11 @@
 
 if (CT_var_openedGUI) exitWith {false};
 
-if (!CT_var_mouseCursorActive) then {_this call CT_fnc_camRotate};
+if (CT_var_mouseCursorActive) then {
+	if (CT_var_forceCamRotate) then {_this call CT_fnc_camRotate};
+} else {
+	_this call CT_fnc_camRotate;
+};
 call CT_fnc_camMove;
 call CT_fnc_cursorUpdate;
 

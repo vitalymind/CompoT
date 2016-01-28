@@ -31,8 +31,6 @@ switch (_case) do {
 		_id pushBack (["add","circle",_points] call CT_fnc_handleDrawOrders);
 		_points = [getPosATL _object, _size, getDir _object] call CT_fnc_findSquarePoints;
 		_id pushBack (["add","circle",_points] call CT_fnc_handleDrawOrders);
-		_points = _childrenObj call CT_fnc_findLineUpPoints;
-		_id pushBack (["add","lineUp",_points] call CT_fnc_handleDrawOrders);
 		_points = _object call CT_fnc_findToClonesPoints;
 		_id pushBack (["add","clones",_points] call CT_fnc_handleDrawOrders);
 		{_id pushBack (["add","parentToChildLine",[position _object, position _x]] call CT_fnc_handleDrawOrders)} forEach _childrenPiv;
@@ -43,8 +41,6 @@ switch (_case) do {
 		_object = _this select 1;
 		_pivot = _object getVariable "pivot";
 		_id pushBack (["add","childToParentLine",[position _object, position _pivot]] call CT_fnc_handleDrawOrders);
-		_points = [_object] call CT_fnc_findLineUpPoints;
-		_id pushBack (["add","lineUp",_points] call CT_fnc_handleDrawOrders);
 	};
 };
 _id;

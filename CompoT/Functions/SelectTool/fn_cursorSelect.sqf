@@ -62,7 +62,7 @@ if (_pivot call CT_fnc_isPivotCloned) then {
 
 //CHECK IF MULTI SELECTION ALLOWED OR NEEDED
 if SOMETHING_SELECTED then {
-	if (isNull _object) then {_cleanSelection = true};
+	if ((isNull _object) AND !HK_SHIFT) then {_cleanSelection = true};
 	if ((_type == "single") OR ((_type == "multi") AND (typeOf _object == PIVOT))) then {_cleanSelection = true};
 	if ((CT_var_sel select 1) == "pivot") then {_cleanSelection = true};
 	if (_cleanSelection) then {
@@ -93,12 +93,22 @@ if (_method == "add") then {
 		CT_var_sel pushBack _type; //PIVOT OR OBJECTS
 		CT_var_sel pushBack "empty"; //CURRENT STATUS OF CURSOR
 	};
+	if (_type == "pivot") then {
+		{
+			ct_var_selDrawIcons pushBack _x;
+		} forEach (_object getVariable "childObjects");
+	} else {
+		ct_var_selDrawIcons pushBack _object;
+	};
 };
 
 //REMOVING FROM SELECTION
 if (_method == "delete") then {
 	_deleted = SELECTION deleteAt _index;
 	["remove", (_deleted select 1)] call CT_fnc_handleDrawOrders;
+	_index = -1;
+	{if (_object == _x) exitWith {_index = _forEachIndex}} forEach ct_var_selDrawIcons;
+	ct_var_selDrawIcons deleteAt _index;
 	if NOTHING_SELECTED then {
 		call CT_fnc_clearSelect;
 	};

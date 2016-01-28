@@ -36,9 +36,11 @@ switch (CT_var_cursorTool) do {
 	};
 	case "selectTool": {
 		if (_button == DIK_LMB) then {
-			if (!_shift AND !_ctrl AND !_alt) then {["single","default"] call CT_fnc_cursorSelect};
-			if (_shift AND !_ctrl AND !_alt) then {["multi","default"] call CT_fnc_cursorSelect};
-			if (!_shift AND _ctrl AND !_alt) then {["single","pivot"] call CT_fnc_cursorSelect};
+			if (!CT_var_mouseCursorActive) then {
+				if (!_shift AND !_ctrl AND !_alt) then {["single","default"] call CT_fnc_cursorSelect};
+				if (_shift AND !_ctrl AND !_alt) then {["multi","default"] call CT_fnc_cursorSelect};
+				if (!_shift AND _ctrl AND !_alt) then {["single","pivot"] call CT_fnc_cursorSelect};
+			};
 		};
 		if (_button == DIK_RMB) then {
 			if (!_shift AND !_ctrl AND !_alt) then {["grab", "mass"] call CT_fnc_cursorGrab};
