@@ -19,15 +19,13 @@ If you like to have CompoT`s functionality in your own project/addon/what-ever-y
 please don’t hesitate to contact me, I will be happy to help integrate CompoT in your project.
 
 CompoT is open source, it is found on GitHub, feel free to fork and/or pull request.
-
+https://github.com/vitalymind/CompoT
 
 ---\Contact
 Discord https://discord.gg/0eGEx8657S0ikp0D 
-BI Forum 
+BI Forum https://forums.bistudio.com/topic/186056-composition-tool-eden-editor-plugin/
 
 
 ---\Tutorial
-Tutorials will soon be available as series of youTube videos.
-Currently you can learn from example mission found in "@CompoT\resources\Example_mission".
-
-s
+See tutorials at official youtube channel
+https://www.youtube.com/channel/UCoxazSqIYg0_W9nMEJG0rzA

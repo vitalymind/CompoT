@@ -40,6 +40,7 @@ if ((_type == "close") AND (CT_var_buildToolGUIShown)) then {
 	CT_var_buildToolGUIShown = false;
 	CT_var_openedGUI = false;
 	CT_var_holdenKeys = [false,false,false,false,false,false,false,false,false];
+	CT_var_forceCamRotate = false;
 	_dialog = findDisplay 25253;
 	_dialog closeDisplay 1;
 	

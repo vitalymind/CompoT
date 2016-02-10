@@ -16,6 +16,7 @@ _newPrefEdit = _dialog displayCtrl 401;
 _prefabList = _dialog displayCtrl 251;
 _newName = ctrlText _newPrefEdit;
 if (_newName == "") exitWith {};
+if (_newName == "n/a") exitWith {};
 _index = lbCurSel _prefabList;
 if (_index == -1) exitWith {};
 _oldName = _prefabList lbText _index;

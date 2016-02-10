@@ -1,7 +1,7 @@
 ﻿---/VERSION 0.1
 Initial release
 
----/DEVELOPMENT BRANCH
+---/VERSION 0.2
 Added:
 - Check if playable unit is placed before CT launch
 - Object surface snapping while building and grabbing (CTRL+S)
@@ -19,11 +19,13 @@ Added:
 - Option menu
 - User settings now saved to profile namespace
 - Import/export of single category
+- "Place logic" button to "Basic panel"
 Fixed:
 - Multiply objects placing with (CTRL+LMB)
 - Scope bug in object library
 - Ctrl, shift, alt keys got stacked sometimes
 - Minor GUI issues
+- A lot small bug fixes
 Changed:
 - Camera speed is not related to framerate any more
 - All textures moved to separate pbo, for faster iterations
@@ -38,5 +40,10 @@ Changed:
 Removed:
 - Building tooltip while in eden
 
+---/DEVELOPMENT BRANCH
+Added:
+Fixed:
+Changed:
+Removed:
 
 Changes mentioned from oldest to newest

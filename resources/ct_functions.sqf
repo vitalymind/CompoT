@@ -583,8 +583,15 @@ CT_fnc_initMission = {
 	((ct_var_projects select _projectIndex) select 5) call CT_fnc_importStructure;
 	
 	//HIDE PIVOTS
-	{
-		_x hideObject true;
-	} forEach CT_var_builtPivots;
-	ct_var_mainPivot hideObject true;
+	if (isMultiplayer) then {
+		{
+			_x hideObjectGlobal true;
+		} forEach CT_var_builtPivots;
+		ct_var_mainPivot hideObjectGlobal true;
+	} else {
+		{
+			_x hideObject true;
+		} forEach CT_var_builtPivots;
+		ct_var_mainPivot hideObject true;
+	};
 };

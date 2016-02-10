@@ -57,7 +57,7 @@ if SOMETHING_SELECTED then {
 				if (!isNull CT_var_cursorBestSelect) then {_commonCenter = CT_var_cursorBestSelect};
 				{
 					_objects pushBack (_x select 0);
-					_pivot = _object getVariable "pivot";
+					_pivot = (_x select 0) getVariable "pivot";
 					if (!(_pivot in _pivots)) then {_pivots pushBack _pivot};
 				} forEach SELECTION;
 				if (_commonCenter in _objects) then {_objects = _objects - [_commonCenter]};

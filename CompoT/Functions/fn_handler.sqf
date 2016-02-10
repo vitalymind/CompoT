@@ -8,7 +8,8 @@
 */ 
 #include "defines.hpp"
 
-private ["_loaded","_input","_display","_cam","_toggle","_ctrl","_pos","_posY","_curSel","_mode","_basicCtrl","_advancedCtrl","_ctrlPlay","_checked"];
+private ["_loaded","_input","_display","_cam","_toggle","_ctrl","_pos","_posY","_curSel","_mode","_basicCtrl","_advancedCtrl",
+"_ctrlPlay","_checked","_entity"];
 _input = param [0, ""];
 _display = finddisplay 313;
 
@@ -291,7 +292,11 @@ switch (_input) do {
 			diag_log "ct mode changed to advanced";
 		};
 	};
-	
+	case "placeLogic": {
+		_entity = create3DENEntity ["Logic", "Logic", screenToWorld [0.5,0.5]];
+		_entity set3DENAttribute ["init",'if (isServer AND !((uiNameSpace getVariable ["CT_var_gui_runMode", ""]) in ["3den","editor"])) then { call compile preprocessfilelinenumbers "ct_functions.sqf"; call CT_fnc_initMission; };'];
+	};
+
 	//OPTIONS
 	case "toggleRotationClamp": {
 		_toggle = (_this select 1) select 1;

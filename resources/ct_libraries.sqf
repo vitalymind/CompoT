@@ -1,13 +1,3 @@
-/* 
-   File: CT_libraries.sqf
-   Function: 
-   Folder: Data 
-   Scope: 
-   Author Vitaly'mind'Chizhikov --- v@vlasport.com 
-   Part of composition tool 
-*/ 
-
-
 ["Author:		vitaly 'mind' chizhikov",
 "Date:			05.01.2016",
 "Decription:	Standart libraries for composition tool.",

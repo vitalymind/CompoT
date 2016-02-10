@@ -10,7 +10,7 @@
 
 _this spawn {
 	{
-		private ["_pivot","_name","_clones","_element","_getHighestCloneName","_parent"];
+		private ["_pivot","_name","_clones","_element","_getHighestCloneName","_parent","_prefab"];
 		_pivot = _x;
 		if (typeName _pivot == "OBJECT") then {
 			if (typeOf _pivot == PIVOT) then {
@@ -27,12 +27,17 @@ _this spawn {
 					_pos set [2,0];
 					_dir = getDir _pivot;
 					_parent = _pivot getVariable "pivot";
+					_prefab = _pivot getVariable ["prefab",[]];
 					
 					["special", "pivot", [[_pivot]]] call CT_fnc_deleteObject;
 					
 					_tc = count CT_var_btc; CT_var_btc pushBack _tc;
 					sleep 0.01;
-					["normal","composition",["asParent",_element],_pos,_dir,_parent,"exact"] call CT_fnc_build;
+					if (count _prefab != 0) then {
+						["normal","prefab",["asParent",_prefab],_pos,_dir,_parent,"exact"] call CT_fnc_build;
+					} else {
+						["normal","composition",["asParent",_element],_pos,_dir,_parent,"exact"] call CT_fnc_build;
+					};
 					CT_var_btc = CT_var_btc - [_tc];
 				} forEach _clones;
 			};

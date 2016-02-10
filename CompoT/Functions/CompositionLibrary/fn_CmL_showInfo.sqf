@@ -60,7 +60,7 @@ _objects = 0; _compositions = 0; _collections = 0; _prefabs = 0;
 	if ((_x select 0) == "collection") then {_collections = _collections + 1; _collectionsList lbAdd (_x select 1);};
 	if ((_x select 0) == "prefab") then {_prefabs = _prefabs + 1; _prefabsList lbAdd (_x select 1);};
 } forEach (_data select 2);
-_sizeText ctrlSetText format ["%1 %2",(_data select 1),(localize "STR_A3_composition_library_meters")];
+_sizeText ctrlSetText format ["%1 %2",round(_data select 1),(localize "STR_A3_composition_library_meters")];
 _objectsText ctrlSetText format ["%1 %2",_objects,(localize "STR_A3_composition_library_pcs")];
 _compositionsText ctrlSetText format ["%1 %2",_compositions,(localize "STR_A3_composition_library_pcs")];
 _collectionsText ctrlSetText format ["%1 %2",_collections,(localize "STR_A3_composition_library_pcs")];

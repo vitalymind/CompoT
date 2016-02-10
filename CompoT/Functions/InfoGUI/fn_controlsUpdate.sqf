@@ -23,10 +23,15 @@ _posX = 0;_posY = 0;_width = 0;_height = 0;
 if (CT_var_curGUIMode == "info+basicControls") then {
 	_posX = 0.8;
 	_width = 0.2;
+	_rows = 22;
 	_resultText = composeText [_resultText,(parseText format["<t size='%1' align='left' color='#%2'>ESC<t align='right' color='#%3'>Cancel selection/grab</t>", _textSize, _colorWhite,_colorYellow]), lineBreak];
 	_resultText = composeText [_resultText,(parseText format["<t size='%1' align='left' color='#%2'>W, A, S, D<t align='right' color='#%3'>Camera movement</t>", _textSize, _colorWhite,_colorYellow]), lineBreak];
 	_resultText = composeText [_resultText,(parseText format["<t size='%1' align='left' color='#%2'>Q, E<t align='right' color='#%3'>Camera height</t>", _textSize, _colorWhite,_colorYellow]), lineBreak];
 	_resultText = composeText [_resultText,(parseText format["<t size='%1' align='left' color='#%2'>Mouse Wheel<t align='right' color='#%3'>Camera speed</t>", _textSize, _colorWhite,_colorYellow]), lineBreak];
+	if (CT_var_mouseCursorActive) then {
+		_rows = _rows + 1;
+		_resultText = composeText [_resultText,(parseText format["<t size='%1' align='left' color='#%2'>Hold RMB<t align='right' color='#%3'>Camera rotation</t>", _textSize, _colorWhite,_colorYellow]), lineBreak];
+	};
 	_resultText = composeText [_resultText,(parseText format["<t size='%1' align='left' color='#%2'>F1<t align='right' color='#%3'>Options</t>", _textSize, _colorWhite,_colorYellow]), lineBreak];
 	_resultText = composeText [_resultText,(parseText format["<t size='%1' align='left' color='#%2'>F2<t align='right' color='#%3'>Switch GUI mode</t>", _textSize, _colorWhite,_colorYellow]), lineBreak];
 	_resultText = composeText [_resultText,(parseText format["<t size='%1' align='left' color='#%2'>F3<t align='right' color='#%3'>Export manager</t>", _textSize, _colorWhite,_colorYellow]), lineBreak];
@@ -39,13 +44,16 @@ if (CT_var_curGUIMode == "info+basicControls") then {
 	_resultText = composeText [_resultText,(parseText format["<t size='%1' align='left' color='#%2'>1<t align='right' color='#%3'>Build tool</t>", _textSize, _colorWhite,_colorYellow]), lineBreak];
 	_resultText = composeText [_resultText,(parseText format["<t size='%1' align='left' color='#%2'>2<t align='right' color='#%3'>Select tool</t>", _textSize, _colorWhite,_colorYellow]), lineBreak];
 	_resultText = composeText [_resultText,(parseText format["<t size='%1' align='left' color='#%2'>T<t align='right' color='#%3'>Toggle alignment mode</t>", _textSize, _colorWhite,_colorYellow]), lineBreak];
-	_resultText = composeText [_resultText,(parseText format["<t size='%1' align='left' color='#%2'>CAPSLOCK<t align='right' color='#%3'>Toggle cursor mode</t>", _textSize, _colorWhite,_colorYellow]), lineBreak];
+	if (CT_var_mouseCursorActive) then {
+		_resultText = composeText [_resultText,(parseText format["<t size='%1' align='left' color='#%2'>CAPSLOCK<t align='right' color='#%3'>Enter camera mode</t>", _textSize, _colorWhite,_colorYellow]), lineBreak];
+	} else {
+		_resultText = composeText [_resultText,(parseText format["<t size='%1' align='left' color='#%2'>CAPSLOCK<t align='right' color='#%3'>Enter cursor mode</t>", _textSize, _colorWhite,_colorYellow]), lineBreak];
+	};
 	_resultText = composeText [_resultText,(parseText format["<t size='%1' align='left' color='#%2'>CTRL+Q<t align='right' color='#%3'>Toggle rotation mode</t>", _textSize, _colorWhite,_colorYellow]), lineBreak];
 	_resultText = composeText [_resultText,(parseText format["<t size='%1' align='left' color='#%2'>CTRL+S<t align='right' color='#%3'>Toggle stick to object mode</t>", _textSize, _colorWhite,_colorYellow]), lineBreak];
 	_resultText = composeText [_resultText,(parseText format["<t size='%1' align='left' color='#%2'>SHIFT+CTRL+K<t align='right' color='#%3'>Delete everything</t>", _textSize, _colorWhite,_colorYellow]), lineBreak];
 	_resultText = composeText [_resultText,(parseText format["<t size='%1' align='left' color='#%2'>SHIFT+CTRL+E<t align='right' color='#%3'>Re-Build everything</t>", _textSize, _colorWhite,_colorYellow]), lineBreak];
 	_resultText = composeText [_resultText,(parseText format["<t size='%1' align='left' color='#%2'>CTRL+G<t align='right' color='#%3'>Set main pivot position</t>", _textSize, _colorWhite,_colorYellow]), lineBreak];
-	_rows = 22;
 	_posY = 1 - (_rows * 0.021);
 	_height = _rows * 0.021;
 };
@@ -58,7 +66,7 @@ if (CT_var_curGUIMode == "info+cursorControls") then {
 		_resultText = composeText [_resultText,(parseText format["<t size='%1' align='left' color='#%2'>LMB<t align='right' color='#%3'>Build element</t>", _textSize, _colorWhite,_colorYellow]), lineBreak];
 		_resultText = composeText [_resultText,(parseText format["<t size='%1' align='left' color='#%2'>SHIFT+LMB<t align='right' color='#%3'>Build element as clone</t>", _textSize, _colorWhite,_colorYellow]), lineBreak];
 		_resultText = composeText [_resultText,(parseText format["<t size='%1' align='left' color='#%2'>CTRL+LMB<t align='right' color='#%3'>Build multiply elements</t>", _textSize, _colorWhite,_colorYellow]), lineBreak];
-		_resultText = composeText [_resultText,(parseText format["<t size='%1' align='left' color='#%2'>Hold RMB<t align='right' color='#%3'>Select building library</t>", _textSize, _colorWhite,_colorYellow]), lineBreak];
+		_resultText = composeText [_resultText,(parseText format["<t size='%1' align='left' color='#%2'>SHIFT+Hold RMB<t align='right' color='#%3'>Select building library</t>", _textSize, _colorWhite,_colorYellow]), lineBreak];
 		_resultText = composeText [_resultText,(parseText format["<t size='%1' align='left' color='#%2'>SHIFT+F<t align='right' color='#%3'>Build new pivot</t>", _textSize, _colorWhite,_colorYellow]), lineBreak];
 		_resultText = composeText [_resultText,(parseText format["<t size='%1' align='left' color='#%2'>SHIFT+MW<t align='right' color='#%3'>Rotate build tool</t>", _textSize, _colorWhite,_colorYellow]), lineBreak];
 		_resultText = composeText [_resultText,(parseText format["<t size='%1' align='left' color='#%2'>ALT+MW<t align='right' color='#%3'>Adjust build tool height</t>", _textSize, _colorWhite,_colorYellow]), lineBreak];
@@ -76,10 +84,18 @@ if (CT_var_curGUIMode == "info+cursorControls") then {
 	};
 	if (CT_var_cursorTool == "selectTool") then {
 		if NOTHING_SELECTED then {
-			_resultText = composeText [_resultText,(parseText format["<t size='%1' align='left' color='#%2'>TAB<t align='right' color='#%3'>Toggle cursor size</t>", _textSize, _colorWhite,_colorYellow]), lineBreak];
-			_resultText = composeText [_resultText,(parseText format["<t size='%1' align='left' color='#%2'>LMB<t align='right' color='#%3'>Select near object/composition</t>", _textSize, _colorWhite,_colorYellow]), lineBreak];
+			if (CT_var_mouseCursorActive) then {
+				_resultText = composeText [_resultText,(parseText format["<t size='%1' align='left' color='#%2'>Hold LMB<t align='right' color='#%3'>Draw select frame</t>", _textSize, _colorWhite,_colorYellow]), lineBreak];
+				_resultText = composeText [_resultText,(parseText format["<t size='%1' align='left' color='#%2'>SHIFT+Hold LMB<t align='right' color='#%3'>Add objects to selection</t>", _textSize, _colorWhite,_colorYellow]), lineBreak];
+				_resultText = composeText [_resultText,(parseText format["<t size='%1' align='left' color='#%2'>ALT+Hold LMB<t align='right' color='#%3'>Remove objects from selection</t>", _textSize, _colorWhite,_colorYellow]), lineBreak];
+				_resultText = composeText [_resultText,(parseText format["<t size='%1' align='left' color='#%2'>CTRL+SHIFT+Hold LMB<t align='right' color='#%3'>Select pivot</t>", _textSize, _colorWhite,_colorYellow]), lineBreak];
+				
+			} else {
+				_resultText = composeText [_resultText,(parseText format["<t size='%1' align='left' color='#%2'>TAB<t align='right' color='#%3'>Toggle cursor size</t>", _textSize, _colorWhite,_colorYellow]), lineBreak];
+				_resultText = composeText [_resultText,(parseText format["<t size='%1' align='left' color='#%2'>LMB<t align='right' color='#%3'>Select near object/composition</t>", _textSize, _colorWhite,_colorYellow]), lineBreak];
+				_resultText = composeText [_resultText,(parseText format["<t size='%1' align='left' color='#%2'>CTRL+LMB<t align='right' color='#%3'>Select near pivot</t>", _textSize, _colorWhite,_colorYellow]), lineBreak];
+			};
 			_resultText = composeText [_resultText,(parseText format["<t size='%1' align='left' color='#%2'>SHIFT+LMB<t align='right' color='#%3'>Add/Remove object to selection</t>", _textSize, _colorWhite,_colorYellow]), lineBreak];
-			_resultText = composeText [_resultText,(parseText format["<t size='%1' align='left' color='#%2'>CTRL+LMB<t align='right' color='#%3'>Select near pivot</t>", _textSize, _colorWhite,_colorYellow]), lineBreak];
 			_resultText = composeText [_resultText,(parseText format["<t size='%1' align='left' color='#%2'>RMB<t align='right' color='#%3'>Grab nearest object/composition</t>", _textSize, _colorWhite,_colorYellow]), lineBreak];
 			_resultText = composeText [_resultText,(parseText format["<t size='%1' align='left' color='#%2'>ALT+RMB<t align='right' color='#%3'>Special object grab</t>", _textSize, _colorWhite,_colorYellow]), lineBreak];
 			_resultText = composeText [_resultText,(parseText format["<t size='%1' align='left' color='#%2'>CTRL+C<t align='right' color='#%3'>Copy object(-s)/composition</t>", _textSize, _colorWhite,_colorYellow]), lineBreak];

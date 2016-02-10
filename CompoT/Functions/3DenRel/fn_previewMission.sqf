@@ -25,11 +25,17 @@ ct_var_disableSim = false;
 ct_var_curProject call CT_fnc_importStructure;
 
 //HIDE PIVOTS
-{
-	_x hideObject true;
-} forEach CT_var_builtPivots;
-ct_var_mainPivot hideObject true;
-
+if (isMultiplayer) then {
+	{
+		_x hideObjectGlobal true;
+	} forEach CT_var_builtPivots;
+	ct_var_mainPivot hideObjectGlobal true;
+} else {
+	{
+		_x hideObject true;
+	} forEach CT_var_builtPivots;
+	ct_var_mainPivot hideObject true;
+};
 100 cutText ["","BLACK IN", 1];
 
 

@@ -46,6 +46,7 @@
 #define CT_OSMGROUPBY_IDC 758368
 #define CT_OSMCATNAMETEXT_IDC 758369
 #define CT_ROTATIONCLAMPTOGGLE_IDC 758370
+#define CT_PLACELOGICBUTTON_IDC 758371
 
 #define CT_SCREEN_01_IDC 758501
 #define CT_SCREEN_02_IDC 758502
@@ -258,6 +259,17 @@ class Display3DEN {
 							textureDisabledChecked = "composition_tool_data\data\UI\ct_clamp_on.paa";
 							textureDisabledUnchecked = "composition_tool_data\data\UI\ct_clamp_off.paa";
 							x = 2 * GRID_W;
+							y = 1 * GRID_H;
+							w = 10 * GRID_W;
+							h = 10 * GRID_H;
+						};
+						class placeLogic : ctrlButtonToolbar {
+							idc = CT_PLACELOGICBUTTON_IDC;
+							action = "['placeLogic'] call CT_fnc_handler";
+							text = "\a3\3DEN\Data\Displays\Display3DEN\PanelRight\submode_logic_logic_ca.paa";
+							tooltip = "$STR_A3_ct_eden_gui_placeLogic_hint";
+							onLoad = "";
+							x = 14 * GRID_W;
 							y = 1 * GRID_H;
 							w = 10 * GRID_W;
 							h = 10 * GRID_H;

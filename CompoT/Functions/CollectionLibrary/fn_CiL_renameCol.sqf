@@ -16,6 +16,7 @@ _newColEdit = _dialog displayCtrl 406;
 _collectionList = _dialog displayCtrl 251;
 _newName = ctrlText _newColEdit;
 if (_newName == "") exitWith {};
+if (_newName == "n/a") exitWith {};
 _index = lbCurSel _collectionList;
 if (_index == -1) exitWith {};
 _oldName = _collectionList lbText _index;

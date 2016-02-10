@@ -16,7 +16,7 @@ if (CT_var_cursorTool == "selectTool") then {
 			ct_var_frameSelect = [[(CT_var_mousePos select 0),(CT_var_mousePos select 1)], [0,0]];
 		};
 	};
-	if (_button == DIK_RMB) then {
-		CT_var_forceCamRotate = true;
-	};
+};
+if (_button == DIK_RMB) then {
+	CT_var_forceCamRotate = true;
 };

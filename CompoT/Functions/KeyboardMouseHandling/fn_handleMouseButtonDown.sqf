@@ -31,7 +31,9 @@ switch (CT_var_cursorTool) do {
 			};
 		};
 		if (_button == DIK_RMB) then {
-			"open" call CT_fnc_buildToolGUI;
+			if (_shift AND !_ctrl AND !_alt) then {
+				"open" call CT_fnc_buildToolGUI;
+			};
 		};
 	};
 	case "selectTool": {

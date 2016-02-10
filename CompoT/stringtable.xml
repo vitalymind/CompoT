@@ -530,6 +530,10 @@
 				<Original>Toggle Composition tool</Original>
 				<English>Toggle Composition tool</English>
 			</Key>
+			<Key ID="STR_A3_ct_eden_gui_placeLogic_hint">
+				<Original>Place init game logic. Required to initialize CompoT at mission start.</Original>
+				<English>Place init game logic. Required to initialize CompoT at mission start.</English>
+			</Key>
 			<Key ID="STR_A3_ct_eden_gui_start_but">
 				<Original>Launch CompoT</Original>
 				<English>Launch CompoT</English>
