@@ -151,8 +151,8 @@ if (CT_var_curGUIMode == "info+cursorControls") then {
 				_resultText = composeText [_resultText,(parseText format["<t size='%1' align='left' color='#%2'>CTRL+E<t align='right' color='#%3'>Re-Build composition</t>", _textSize, _colorWhite,_colorYellow]), lineBreak];
 				_resultText = composeText [_resultText,(parseText format["<t size='%1' align='left' color='#%2'>SHIFT+R<t align='right' color='#%3'>Reclaim objects in radius</t>", _textSize, _colorWhite,_colorYellow]), lineBreak];
 				_resultText = composeText [_resultText,(parseText format["<t size='%1' align='left' color='#%2'>CTRL+F<t align='right' color='#%3'>Save composition</t>", _textSize, _colorWhite,_colorYellow]), lineBreak];
-				_resultText = composeText [_resultText,(parseText format["<t size='%1' align='left' color='#%2'>DEL<t align='right' color='#%3'>Delete composition</t>", _textSize, _colorWhite,_colorYellow]), lineBreak];
-				_resultText = composeText [_resultText,(parseText format["<t size='%1' align='left' color='#%2'>SHIFT+DEL<t align='right' color='#%3'>Delete whole tree</t>", _textSize, _colorWhite,_colorYellow]), lineBreak];
+				_resultText = composeText [_resultText,(parseText format["<t size='%1' align='left' color='#%2'>DEL<t align='right' color='#%3'>Delete whole tree</t>", _textSize, _colorWhite,_colorYellow]), lineBreak];
+				_resultText = composeText [_resultText,(parseText format["<t size='%1' align='left' color='#%2'>SHIFT+DEL<t align='right' color='#%3'>Delete composition</t>", _textSize, _colorWhite,_colorYellow]), lineBreak];
 				_resultText = composeText [_resultText,(parseText format["<t size='%1' align='left' color='#%2'>SHIFT+CTRL+DEL<t align='right' color='#%3'>Delete only pivot</t>", _textSize, _colorWhite,_colorYellow]), lineBreak];
 				_rows = 17;
 				_posY = 1 - (_rows * 0.021);

@@ -281,7 +281,7 @@ class Display3DEN {
 					x = 0;
 					y = 6 * GRID_H;
 					w = CT_PANEL_W * GRID_W;
-					h = CT_ADVANCEDTAB_H * GRID_H;
+					h = (CT_ADVANCEDTAB_H - 6) * GRID_H;
 					
 					class Controls {
 						class Background_ct : ctrlStatic {
@@ -289,7 +289,7 @@ class Display3DEN {
 							x = 0;
 							y = 0;
 							w = CT_PANEL_W * GRID_W;
-							h = CT_ADVANCEDTAB_H * GRID_H;
+							h = (CT_ADVANCEDTAB_H - 6) * GRID_H;
 							colorBackground[] = {0.2, 0.2, 0.2, 1};
 						};
 						class Start_ct : ctrlShortcutButton {
