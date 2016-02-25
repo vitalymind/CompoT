@@ -138,6 +138,17 @@ _pivots = [];
 					};
 					[_parent] call CT_fnc_saveElement;
 				};
+				if (_type == "object") then {
+					private ["_pivot","_parentChildObjects"];
+					_pivot = _object getVariable "pivot";
+					_parentChildObjects = _pivot getVariable "childObjects";
+					_parentChildObjects = _parentChildObjects - [_object];
+					_pivot setVariable ["childObjects", _parentChildObjects];
+					CT_var_builtObjects = CT_var_builtObjects - [_object];
+					deleteVehicle _object;
+					if (_clearSelection) then {["clean"] call CT_fnc_drawSelection; call CT_fnc_clearSelect;};
+					if (!(_pivot in _pivots)) then {_pivots pushBack _pivot};
+				};
 			};
 			case "special": {
 				if (_type == "pivot") then {

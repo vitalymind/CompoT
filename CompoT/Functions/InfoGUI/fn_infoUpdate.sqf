@@ -86,13 +86,14 @@ if (CT_var_cursorTool == "selectTool") then {
 			};
 			_pos = getPosATL FIRST_SELECTION;
 			_dir = getDir FIRST_SELECTION;
+			if ((_dir < 0.01) OR (_dir == 360)) then {_dir = 0};
 			_size = FIRST_SELECTION getVariable "size";
 			_resultText = composeText [_resultText,(parseText format["<t size='%1' align='left' color='#%2'>Pos: </t>", _textSize, _colorWhite])];
 			_resultText = composeText [_resultText,(parseText format["<t size='%1' align='left' color='#%2'>%3   </t>", _textSize, _colorYellow,_pos])];
 			_resultText = composeText [_resultText,(parseText format["<t size='%1' align='left' color='#%2'>Dir: </t>", _textSize, _colorWhite])];
 			_resultText = composeText [_resultText,(parseText format["<t size='%1' align='left' color='#%2'>%3   </t>", _textSize, _colorYellow,_dir])];
 			_resultText = composeText [_resultText,(parseText format["<t size='%1' align='left' color='#%2'>Size: </t>", _textSize, _colorWhite])];
-			_resultText = composeText [_resultText,(parseText format["<t size='%1' align='left' color='#%2'>%3</t>", _textSize, _colorYellow,_size]), lineBreak];
+			_resultText = composeText [_resultText,(parseText format["<t size='%1' align='left' color='#%2'>%3</t>", _textSize, _colorYellow,round _size]), lineBreak];
 			_pivot = (FIRST_SELECTION getVariable "pivot") getVariable "name";
 			_resultText = composeText [_resultText,(parseText format["<t size='%1' align='left' color='#%2'>Parent pivot: </t>", _textSize, _colorWhite])];
 			_resultText = composeText [_resultText,(parseText format["<t size='%1' align='left' color='#%2'>%3   </t>", _textSize, _colorYellow,_pivot]), lineBreak];
@@ -124,6 +125,7 @@ if (CT_var_cursorTool == "selectTool") then {
 				_resultText = composeText [_resultText,(parseText format["<t size='%1' align='left' color='#%2'>%3</t>", _textSize, _colorYellow,_displayName]), lineBreak];
 				_pos = getPosATL FIRST_SELECTION;
 				_dir = getDir FIRST_SELECTION;
+				if ((_dir < 0.01) OR (_dir == 360)) then {_dir = 0};
 				_resultText = composeText [_resultText,(parseText format["<t size='%1' align='left' color='#%2'>Pos: </t>", _textSize, _colorWhite])];
 				_resultText = composeText [_resultText,(parseText format["<t size='%1' align='left' color='#%2'>%3   </t>", _textSize, _colorYellow,_pos])];
 				_resultText = composeText [_resultText,(parseText format["<t size='%1' align='left' color='#%2'>Dir: </t>", _textSize, _colorWhite])];

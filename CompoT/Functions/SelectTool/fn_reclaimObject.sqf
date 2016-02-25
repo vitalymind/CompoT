@@ -19,6 +19,7 @@ if (isNull _newPivot) exitWith {};
 _childObjects = _newPivot getVariable "childObjects";
 
 _object = [[],"normal","objects"] call CT_fnc_cursorFindClosestObject;
+if (isNull _object) exitWith {};
 if (!(_object in _childObjects)) then {
 	_childObjects pushBack _object;
 	_newPivot setVariable ["childObjects", _childObjects];
