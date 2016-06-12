@@ -66,13 +66,26 @@ if (!_shift AND !_ctrlKey AND !_alt) then {
 	if (_dikCode == DIK_CAPS) then {_handled = true; call CT_fnc_MC_init};
 	if (_dikCode == DIK_R) then {_handled = true; call CT_fnc_reclaimObject};
 	if (_dikCode == DIK_T) then {_handled = true; call CT_fnc_toggleSlopeMode};
+	if (_dikCode == DIK_NUM3) then {_handled = true; ["y","right",2] call CT_fnc_tiltObject};
+	if (_dikCode == DIK_NUM1) then {_handled = true; ["y","left",2] call CT_fnc_tiltObject};
+	if (_dikCode == DIK_NUM2) then {_handled = true; ["x","back",2] call CT_fnc_tiltObject};
+	if (_dikCode == DIK_NUM5) then {_handled = true; ["x","forw",2] call CT_fnc_tiltObject};
+	if (_dikCode == DIK_NUM4) then {_handled = true; ["z","left",2] call CT_fnc_tiltObject};
+	if (_dikCode == DIK_NUM6) then {_handled = true; ["z","right",2] call CT_fnc_tiltObject};
 };
 if (_shift AND !_ctrlKey AND !_alt) then {
 	if (_dikCode == DIK_R) then {_handled = true; call CT_fnc_reclaimObjectsInRadius};
 	if (_dikCode == DIK_F) then {_handled = true; call CT_fnc_buildPivot};
+	if (_dikCode == DIK_T) then {_handled = true; call CT_fnc_toggleVectorUpMode};
 	if (_dikCode == DIK_DELETE) then {_handled = true; ["normal"] call CT_fnc_deleteObject};
 	if (_dikCode == DIK_MINUS) then {_handled = true; ["change", -1] call CT_fnc_cursorChangeValue};
 	if (_dikCode == DIK_PLUS) then {_handled = true; ["change", 1] call CT_fnc_cursorChangeValue};
+	if (_dikCode == DIK_NUM3) then {_handled = true; ["y","right",10] call CT_fnc_tiltObject};
+	if (_dikCode == DIK_NUM1) then {_handled = true; ["y","left",10] call CT_fnc_tiltObject};
+	if (_dikCode == DIK_NUM2) then {_handled = true; ["x","back",10] call CT_fnc_tiltObject};
+	if (_dikCode == DIK_NUM5) then {_handled = true; ["x","forw",10] call CT_fnc_tiltObject};
+	if (_dikCode == DIK_NUM4) then {_handled = true; ["z","left",10] call CT_fnc_tiltObject};
+	if (_dikCode == DIK_NUM6) then {_handled = true; ["z","right",10] call CT_fnc_tiltObject};
 };
 if (!_shift AND _ctrlKey AND !_alt) then {
 	if (_dikCode == DIK_R) then {_handled = true; call CT_fnc_changePivotOwner};
@@ -84,6 +97,14 @@ if (!_shift AND _ctrlKey AND !_alt) then {
 	if (_dikCode == DIK_E) then {_handled = true; [] call CT_fnc_reBuild};
 	if (_dikCode == DIK_G) then {_handled = true; (getPosATL CT_var_cursor) call CT_fnc_changeCenterPos};
 	if (_dikCode == DIK_S) then {_handled = true; call CT_fnc_toggleStickToObjectMode};
+	if (_dikCode == DIK_NUM3) then {_handled = true; ["y","right",0.5] call CT_fnc_tiltObject};
+	if (_dikCode == DIK_NUM1) then {_handled = true; ["y","left",0.5] call CT_fnc_tiltObject};
+	if (_dikCode == DIK_NUM2) then {_handled = true; ["x","back",0.5] call CT_fnc_tiltObject};
+	if (_dikCode == DIK_NUM5) then {_handled = true; ["x","forw",0.5] call CT_fnc_tiltObject};
+	if (_dikCode == DIK_NUM4) then {_handled = true; ["z","left",0.5] call CT_fnc_tiltObject};
+	if (_dikCode == DIK_NUM6) then {_handled = true; ["z","right",0.5] call CT_fnc_tiltObject};
+	if (_dikCode == DIK_SPACE) then {_handled = true; call CT_fnc_forceAlignObjectToSurface;};
+	
 };
 if (_shift AND _ctrlKey AND !_alt) then {
 	if (_dikCode == DIK_DELETE) then {_handled = true; ["transfer"] call CT_fnc_deleteObject};

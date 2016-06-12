@@ -12,6 +12,15 @@
 #define DIK_TAB				15
 #define DIK_ARROWUP			200
 #define DIK_ARROWDOWN		208
+#define DIK_NUM1		79
+#define DIK_NUM2		80
+#define DIK_NUM3		81
+#define DIK_NUM4		75
+#define DIK_NUM5		76
+#define DIK_NUM6		77
+#define DIK_NUM7		71
+#define DIK_NUM8		72
+#define DIK_NUM9		73
 #define DIK_ENTER			28
 #define DIK_SPACE			57
 #define DIK_LMB 			0

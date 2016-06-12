@@ -39,6 +39,7 @@ class CfgFunctions {
 			class cursorChangeTool{}; 
 			class cursorChangeValue{}; 
 			class alignWithSurface{}; 
+			class forceAlignObjectToSurface{}; 
 			class toggleStickToObjectMode{}; 
 		}; 
 		class MouseCursor {
@@ -91,6 +92,8 @@ class CfgFunctions {
 			class liftBuildTool{}; 
 			class changeCenterPos{}; 
 			class toggleSlopeMode{}; 
+			class tiltObject{}; 
+			class toggleVectorUpMode{}; 
 		}; 
 		class Clipboard {
 			file = "composition_tool\functions\Clipboard"; 

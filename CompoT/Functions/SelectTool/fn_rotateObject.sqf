@@ -79,11 +79,17 @@ switch (_case) do {
 		} forEach _childPivots;
 	};
 	case "object": {
-		private ["_object", "_rotateAngle"];
+		private ["_object", "_rotateAngle","_pb"];
 		_object = _this select 1;
 		_rotateAngle = _this select 2;
+		_pb = _object call CT_fnc_getPB;
 		[_object,0,0] call CT_fnc_setPB;
 		_object setDir ((getDir _object) + _rotateAngle);
-		[_object] call CT_fnc_alignWithSurface;
+		if (ct_var_vectorUpMode == 0) then {
+			[_object] call CT_fnc_alignWithSurface;
+		};
+		if (ct_var_vectorUpMode == 1) then {
+			[_object, _pb select 0, _pb select 1] call CT_fnc_setPB;
+		};
 	};
 };

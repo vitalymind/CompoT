@@ -129,6 +129,15 @@ switch (CT_var_cursorTool) do {
 					{
 						if ((_x select 3) in _selectedObjects) then {_contact set [_forEachIndex, "delMe"]};
 					} forEach _contact;
+					if (!isNil "noLootIntersect") then {
+						if (noLootIntersect) then {
+							{
+								if (typeName _x == "ARRAY") then {
+									if ((_x select 3) in ct_var_builtObjects) then {_contact set [_forEachIndex, "delMe"]};
+								};
+							} forEach _contact;
+						};
+					};
 					_contact = _contact - ["delMe"];
 					if (count _contact != 0) then {
 						_pos = ASLtoATL ((_contact select 0) select 0);
@@ -142,6 +151,7 @@ switch (CT_var_cursorTool) do {
 				};
 				{
 					_object = (_x select 0);
+					_pb = _object call CT_fnc_getPB;
 					[_object, 0, 0] call CT_fnc_setPB;
 					_newPos = []; _newHeight = 0;
 					_relPos = _x select 2;
@@ -157,7 +167,12 @@ switch (CT_var_cursorTool) do {
 					
 					_newPos pushBack _newHeight;
 					_object setPosATL _newPos;
-					[_object] call CT_fnc_alignWithSurface;
+					if (ct_var_vectorUpMode == 0) then {
+						[_object] call CT_fnc_alignWithSurface;
+					};
+					if (ct_var_vectorUpMode == 1) then {
+						[_object, _pb select 0, _pb select 1] call CT_fnc_setPB;
+					};
 				} forEach SELECTION;
 			};
 		};

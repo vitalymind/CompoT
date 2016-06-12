@@ -42,10 +42,16 @@ if (_type == "pivot") then {
 	};
 };
 if (_type == "object") then {
-	private ["_pos"];
+	private ["_pos","_pb"];
+	_pb = _object call CT_fnc_getPB;
 	[_object,0,0] call CT_fnc_setPB;
 	_pos = getPosATL _object;
 	_pos set [2, (_pos select 2) + _height];
 	_object setPosATL _pos;
-	[_object] call CT_fnc_alignWithSurface;
+	if (ct_var_vectorUpMode == 0) then {
+		[_object] call CT_fnc_alignWithSurface;
+	};
+	if (ct_var_vectorUpMode == 1) then {
+		[_object, _pb select 0, _pb select 1] call CT_fnc_setPB;
+	};
 };

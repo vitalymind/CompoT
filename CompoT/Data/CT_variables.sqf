@@ -50,6 +50,7 @@ ct_var_buildMode = [["object",0,0],[0,0],[0,0],[0,0],[0,0]];
 ct_var_btc = []; 
 ct_var_disableSim = true;
 ct_var_mainPivot = objNull;
+ct_var_vectorUpMode = 0;
 
 //CLIPBOARD
 ct_var_clipboard = [];

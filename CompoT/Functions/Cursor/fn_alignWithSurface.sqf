@@ -9,8 +9,9 @@
 #include "defines.hpp" 
 
 private ["_object","_vSide","_vUp","_vDir","_toLand","_toSea"];
-_object = _this select 0;
+_object = [_this, 0, objNull] call BIS_fnc_param;
 _forced = [_this, 1, ""] call BIS_fnc_param;
+if (isNull _object) exitWith {};
 _toSea = {
 	[_this, 0, 0] call CT_fnc_setPB
 };
