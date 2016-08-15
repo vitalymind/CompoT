@@ -38,5 +38,5 @@ private ["_case","_points"];
 			_color, getPosVisual _x, 0.5, 0.5, 0
 		];
 	};
-} forEach ct_var_hiddenObjects;
+} forEach ct_var_subCubes;
 

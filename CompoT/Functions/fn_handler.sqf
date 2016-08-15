@@ -35,6 +35,18 @@ switch (_input) do {
 		};
 		uiNameSpace setVariable ["CT_var_gui_runMode", "3den"];
 		diag_log "CT Mission preview ended";
+		
+		[] spawn {
+			sleep 0.5;
+			private _array = uiNamespace getVariable ["ct_vat_hiddenObjects",[]];
+			{
+				_x params ["_position","_model"];
+				_target = objNull;
+				{if (((getModelInfo _x) select 0) == _model) exitWith {_target = _x}} forEach (nearestTerrainObjects [_position, [], 25]);
+				if (!isNull _target) then {_target hideObject true};
+			} forEach _array;
+		};
+		
 	};
 	case "previewStart": {
 		if (!(uinamespace getVariable ["CT_var_gui_editorLoaded", false])) exitWith {};
