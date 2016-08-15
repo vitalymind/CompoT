@@ -45,6 +45,7 @@ _firstList lbAdd (localize "STR_A3_export_tool_All_libraries");
 _firstList lbAdd (localize "STR_A3_export_tool_Single_library");
 _firstList lbAdd (localize "STR_A3_export_tool_Single_element"); 
 _firstList lbAdd (localize "STR_A3_export_tool_Single_category");
+_firstList lbAdd "Hidden objects";
 _firstList lbSetCurSel 0;
 _toClipCheck cbSetChecked true;	ctrlShow [500, false];
 call CT_fnc_EM_updateHint;

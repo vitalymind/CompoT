@@ -52,6 +52,11 @@ ct_var_disableSim = true;
 ct_var_mainPivot = objNull;
 ct_var_vectorUpMode = 0;
 
+//REMOVE TOOL
+ct_var_hiddenObjects = [];
+ct_var_subCubes = [];
+CT_var_subCubesShown = false;
+
 //CLIPBOARD
 ct_var_clipboard = [];
 
@@ -120,3 +125,4 @@ ct_var_projects = [];
 
 //MISC
 ct_var_disableUnitSim = false;
+

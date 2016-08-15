@@ -52,6 +52,15 @@ switch (CT_var_cursorTool) do {
 			if (!_shift AND _ctrl AND !_alt) then {["grab", "mass", true] call CT_fnc_cursorGrab};
 		};
 	};
+	case "removeTool": {
+		if (_button == DIK_LMB) then {
+			if (!CT_var_mouseCursorActive) then {
+				if (!_shift AND !_ctrl AND !_alt) then {["none"] call CT_fnc_hideObject};
+				if (_shift AND !_ctrl AND !_alt) then {["shift"] call CT_fnc_hideObject};
+				if (!_shift AND _ctrl AND !_alt) then {["ctrl"] call CT_fnc_hideObject};
+			};
+		};
+	};
 };
 
 true;

@@ -30,3 +30,13 @@ private ["_case","_points"];
 	};
 } forEach ct_var_builtObjects;
 
+{
+	_color = [0.12,0.91,1,0.6];
+	if ((CT_var_cam distance _x) < 750) then {
+		drawIcon3D [
+			"composition_tool_data\data\ui\ct_object.paa", 
+			_color, getPosVisual _x, 0.5, 0.5, 0
+		];
+	};
+} forEach ct_var_hiddenObjects;
+

@@ -27,6 +27,7 @@
 #define DIK_RMB 			1
 #define DIK_1				2
 #define DIK_2				3
+#define DIK_3				4
 #define DIK_R				19
 #define DIK_C				46
 #define DIK_V				47

@@ -59,6 +59,7 @@ if (!_shift AND !_ctrlKey AND !_alt) then {
 	
 	if (_dikCode == DIK_1) then {_handled = true; "buildTool" call CT_fnc_cursorChangeTool};
 	if (_dikCode == DIK_2) then {_handled = true; "selectTool" call CT_fnc_cursorChangeTool};
+	if (_dikCode == DIK_3) then {_handled = true; "removeTool" call CT_fnc_cursorChangeTool};
 	if (_dikCode == DIK_DELETE) then {_handled = true; ["mass"] call CT_fnc_deleteObject};
 	if (_dikCode == DIK_MINUS) then {_handled = true; ["adjust", -1] call CT_fnc_cursorChangeValue};
 	if (_dikCode == DIK_PLUS) then {_handled = true; ["adjust", 1] call CT_fnc_cursorChangeValue};
@@ -77,6 +78,7 @@ if (_shift AND !_ctrlKey AND !_alt) then {
 	if (_dikCode == DIK_R) then {_handled = true; call CT_fnc_reclaimObjectsInRadius};
 	if (_dikCode == DIK_F) then {_handled = true; call CT_fnc_buildPivot};
 	if (_dikCode == DIK_T) then {_handled = true; call CT_fnc_toggleVectorUpMode};
+	if (_dikCode == DIK_C) then {_handled = true; call CT_fnc_toggleSubCubes};
 	if (_dikCode == DIK_DELETE) then {_handled = true; ["normal"] call CT_fnc_deleteObject};
 	if (_dikCode == DIK_MINUS) then {_handled = true; ["change", -1] call CT_fnc_cursorChangeValue};
 	if (_dikCode == DIK_PLUS) then {_handled = true; ["change", 1] call CT_fnc_cursorChangeValue};

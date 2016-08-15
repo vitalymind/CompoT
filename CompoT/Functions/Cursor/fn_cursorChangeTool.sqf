@@ -51,4 +51,16 @@ switch (_case) do {
 		CT_var_cursor setVariable ["childPivots",[]];
 		CT_var_cursorTool = "selectTool";
 	};
+	case "removeTool": {
+		call CT_fnc_clearPreview;
+		deleteVehicle CT_var_cursor;
+		if (CT_var_selectToolSize == "big") then {CT_var_cursor = SELECT_TOOL_B createVehicleLocal [0,0,0]};
+		if (CT_var_selectToolSize == "small") then {CT_var_cursor = SELECT_TOOL_S createVehicleLocal [0,0,0]};
+		[CT_var_cursor, 0, 0] call CT_fnc_setPB;
+		CT_var_cursor setVariable ["forbidden",[]];
+		CT_var_cursor setVariable ["childObjects",[]];
+		CT_var_cursor setVariable ["childPivots",[]];
+		CT_var_cursorTool = "removeTool";
+		CT_var_cursor setObjectTexture [0, "#(rgb,8,8,3)color(0.12,0.91,1,1)"];
+	};
 };

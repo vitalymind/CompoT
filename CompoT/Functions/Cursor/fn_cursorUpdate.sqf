@@ -177,4 +177,19 @@ switch (CT_var_cursorTool) do {
 			};
 		};
 	};
+	case "removeTool": {
+		_skipIntersect = false;
+		_pos = screenToWorld CT_var_mousePos;
+		_contact = [];
+		_posCam = getPosASL CT_var_cam;
+		_posTarget = screenToWorld CT_var_mousePos;
+		_posTarget = [_posTarget select 0, _posTarget select 1, getTerrainHeightASL _posTarget];
+		_contact = lineIntersectsSurfaces [_posCam, _posTarget, objnull, objNull, true, 1];
+		if (count _contact != 0) then {
+			_pos = ASLToATL ((_contact select 0) select 0);
+			CT_var_cursorBestSelect = (_contact select 0) select 3;
+		} else {CT_var_cursorBestSelect = objNull;};
+		
+		CT_var_cursor setPosATL _pos;
+	};
 };

@@ -8,11 +8,21 @@
 */ 
 #include "defines.hpp" 
 
-if (CT_var_cursorTool != "selectTool") exitWith {};
-if (CT_var_selectToolSize == "big") then {
-	CT_var_selectToolSize = "small";
-	"selectTool" call CT_fnc_cursorChangeTool;
-} else {
-	CT_var_selectToolSize = "big";
-	"selectTool" call CT_fnc_cursorChangeTool;
+if (CT_var_cursorTool == "selectTool") then {
+	if (CT_var_selectToolSize == "big") then {
+		CT_var_selectToolSize = "small";
+		"selectTool" call CT_fnc_cursorChangeTool;
+	} else {
+		CT_var_selectToolSize = "big";
+		"selectTool" call CT_fnc_cursorChangeTool;
+	};
+};
+if (CT_var_cursorTool == "removeTool") then {
+	if (CT_var_selectToolSize == "big") then {
+		CT_var_selectToolSize = "small";
+		"removeTool" call CT_fnc_cursorChangeTool;
+	} else {
+		CT_var_selectToolSize = "big";
+		"removeTool" call CT_fnc_cursorChangeTool;
+	};
 };

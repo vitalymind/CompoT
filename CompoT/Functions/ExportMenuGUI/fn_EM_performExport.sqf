@@ -25,6 +25,7 @@ _tl = lbSelection _thirdList;
 _ef = lbCurSel _formatCombo;
 _tc = if (cbChecked _incTempCheck) then {true} else {false};
 _to = if (cbChecked _toClipCheck) then {0} else {if (cbChecked _toDispCheck) then {1};};
+_br = toString [13,10];
 
 _newLine = toString [10]; _tab = toString [9];
 _text = '["Author:' + _tab + _tab + 'Unknown",' + _newLine + '"Date:' + _tab + _tab + _tab + '01.01.2015",' + _newLine + 
@@ -68,6 +69,17 @@ if (_fl == 3) then {
 	if (_sl == 2) then {_text = _text + 'collections' + '",' + _newLine + '[3,2], ' + str _data};
 	if (_sl == 3) then {_text = _text + 'prefabs' + '",' + _newLine + '[3,3], ' + str _data};
 	_text = _text + ']' + _newLine;
+};
+if (_fl == 4) then {
+	_text = "";
+	{
+		_position = _x getVariable ["position",[]];
+		_class = _x getVariable ["class",""];
+		_model = _x getVariable ["model",""];
+		_dir = _x getVariable ["dir",0];
+		_pb = _x getVariable ["pb",[0,0]];
+		_text = _text + (format ['[%1,"%2"],',ASLtoAGL _position,_model]) + _br;
+	} forEach ct_var_subCubes;
 };
 if (_to == 0) then {
 	["Exported to clipboard"] call CT_fnc_notification;

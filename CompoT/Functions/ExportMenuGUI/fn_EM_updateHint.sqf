@@ -51,6 +51,9 @@ if (_fl == 3) then {
 	if (_sl == 2) then {_text = _text + format ["%1 ", localize "STR_A3_export_tool_CollectionCategory"]};
 	if (_sl == 3) then {_text = _text + format ["%1 ", localize "STR_A3_export_tool_prefabCategory"]};
 };
+if (_fl == 4) then {
+	_text = _text + "Hidden objects will be exported as array ";
+};
 if ((_to == 0) AND (_fl in [0,1,2,3])) then {_text = _text + format [" %1.", localize "STR_A3_export_tool_clipboard"]};
 if ((_to == 1) AND (_fl in [0,1,2,3])) then {_text = _text + format [" %1.", localize "STR_A3_export_tool_display"]};
 if ((_tc) AND (_fl in [0,1])) then {_text = _text + format [" %1.",localize "STR_A3_export_tool_includeTemp"]};
