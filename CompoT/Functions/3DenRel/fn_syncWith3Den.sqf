@@ -22,3 +22,11 @@ _project set [0, _curProjectName];
 
 (uinamespace getVariable "CT_var_gui_curProject") deleteRange [0, 10];
 (uinamespace getVariable "CT_var_gui_curProject") append _project;
+
+private _hiddenObjects = [];
+{
+	_model = _x getVariable ["model",""];
+	_position = _x getVariable ["position",[]];
+	_hiddenObjects pushBack [_position,_model];
+} forEach ct_var_subCubes;
+uiNamespace setVariable ["ct_var_hiddenObjects",_hiddenObjects];

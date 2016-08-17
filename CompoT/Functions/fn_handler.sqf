@@ -38,7 +38,7 @@ switch (_input) do {
 		
 		[] spawn {
 			sleep 0.5;
-			private _array = uiNamespace getVariable ["ct_vat_hiddenObjects",[]];
+			private _array = uiNamespace getVariable ["ct_var_hiddenObjects",[]];
 			{
 				_x params ["_position","_model"];
 				_target = objNull;
