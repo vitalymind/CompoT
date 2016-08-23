@@ -53,8 +53,8 @@ ct_var_mainPivot = objNull;
 ct_var_vectorUpMode = 0;
 
 //REMOVE TOOL
-ct_var_hiddenObjects = [];
-ct_var_subCubes = [];
+if (isNil 'ct_var_hiddenObjects') then {ct_var_hiddenObjects = []};
+if (isNil 'ct_var_subCubes') then {ct_var_subCubes = []};
 CT_var_subCubesShown = false;
 
 //CLIPBOARD

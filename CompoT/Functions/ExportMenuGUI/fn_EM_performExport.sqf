@@ -78,7 +78,7 @@ if (_fl == 4) then {
 		_model = _x getVariable ["model",""];
 		_dir = _x getVariable ["dir",0];
 		_pb = _x getVariable ["pb",[0,0]];
-		_text = _text + (format ['[%1,"%2"],',ASLtoAGL _position,_model]) + _br;
+		_text = _text + (format ['[%1,"%2"],',_position,_model]) + _br;
 	} forEach ct_var_subCubes;
 };
 if (_to == 0) then {

@@ -42,7 +42,7 @@ switch (_input) do {
 			{
 				_x params ["_position","_model"];
 				_target = objNull;
-				{if (((getModelInfo _x) select 0) == _model) exitWith {_target = _x}} forEach (nearestTerrainObjects [_position, [], 25]);
+				{if (((getModelInfo _x) select 0) == _model) exitWith {_target = _x}} forEach (nearestTerrainObjects [_position, [], 10]);
 				if (!isNull _target) then {_target hideObject true};
 			} forEach _array;
 		};
